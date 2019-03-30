@@ -1,0 +1,33 @@
+body {background-color: #cccccc;}
+
+.strapL{
+    width: 500px;
+    float: left;
+    margin-top:70px;
+    
+}
+
+.strapR{
+    width: 620px;
+    float: left;
+    margin-top:75px;
+    
+}
+
+/* Background Gradient for Complementary Colors */
+
+
+.frame{
+    float: left;
+    margin: auto;
+    width:200px;
+    height:255px;
+
+    
+}
+
+
+
+.row{
+    height: 45px;
+}
