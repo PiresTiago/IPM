@@ -1,4 +1,4 @@
-body {background-color: #cccccc;}
+body {background-color: #D6D6D6;}
 
 .strapL{
     width: 500px;
@@ -20,14 +20,20 @@ body {background-color: #cccccc;}
 .frame{
     float: left;
     margin: auto;
-    width:200px;
+    width:205px;
     height:255px;
 
     
 }
 
-
-
 .row{
     height: 45px;
+}
+
+#maps{
+    display: none;
+}
+
+#menu{
+    display: block;
 }
