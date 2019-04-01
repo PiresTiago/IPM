@@ -1,4 +1,4 @@
-body {background-color: #D6D6D6;}
+body {background-color: #F4F4F4;}
 a, a:hover{
     color: black;
     
@@ -20,6 +20,30 @@ a, a:hover{
 }
 
 /* Background Gradient for Complementary Colors */
+#screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -118px;
+    margin-left: -86px;
+    width: 172px;
+    height: 236px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#watch {
+    background-color: #FFFFFF;
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-top: -149px;
+   margin-left: -570px;
+   width: 1140px;
+   
+}
+
+
 
 .container{
     background-color: #f7f7f7;
