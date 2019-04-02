@@ -7,3 +7,5 @@ function displayMenu(id) {
     document.getElementById("menu").style.display = "none";
     document.getElementById(id).style.display = "block";
   }
+
+  

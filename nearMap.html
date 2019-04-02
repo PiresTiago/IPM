@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
   <!-- Required meta tags -->
@@ -14,104 +14,63 @@
   <title>iGo</title>
   <link rel="stylesheet" href="./css/stylesheet.css">
   <script src="js/scripts.js"></script>
-
 </head>
 
 <body>
-  <div class="container-fluid" style="margin:150px auto;">
-    <div class="strapL"><img src="imagens/strapL.png" width="100%"></div>
+  <img id="watch" src="imagens/watch.png">
+  <div id="screen">
+    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0">
+      <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
+      <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <!-- Toggle change icon -->
+        <i class="fas fa-angle-double-down"></i>
+      </button>
+      <div class="col-3 m-0 p-0">8:30</div>
+
+      <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px
+                height=45px">Mapas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px">MyWeb</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
 
-    <div class="frame" id="menu">
-      <img src="imagens/border.png" width=250px height=310px; style="position:absolute; margin: -25px 0px 0px -20px;">
-      <div class="container" style="height:100%;background:-webkit-linear-gradient(top,  #393a3b 0%,#b9b9bb 100%);">
-
-        <div class="row">
-          <div class="col-sm">
-            <img src="imagens/meteo.png" width="55%" style="margin-top:4px; margin-left: 5px;">
-          </div>
-          <div class="col-sm" style="color:white;text-align:right; margin-top: 5px; margin-right:5px;font-size:24px">
-            8:30
-          </div>
-        </div>
-
-        <div class="row" style="height:90px;">
-          <div class="col-sm">
-            <img src="imagens/maps.png" width=53px height=53px onclick="displayMaps()" style="margin: 15px 0px 0px 0px">
-          </div>
-          <div class="col-sm" style="margin: 25px 0px 0px -40px; font-weight: bold; color: white">
-            Mapas
-          </div>
-        </div>
-
-        <div class="row" style="height:90px;">
-          <div class="col-sm">
-            <img src="imagens/web.png" width=70px height=60px; onclick="displayWeb()" style="margin: 10px 0px 0px -10px;">
-          </div>
-          <div class="col-sm" style="margin: 25px 0px 0px -40px;font-weight: bold;color: white">
-            MyWeb
-          </div>
-        </div>
-
-        <div class="row">
-          <i class="fas fa-angle-double-up" id="hideMenu" onclick="hideMenu('nearMap')"
-            style="color:white;position:absolute; margin:0px 0px 0px 95px"></i>
-        </div>
-
+    <div class="row" style="text-align:right; font-weight: bold;font-size:20px">
+      <a href="maps.html" class="stretched-link position-relative">
+        <i class="fas fa-chevron-left" style="font-size:25px; margin:12px 0px 0px 10px;"></i>
+      </a>
+      <span style="margin: 10px 0px 0px 15px">Perto de si:</span>
+    </div>
+    <div class="row">
+      <div class="container-fluid" style="background-color:white; padding-top:5px;margin-top:5px;border-style:solid;">
+        <span style="margin: 25px 0px 0px 5px; font-weight: bold">Lojas</span>
       </div>
     </div>
-
-    <div class="frame" id="nearMap">
-      <img src="imagens/border.png" width=248px height=310px; style="position:absolute; margin: -25px 0px 0px -20px;">
-      <div class="container" style="background:-webkit-linear-gradient(top,  #393a3b 0%,#b9b9bb 100%);">
-        <div class="row">
-          <div class="col-sm">
-            <img src="imagens/meteo.png" width="55%" style="margin-top:4px; margin-left: 5px;">
-          </div>
-          <div class="col-sm" style="color:white;text-align:right; margin-top: 5px; margin-right:5px;font-size:24px">
-            8:30
-          </div>
-          <i class="fas fa-angle-double-down" id="showMenu" onclick="displayMenu('nearMap')"
-            style="color:white;position:absolute; margin:16px 0px 0px 95px"></i>
-        </div>
-
-
+    <div class="row">
+      <div class="container-fluid" style="background-color:white;  padding-top:5px; margin-top:5px;border-style:solid;">
+        <span style="margin: 25px 0px 0px 5px; font-weight: bold">Restaurantes</span>
       </div>
-
-      <div class="container" style="height:83%">
-        <div class="row" style="text-align:right; font-weight: bold;font-size:20px">
-          <a href="./maps.html" class="stretched-link position-relative">
-            <i class="fas fa-chevron-left" style="font-size:25px; margin:12px 0px 0px 10px;"></i>
-          </a>
-          <span style="margin: 10px 0px 0px 15px">Perto de si:</span>
-        </div>
-        <div class="row">
-          <div class="container-fluid"
-            style="background-color:white; padding-top:5px;margin-top:5px;border-style:solid;">
-            <span style="margin: 25px 0px 0px 5px; font-weight: bold">Lojas</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="container-fluid"
-            style="background-color:white;  padding-top:5px; margin-top:5px;border-style:solid;">
-            <span style="margin: 25px 0px 0px 5px; font-weight: bold">Restaurantes</span>
-          </div>
-        </div>
-        <a href="./museums.html" class="stretched-link position-relative">
-          <div class="row">
-            <div class="container-fluid"
-              style="background-color:white;  padding-top:5px; margin-top:5px;border-style:solid;">
-              <span style="margin: 25px 0px 0px 5px; font-weight: bold">Museus</span>
-            </div>
-          </div>
-        </a>
-
-      </div>
-
     </div>
-    <div class="strapR"><img src="imagens/strapR.png" width="100%"></div>
+    <a href="./museums.html" class="stretched-link position-relative">
+      <div class="row">
+        <div class="container-fluid"
+          style="background-color:white;  padding-top:5px; margin-top:5px;border-style:solid;">
+          <span style="margin: 25px 0px 0px 5px; font-weight: bold">Museus</span>
+        </div>
+      </div>
+    </a>
+
 
   </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -123,6 +82,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>

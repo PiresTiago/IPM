@@ -1,103 +1,62 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Required meta tags -->
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  	<!-- Bootstrap CSS  -->
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <title>iGo</title>
-  <link rel="stylesheet" href="./css/stylesheet.css">
+	<title>iGo</title>
+	<link rel="stylesheet" href="./css/stylesheet.css">
   <script src="js/scripts.js"></script>
-
 </head>
-
 <body>
-  <div class="container-fluid" style="margin:150px auto;">
-    <div class="strapL"><img src="imagens/strapL.png" width="100%"></div>
+	<img id="watch" src="imagens/watch.png">
+	<div id="screen">
+    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0">
+      <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
+      <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Toggle change icon -->
+      <i class="fas fa-angle-double-down"></i> 
+      </button>
+      <div class="col-3 m-0 p-0" id="time" >8:30</div>
 
-
-    <div class="frame" id="menu">
-      <img src="imagens/border.png" width=250px height=310px; style="position:absolute; margin: -25px 0px 0px -20px;">
-      <div class="container" style="height:100%;background:-webkit-linear-gradient(top,  #393a3b 0%,#b9b9bb 100%);">
-
-        <div class="row">
-          <div class="col-sm">
-            <img src="imagens/meteo.png" width="55%" style="margin-top:4px; margin-left: 5px;">
-          </div>
-          <div class="col-sm" style="color:white;text-align:right; margin-top: 5px; margin-right:5px;font-size:24px">
-            8:30
-          </div>
-        </div>
-
-        <div class="row" style="height:90px;">
-          <div class="col-sm">
-            <img src="imagens/maps.png" width=53px height=53px onclick="displayMaps()" style="margin: 15px 0px 0px 0px">
-          </div>
-          <div class="col-sm" style="margin: 25px 0px 0px -40px; font-weight: bold; color: white">
-            Mapas
-          </div>
-        </div>
-
-        <div class="row" style="height:90px;">
-          <div class="col-sm">
-            <img src="imagens/web.png" width=70px height=60px; onclick="displayWeb()" style="margin: 10px 0px 0px -10px;">
-          </div>
-          <div class="col-sm" style="margin: 25px 0px 0px -40px;font-weight: bold;color: white">
-            MyWeb
-          </div>
-        </div>
-
-        <div class="row">
-          <i class="fas fa-angle-double-up" id="hideMenu" onclick="hideMenu('maps')"
-            style="color:white;position:absolute; margin:0px 0px 0px 95px"></i>
-        </div>
-
+      <div class="collapse navbar-collapse py-3" height=100% id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px">Mapas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px">MyWeb</a>
+          </li>
+        </ul>
       </div>
+    </nav>
+  
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.1
+        64345951975!2d-9.14038942911552!3d38.736990739740314!2m3!1f0!2f0!3f0!3m2!
+        1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a24aa81f17%3A0x880c7c731a54423!2sIns
+        tituto+Superior+T%C3%A9cnico!5e0!3m2!1spt-PT!2spt!4v1553784971099!5m2!1sp
+        t-PT!2spt" style="margin-left:1%;border:0; width:98%; height:80%;"></iframe>
+
+    <div class="row">
+      <div class="col-sm">
+        <a href="./nearMap.html">
+          <img src="imagens/near.png" width="40%" style="position: absolute; margin:-60px 0px 0px 20px;">
+        </a>
+      </div>
+      <div class="col-sm">
+        <a href="./searchMap.html">
+          <img src="imagens/search.png" width="40%" style="position:absolute; margin:-60px 0px 0px 15px;">
+        </a>
+      </div>
+
+
     </div>
-
-    <div class="frame" id="maps">
-      <img src="imagens/border.png" width=250px height=310px; style="position:absolute; margin: -25px 0px 0px -20px;">
-      <div class="container" style=" height:18%;background:-webkit-linear-gradient(top,  #393a3b 0%,#b9b9bb 100%);">
-        <div class="row">
-          <div class="col-sm">
-            <img src="imagens/meteo.png" width="55%" style="margin-top:4px; margin-left: 5px;">
-          </div>
-          <div class="col-sm" style="color:white;text-align:right; margin-top: 5px; margin-right:5px;font-size:24px">
-            8:30
-          </div>
-          <i class="fas fa-angle-double-down" id="showMenu" onclick="displayMenu('maps')"
-            style="color:white;position:absolute; margin:16px 0px 0px 95px"></i>
-        </div>
-      </div>
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.1
-      64345951975!2d-9.14038942911552!3d38.736990739740314!2m3!1f0!2f0!3f0!3m2!
-      1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a24aa81f17%3A0x880c7c731a54423!2sIns
-      tituto+Superior+T%C3%A9cnico!5e0!3m2!1spt-PT!2spt!4v1553784971099!5m2!1sp
-      t-PT!2spt" style="margin-left:1%;border:0; width:98%; height:80%;"></iframe>
-
-      <div class="row">
-        <div class="col-sm">
-          <a href="./nearMap.html">
-            <img src="imagens/near.png" width="40%" style="position: absolute; margin:-60px 0px 0px 20px;">
-          </a>
-        </div>
-        <div class="col-sm">
-          <a href="./searchMap.html">
-            <img src="imagens/search.png" width="40%" style="position:absolute; margin:-60px 0px 0px 15px;">
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="strapR"><img src="imagens/strapR.png" width="100%"></div>
-
   </div>
 
   <!-- Optional JavaScript -->
@@ -111,6 +70,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-</body>
 
+</body>
 </html>

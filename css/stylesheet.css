@@ -5,21 +5,9 @@ a, a:hover{
     text-decoration: none;
 }
 
-.strapL{
-    width: 500px;
-    float: left;
-    margin-top:70px;
-    
-}
-
-.strapR{
-    width: 620px;
-    float: left;
-    margin-top:75px;
-    
-}
 
 /* Background Gradient for Complementary Colors */
+
 #screen {
     position: absolute;
     top: 50%;
@@ -27,7 +15,7 @@ a, a:hover{
     margin-top: -118px;
     margin-left: -86px;
     width: 172px;
-    height: 236px;
+    height: 232px;
     overflow: hidden;
     z-index: 1;
 }
@@ -44,30 +32,7 @@ a, a:hover{
 }
 
 
-
-.container{
-    background-color: #f7f7f7;
-}
-
-.frame{
-    float: left;
-    margin: auto;
-    width:205px;
-    height:255px;
-}
-
 .row{
     height: 45px;
 }
 
-#maps{
-    display: block;
-}
-
-#menu{
-    display: none;
-}
-
-#searchMap{
-    display: block;
-}
