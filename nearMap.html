@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="./css/fontawesome.css">
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <head>
 
-  <title>iGo</title>
-  <link rel="stylesheet" href="./css/stylesheet.css">
-  <script src="js/scripts.js"></script>
-</head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  
+    <title>iGo</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+  
+    <script src="js/scripts.js"></script>
+  </head>
 
 <body>
   <img id="watch" src="imagens/watch.png">
   <div id="screen">
-    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0">
+    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
       <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
       <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <!-- Toggle change icon -->
@@ -37,31 +39,41 @@
       </div>
     </nav>
 
+    <div class="mx-2">
+      
+      <div class="mt-2 h5 font-weight-bold">
+          <a href="maps.html"><i class="fas fa-chevron-left"></i></a>
+          <span class="ml-1">Perto de si:</span>
+          <div class="dropdown-divider mt-1 p-0"></div>
+      </div>
+    
+      <div class="container">
+        <p class="m-0 p-0 font-weight-bold">Lojas</p>
+      </div>
 
-    <div class="row" style="text-align:right; font-weight: bold;font-size:20px">
-      <a href="maps.html" class="stretched-link position-relative">
-        <i class="fas fa-chevron-left" style="font-size:25px; margin:12px 0px 0px 10px;"></i>
-      </a>
-      <span style="margin: 10px 0px 0px 15px">Perto de si:</span>
-    </div>
-    <div class="row">
-      <div class="container-fluid" style="background-color:white; padding-top:5px;margin-top:5px;border-style:solid;">
-        <span style="margin: 25px 0px 0px 5px; font-weight: bold">Lojas</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="container-fluid" style="background-color:white;  padding-top:5px; margin-top:5px;border-style:solid;">
-        <span style="margin: 25px 0px 0px 5px; font-weight: bold">Restaurantes</span>
-      </div>
-    </div>
-    <a href="./museums.html" class="stretched-link position-relative">
-      <div class="row">
-        <div class="container-fluid"
-          style="background-color:white;  padding-top:5px; margin-top:5px;border-style:solid;">
-          <span style="margin: 25px 0px 0px 5px; font-weight: bold">Museus</span>
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+          <p class="m-0 p-0 font-weight-bold">Restaurantes</p>
         </div>
+  
+        <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+          <a href="./museums.html" class="stretched-link position-relative"></a><p class="m-0 p-0 font-weight-bold">Farmácias</p></a>
       </div>
-    </a>
+
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+          <a href="./museums.html" class="stretched-link position-relative"><p class="m-0 p-0 font-weight-bold">Atrações</p></a>
+      </div>
+      
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+          <a href="./museums.html" class="stretched-link position-relative"><p class="m-0 p-0 font-weight-bold">Museus</p></a>
+      </div>
 
 
   </div>

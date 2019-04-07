@@ -15,25 +15,25 @@
 <body>
 	<img id="watch" src="watch.png">
 	<div id="screen">
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary text-light px-2 m-0">
-      <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
-      <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- Toggle change icon -->
-      <i class="fas fa-angle-double-down"></i> 
-      </button>
-      <div class="col-3 m-0 p-0">8:30</div>
-
-      <div class="collapse navbar-collapse py-3" height=100% id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#"><img src="imagens/maps.png" width=45px height=45px onclick="displayMaps()">Mapas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px onclick="displayMaps()">Mapas</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
+        <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
+        <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- Toggle change icon -->
+        <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
+        </button>
+        <div class="col-3  h5 m-0 p-0 font-weight-normal" id="time" >8:30</div>
+  
+        <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae diam lobortis, aliquet mi quis, ultrices neque. Donec tempus rutrum sagittis. Aenean laoreet tincidunt justo in vestibulum. Aenean egestas ultrices volutpat. Vestibulum congue nisl purus, id luctus est tincidunt eu. Etiam porttitor varius pretium. Vestibulum vitae iaculis massa, nec lobortis nisl. In ut laoreet urna. Morbi nec tortor sed urna ultrices mattis nec non justo. Aenean eget rhoncus nisi, at tempor enim. Praesent laoreet, purus at tristique hendrerit, magna urna vestibulum dolor, id molestie nunc nunc eget metus. Nunc rhoncus nisi vitae velit tristique ullamcorper. Phasellus vel interdum mi. Maecenas facilisis vitae tellus eget tincidunt. Mauris vitae odio eu ligula venenatis tempus sit amet in tortor.
 	</div>
 

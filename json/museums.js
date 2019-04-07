@@ -31,6 +31,6 @@ var museumdata = {
 };
 
 
-function getData() {
+function getMuseumData() {
 	return museumdata.rooms;
 }

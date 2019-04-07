@@ -16,8 +16,14 @@ a, a:hover{
     margin-left: -86px;
     width: 172px;
     height: 232px;
-    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
     z-index: 1;
+    scrollbar-width: none;
+}
+
+#screen::-webkit-scrollbar { 
+    display: none; 
 }
 
 #watch {
