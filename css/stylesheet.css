@@ -4,7 +4,11 @@ a, a:hover{
     
     text-decoration: none;
 }
-
+span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 /* Background Gradient for Complementary Colors */
 
@@ -26,6 +30,8 @@ a, a:hover{
     display: none; 
 }
 
+
+
 #watch {
     background-color: #FFFFFF;
     position: absolute;
@@ -36,8 +42,3 @@ a, a:hover{
    width: 1140px;
    
 }
-
-.row{
-    height: 45px;
-}
-
