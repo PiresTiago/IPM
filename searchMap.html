@@ -19,25 +19,23 @@
     <div id="screen">
         <nav class="navbar navbar-light bg-secondary text-light px-2 m-0">
             <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
-            <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <!-- Toggle change icon -->
-                <i class="fas fa-angle-double-down"></i>
+            <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- Toggle change icon -->
+            <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
             </button>
-            <div class="col-3 m-0 p-0">8:30</div>
-
-            <div class="collapse navbar-collapse py-3" height=100% id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px">Mapas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px">MyWeb</a>
-                    </li>
-                </ul>
+            <div class="col-3  h5 m-0 p-0 font-weight-normal" id="time" >8:30</div>
+      
+            <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
+                </li>
+              </ul>
             </div>
-        </nav>
+          </nav>
 
         <div class="row" style="text-align:right; font-weight: bold;font-size:15px">
             <a href="maps.html" class="stretched-link position-relative">
