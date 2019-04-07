@@ -2,16 +2,17 @@
 <html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/fontawesome.css">
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-
-    <title>iGo</title>
-    <link rel="stylesheet" href="./css/stylesheet.css">
-    <script src="js/scripts.js"></script>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+     <!-- Bootstrap CSS  -->
+     <link rel="stylesheet" href="./css/bootstrap.min.css">
+ 
+     <title>iGo</title>
+     <link rel="stylesheet" href="./css/stylesheet.css">
+ 
+     <script src="js/scripts.js"></script>
 </head>
 
 <body>
@@ -20,36 +21,41 @@
         <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
             <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
             <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <!-- Toggle change icon -->
+                <!-- Toggle change icon -->
             <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
             </button>
             <div class="col-3  h5 m-0 p-0 font-weight-normal" id="time" >8:30</div>
-      
+        
             <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
+                    <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
+                    <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
                 </li>
-              </ul>
+                </ul>
             </div>
-          </nav>
+        </nav>
 
-        <div class="row" style="text-align:right; font-weight: bold;font-size:15px">
-            <a href="maps.html" class="stretched-link position-relative">
-                <i class="fas fa-chevron-left" style="font-size:20px;"></i>
-            </a>
-            <span style="margin: 9px 0px 0px 15px">Pesquise por:</span>
-        </div>
-        <div class="row">
-            <div class="container" style="background-color:white;border-style:solid;">
+        <div class="mx-2">
+            <div class="mt-2 h5 font-weight-bold">
+                <a href="./maps.html"><i class="fas fa-chevron-left"></i></a>
+                <span class="ml-1">Pesquise por:</span>
+                <div class="dropdown-divider mt-1 p-0"></div>
             </div>
-        </div>
+            <div class="input-group input-group-sm mb-3">
 
-        <img src="imagens/mic.png" width="30%"
-            style=" border-style: solid; border-radius: 50%; margin: 50px 0px 0px 60px;">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+                  
+            <div class="text-center">
+                <button id="mic" type="button" class="rounded-circle btn btn-secondary"><i class="fas fa-microphone fa-3x"></i></button>
+            </div>
+        </div>      
+
+        
+        
     </div>
 
     <!-- Optional JavaScript -->
