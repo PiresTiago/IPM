@@ -14,12 +14,10 @@
     <link rel="stylesheet" href="./css/stylesheet.css">
 
     <script src="js/scripts.js"></script>
-    <script src="json/museums.js"></script>
-    <script src="json/stores.js"></script>
 
 </head>
 
-<body onload="loadListofLocals();">
+<body onload="loadLocal();">
 
     <img id="watch" src="./imagens/watch.png">
     <div id="screen">
@@ -50,13 +48,48 @@
 
         <div class="mx-2" id="main">
             <div class="mt-2 h5 font-weight-bold">
-                <a href="./nearMap.html"><i class="fas fa-chevron-left"></i></a>
-                <span class="ml-1" id="tipoLugar"></span>
+                <a href="./places.html"><i class="fas fa-chevron-left"></i></a>
+                <span class="ml-1" id="name"></span>
+                <span style="font-size:1rem" id="distance"></span>
+                <p style="font-size:10px;margin-top: 10px;margin-bottom: 0px;text-align: right;" id="tipoLugar"></p>
+                <div class="dropdown-divider m-0 p-0"></div>
+
+
+                <div class="row m-0 p-0">
+                    <div style="font-size: 15px;" class="col-9 m-0 p-0 font-weight-bold d-inline-block text-truncate">
+                        <span>Horario</span>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
+                        segunda
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
+                        sabado
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
+                        domingo
+                    </div>
+                </div>
                 <div class="dropdown-divider mt-1 p-0"></div>
+                <div class="row m-0 p-0">
+                    <div style="font-size: 15px;background-color: red"
+                        class="col-5 m-0 p-0 d-inline-block text-truncate">
+                        Direçoes
+                    </div>
+                    <div style="font-size: 15px;" class="col-5 m-0 p-0 d-inline-block text-truncate">
+                        Comprar
+                    </div>
+
+                </div>
+
+
             </div>
-
         </div>
-
     </div>
 
     <!-- Optional JavaScript -->
