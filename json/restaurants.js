@@ -25,7 +25,9 @@ var restaurantdata = {
                     "hourclose": "00:00"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1145,
+            "y" : 637
         },
         {
             "name": "Frankie Hot Dogs",
