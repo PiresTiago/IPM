@@ -1,3 +1,19 @@
+function mouseDownMic() {
+  document.getElementById("mic").classList.add('bg-danger');
+}
+
+function mouseUpMic() {
+  document.getElementById("mic").classList.remove('bg-danger');
+}
+
+function getValue(e) {
+  if (e.keyCode == 13) {
+    var value = document.getElementById('search').value;
+    console.log(value);
+}
+  
+}
+
 var map = L.map('mapid', {
   crs: L.CRS.Simple,
   minZoom: -1,

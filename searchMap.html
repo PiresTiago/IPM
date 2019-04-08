@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/stylesheet.css">
 
     <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
 </head>
 
 <body>
@@ -48,15 +49,17 @@
                 <span class="ml-0">Pesquise por:</span>
                 <div class="dropdown-divider mt-1 p-0"></div>
             </div>
+            
             <div class="input-group input-group-sm mb-3">
-
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-sm">
+                <input type="text" class="form-control input submit" id="search" onkeyup="getValue(event)"
+            aria-describedby="inputGroup-sizing-sm">
+             
+                
             </div>
 
             <div class="text-center">
                 <button id="mic" type="button" class="rounded-circle btn btn-secondary"><i
-                        class="fas fa-microphone fa-3x"></i></button>
+                        class="fas fa-microphone fa-3x" onmousedown="mouseDownMic()" onmouseup="mouseUpMic()" ></i></button>
             </div>
         </div>
 
@@ -70,6 +73,9 @@
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    
+  
+  }</script>
 
 </body>
 
