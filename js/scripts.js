@@ -25,9 +25,9 @@ var bounds = [[0,0], [1173,2111]];
 var image = L.imageOverlay('imagens/map.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
-var tecnico = L.latLng([ 730, 1220 ]);
+var tecnico = L.latLng([ 625, 1340 ]);
 L.marker(tecnico).addTo(map);
-map.setView( [730, 1220], 0);
+map.setView( [625, 1340], 0);
 
 
 
