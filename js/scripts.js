@@ -12,20 +12,36 @@ function getValue(e) {
   }
 }
 
-var map = L.map('mapid', {
-  crs: L.CRS.Simple,
-  minZoom: -1,
-  maxZoom: 2,
-  zoomControl: false
-});
+function getTime() {
+  var hours = new Date().getHours();
+  var minutes = new Date().getMinutes();
+  var paragraph = document.getElementById("time");
 
-var bounds = [[0, 0], [1173, 2111]];
-var image = L.imageOverlay('imagens/map.png', bounds).addTo(map);
-map.fitBounds(bounds);
+  if(minutes < 10) 
+    var text = document.createTextNode(hours + ":0" + minutes);
+  else
+    var text = document.createTextNode(hours + ":" + minutes);
 
-var tecnico = L.latLng([730, 1220]);
-L.marker(tecnico).addTo(map);
-map.setView([730, 1220], 0);
+  paragraph.appendChild(text);
+}
+
+function getMap() {
+  var map = L.map('mapid', {
+    crs: L.CRS.Simple,
+    minZoom: -1,
+    maxZoom: 2,
+    zoomControl: false
+  });
+  
+  var bounds = [[0, 0], [1173, 2111]];
+  var image = L.imageOverlay('imagens/map.png', bounds).addTo(map);
+  map.fitBounds(bounds);
+  
+  var tecnico = L.latLng([ 625, 1340 ]);
+  L.marker(tecnico).addTo(map);
+  map.setView( [625, 1340], 0);
+}
+
 
 
 

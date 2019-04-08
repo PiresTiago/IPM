@@ -25,7 +25,9 @@ var pharmacydata = {
                     "hourclose": "20:00"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1450,
+            "y" : 770
         },
         {
             "name": "Leonel Pinheiro",
@@ -48,7 +50,9 @@ var pharmacydata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1080,
+            "y" : 670
         },
         {
             "name": "Palma",
@@ -71,7 +75,9 @@ var pharmacydata = {
                     "hourclose": "19:00"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1115,
+            "y" : 425
         },
         {
             "name": "Avenidas",
@@ -94,7 +100,9 @@ var pharmacydata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 990,
+            "y" : 540
         },
         {
             "name": "Duque D' Ávila",
@@ -117,7 +125,9 @@ var pharmacydata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 940,
+            "y" : 430
         },
     ]
 };
