@@ -74,7 +74,7 @@ var restaurantdata = {
             "tickets": false
         },
         {
-            "name": "Hamburgueria do Tecnyco",
+            "name": "Hamburgueria do Técnico",
             "distance": "500 m",
             "type": "Informal",
             "schedule": [

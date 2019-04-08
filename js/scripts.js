@@ -40,13 +40,8 @@ function switchAngle(id) {
 }
 function toListofLocals(page) {
 
-  
-  localStorage.setItem("pageData1", JSON.stringify(page));
-}
 
-function toLocal(page) {
-  console.log(page);
-  localStorage.setItem("pageData2", JSON.stringify(page));
+  localStorage.setItem("pageData1", JSON.stringify(page));
 }
 
 
@@ -57,42 +52,58 @@ function loadListofLocals() {
   for (let i = 1; i < data.length; i++) {
     var f = function () {
       var divContainer = document.createElement('div');
-      var divRow = document.createElement('div');
-      var divCol = document.createElement('div');
-      var spanName = document.createElement('span');
+      var divRowName = document.createElement('div');
       var spanDist = document.createElement('span');
-      var divDist = document.createElement('div');
       var divDivider = document.createElement('div');
       var link = document.createElement('a');
 
+      
+
       divContainer.className = "container";
-      divRow.className = "row m-0 p-0";
-      divCol.className = "col-9 m-0 p-0 font-weight-bold d-inline-block text-truncate";
-      divDist.className = "col-3 m-0 p-0";
+      divRowName.className = "row mt-0 mb-4 p-0 font-weight-bold";
+      
       divDivider.className = "dropdown-divider mt-0 p-0";
       link.href = "place.html";
 
       if (data[0].type == "Museus") {
-        link.addEventListener("click",toLocal(getMuseum(data[i].name)))
+        link.addEventListener("click", function () {
+          localStorage.setItem("pageData2", JSON.stringify(getMuseum(data[i].name)))
+        })
       }
 
       else if (data[0].type == "Lojas") {
-        link.addEventListener("click",toLocal(getStore(data[i].name)))
+        link.addEventListener("click", function () {
+          localStorage.setItem("pageData2", JSON.stringify(getStore(data[i].name)))
+        })
       }
 
+      else if (data[0].type == "Atrações") {
+        link.addEventListener("click", function () {
+          localStorage.setItem("pageData2", JSON.stringify(getAttraction(data[i].name)))
+        })
+      }
 
-      spanName.textContent = data[i].name;
-      spanDist.textContent = data[i].distance;
+      else if (data[0].type == "Restaurantes") {
+        link.addEventListener("click", function () {
+          localStorage.setItem("pageData2", JSON.stringify(getRestaurant(data[i].name)))
+        })
+      }
 
-      spanDist.style = "float:right;margin-right:-12px";
+      else if (data[0].type == "Farmácias") {
+        link.addEventListener("click", function () {
+          localStorage.setItem("pageData2", JSON.stringify(getPharmacy(data[i].name)))
+        })
+      }
+      spanDist.style="position:absolute;margin: 25px 0px 0px 100px;font-weight:normal;font-size:15px"
 
+      spanDist.innerText=data[i].distance;
+      link.innerHTML = data[i].name;
 
-      divContainer.appendChild(divRow);
-      divRow.appendChild(divCol);
-      divRow.appendChild(divDist);
-      divDist.appendChild(spanDist);
-      divCol.appendChild(link);
-      link.appendChild(spanName);
+      divContainer.appendChild(divRowName);
+      divRowName.appendChild(spanDist);
+      divRowName.appendChild(link);
+
+      
 
 
       document.getElementById("main").appendChild(divContainer);
@@ -104,10 +115,34 @@ function loadListofLocals() {
 
 function loadLocal() {
   var data = JSON.parse(localStorage.getItem("pageData2"));
-  console.log(data);
   document.getElementById("tipoLugar").innerHTML = data.type;
   document.getElementById("Localname").innerHTML = data.name;
-  document.getElementById("distance").innerHTML = data.distance;
+  document.getElementById("weekdays").innerHTML = data.schedule[0].houropen+
+  '-'+data.schedule[0].hourclose;
+
+  if (data.schedule[1].houropen == null){
+    document.getElementById("saturday").innerHTML = 'Fechado';
+  }
+  else{
+    document.getElementById("saturday").innerHTML = data.schedule[1].houropen+
+  '-'+data.schedule[1].hourclose;
+  }
+  
+  if (data.schedule[2].houropen == null){
+    document.getElementById("sunday").innerHTML = 'Fechado';
+  }
+  else{
+    document.getElementById("sunday").innerHTML = data.schedule[2].houropen+
+  '-'+data.schedule[2].hourclose;
+  }
+
+  if (data.tickets){
+    document.getElementById("buyTicket").style= "display: block;visibility: visible;";
+  }
+  else{
+    document.getElementById("buyTicket").style= "display: none; visibility: hidden;";
+  }
+
   var divContainer = document.createElement('div');
 
   var divDist = document.createElement('div');

@@ -49,32 +49,31 @@
         <div class="mx-2" id="main">
             <div class="mt-2 h5 font-weight-bold">
                 <a href="./places.html"><i class="fas fa-chevron-left"></i></a>
-                <span class="ml-1" id="Localname"></span>
-                <span style="font-size:1rem" id="distance"></span>
-                <p style="font-size:10px;margin-top: 10px;margin-bottom: 0px;
-                text-align: right;" id="tipoLugar"></p>
+                <div class="ml-1" id="Localname" 
+                style="width:88%;height:30px; float:right;font-size:1rem"></div>
+                <p style="font-size:10px;margin:0px 0px 5px 0px; text-align: right; line-height: 2px;" id="tipoLugar"></p>
 
                 <div class="dropdown-divider m-0 p-0"></div>
 
-                
+
                 <div class="row m-0 p-0">
-                    <div style="font-size: 15px;" class="col-9 m-0 p-0 font-weight-bold d-inline-block text-truncate">
-                        <span>Horario</span>
+                    <div style="font-size: 15px;" class="col-12 m-0 p-0 font-weight-bold d-inline-block text-truncate">
+                        <span>Horário de funcionamento</span>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
                     <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        segunda
+                        Segunda a Sexta:<span id="weekdays"></span>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
                     <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        sabado
+                        Sábado:<span id="saturday"></span>
                     </div>
                 </div>
                 <div class="row m-0 p-0">
                     <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        domingo
+                        Domingo:<span id="sunday"></span>
                     </div>
                 </div>
                 <div class="dropdown-divider mt-1 p-0"></div>
@@ -83,7 +82,7 @@
                         class="col-5 m-0 p-0 d-inline-block text-truncate">
                         Direçoes
                     </div>
-                    <div style="font-size: 15px;" class="col-5 m-0 p-0 d-inline-block text-truncate">
+                    <div id="buyTicket" style="font-size: 15px;" class="col-5 m-0 p-0 d-inline-block text-truncate">
                         Comprar
                     </div>
 
