@@ -32,6 +32,17 @@ span {
     scrollbar-width: none;
 }
 
+#mapid {
+    width: 4.5cm;
+    height: 4.9cm;
+    z-index: 0;
+}
+
+#menumaps {
+    position: absolute;
+    z-index: 10000;
+}
+
 #screen::-webkit-scrollbar {
     display: none;
 }
