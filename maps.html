@@ -15,16 +15,16 @@
   
   
 </head>
-<body>
+<body onload="getMap(); getTime()">
 	<img id="watch" src="imagens/watch.png">
 	<div id="screen">
     <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
-      <div class="col-2 p-0 m-0"><img src="imagens/meteo.png" class="w-100"></div>
+      <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-75"></div>
       <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <!-- Toggle change icon -->
       <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
       </button>
-      <div class="col-3  h5 m-0 p-0 font-weight-normal" id="time" >8:30</div>
+      <div class="col-4 h5 m-0 p-0 font-weight-normal" id="time" ></div>
 
       <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
