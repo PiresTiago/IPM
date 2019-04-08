@@ -1,46 +1,46 @@
-var storedata = {
+var pharmacydata = {
 
-    stores: [
+    pharmacies: [
         {
-            "type": "Lojas"
+            "type": "Museus"
         },
         {
-            "name": "Fnac IST",
-            "distance": "350 m",
-            "type": "Tecnologia",
+            "name": "Imperial",
+            "distance": "500 m",
+            "type": "Farmácia",
             "schedule": [
                 {
                     "weekday": 0,
                     "houropen": "09:00",
-                    "hourclose": "19:30"
+                    "hourclose": "21:00"
                 },
                 {
                     "weekday": 1,
-                    "houropen": null,
-                    "hourclose": null
+                    "houropen": "09:00",
+                    "hourclose": "20:00"
                 },
                 {
                     "weekday": 2,
-                    "houropen": null,
-                    "hourclose": null
+                    "houropen": "10:00",
+                    "hourclose": "20:00"
                 }
             ],
             "tickets": false
         },
         {
-            "name": "Mango",
+            "name": "Leonel Pinheiro",
             "distance": "550 m",
-            "type": "Loja de Vestuário feminino",
+            "type": "Farmácia",
             "schedule": [
                 {
                     "weekday": 0,
-                    "houropen": "10:00",
+                    "houropen": "08:30",
                     "hourclose": "19:30"
                 },
                 {
                     "weekday": 1,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
+                    "houropen": "09:00",
+                    "hourclose": "13:00"
                 },
                 {
                     "weekday": 2,
@@ -51,19 +51,42 @@ var storedata = {
             "tickets": false
         },
         {
-            "name": "Cortefiel",
-            "distance": "550 m",
-            "type": "Loja de Roupa",
+            "name": "Palma",
+            "distance": "700 m",
+            "type": "Farmácia",
             "schedule": [
                 {
                     "weekday": 0,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
+                    "houropen": "08:30",
+                    "hourclose": "21:00"
                 },
                 {
                     "weekday": 1,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
+                    "houropen": "08:30",
+                    "hourclose": "21:00"
+                },
+                {
+                    "weekday": 2,
+                    "houropen": "09:00",
+                    "hourclose": "19:00"
+                }
+            ],
+            "tickets": false
+        },
+        {
+            "name": "Avenidas",
+            "distance": "850 m",
+            "type": "Farmácia",
+            "schedule": [
+                {
+                    "weekday": 0,
+                    "houropen": "08:00",
+                    "hourclose": "20:00"
+                },
+                {
+                    "weekday": 1,
+                    "houropen": "09:00",
+                    "hourclose": "20:00"
                 },
                 {
                     "weekday": 2,
@@ -74,19 +97,19 @@ var storedata = {
             "tickets": false
         },
         {
-            "name": "Seaside",
-            "distance": "550 m",
-            "type": "Loja de Roupa",
+            "name": "Duque D' Ávila",
+            "distance": "950 m",
+            "type": "Farmácia",
             "schedule": [
                 {
                     "weekday": 0,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
+                    "houropen": "08:30",
+                    "hourclose": "20:00"
                 },
                 {
-                    "weekday": 1,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
+                    "weekday": 0,
+                    "houropen": "08:30",
+                    "hourclose": "20:00"
                 },
                 {
                     "weekday": 2,
@@ -96,42 +119,18 @@ var storedata = {
             ],
             "tickets": false
         },
-        {
-            "name": "Zara Home",
-            "distance": "650 m",
-            "type": "Loja de Decoração e Bricolage",
-            "schedule": [
-                {
-                    "weekday": 0,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
-                },
-                {
-                    "weekday": 1,
-                    "houropen": "10:00",
-                    "hourclose": "19:30"
-                },
-                {
-                    "weekday": 2,
-                    "houropen": null,
-                    "hourclose": null
-                }
-            ],
-            "tickets": false
-        },
-        
     ]
 };
 
 
-function getStoreData() {
-    return storedata.stores;
+function getPharmacyData() {
+    return pharmacydata.pharmacies;
 }
 
-function getStore(name) {
-    for (var i = 0; i < storedata.stores.length; i++) {
-        if (storedata.stores[i].name == name)
-            return storedata.stores[i];
+function getPharmacy(name) {
+    for (var i = 0; i < pharmacydata.pharmacies.length; i++) {
+        if (pharmacydata.pharmacies[i].name == name)
+            return pharmacydata.pharmacies[i];
     }
     return null;
 }

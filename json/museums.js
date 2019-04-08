@@ -6,18 +6,64 @@ var museumdata = {
         },
         {
             "name": "Faraday",
-            "distance": "200m",
-            "type": "Museu da Ciência",
+            "distance": "40 m",
+            "type": "Tecnologia",
             "schedule": [
                 {
                     "weekday": 0,
-                    "houropen": "10",
-                    "hourclose": "18"
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 },
                 {
                     "weekday": 1,
-                    "houropen": null,
-                    "hourclose": null
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
+                },
+                {
+                    "weekday": 2,
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
+                }
+            ],
+            "tickets": true
+        },
+        {
+            "name": "Campo pequeno",
+            "distance": "1 km",
+            "type": "Tauromaquia",
+            "schedule": [
+                {
+                    "weekday": 0,
+                    "houropen": "10:00",
+                    "hourclose": "19:00"
+                },
+                {
+                    "weekday": 1,
+                    "houropen": "10:00",
+                    "hourclose": "19:00"
+                },
+                {
+                    "weekday": 2,
+                    "houropen": "10:00",
+                    "hourclose": "19:00"
+                }
+            ],
+            "tickets": true
+        },
+        {
+            "name": "Câmara dos Azuis",
+            "distance": "1,4 km",
+            "type": "Arte e Antuiguidades",
+            "schedule": [
+                {
+                    "weekday": 0,
+                    "houropen": "10:00",
+                    "hourclose": "19:30"
+                },
+                {
+                    "weekday": 1,
+                    "houropen": "10:00",
+                    "hourclose": "19:30"
                 },
                 {
                     "weekday": 2,
@@ -28,87 +74,47 @@ var museumdata = {
             "tickets": true
         },
         {
-            "name": "Saúde",
-            "distance": "2km",
-            "type": "Museu da Ciência",
+            "name": "Calouste Gulbenkian",
+            "distance": "1,5 km",
+            "type": "Arte Moderna",
             "schedule": [
                 {
                     "weekday": 0,
-                    "houropen": "10",
-                    "hourclose": "18"
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 },
                 {
                     "weekday": 1,
-                    "houropen": "10",
-                    "hourclose": "18"
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 },
                 {
                     "weekday": 2,
-                    "houropen": "10",
-                    "hourclose": "18"
-                },
-                {
-                    "weekday": 3,
-                    "houropen": "10",
-                    "hourclose": "18"
-                },
-                {
-                    "weekday": 4,
-                    "houropen": "10",
-                    "hourclose": "18"
-                },
-                {
-                    "weekday": 5,
-                    "houropen": null,
-                    "hourclose": null
-                },
-                {
-                    "weekday": 6,
-                    "houropen": null,
-                    "hourclose": null
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 }
             ],
             "tickets": true
         },
         {
-            "name": "Campo Pequeno",
-            "distance": "1km",
-            "type": "Museu da Ciência",
+            "name": "Whisky & Companhia",
+            "distance": "1,6 km",
+            "type": "Bebidas",
             "schedule": [
                 {
                     "weekday": 0,
-                    "houropen": "10",
-                    "hourclose": "18"
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 },
                 {
                     "weekday": 1,
-                    "houropen": "10",
-                    "hourclose": "18"
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 },
                 {
                     "weekday": 2,
-                    "houropen": "10",
-                    "hourclose": "18"
-                },
-                {
-                    "weekday": 3,
-                    "houropen": "10",
-                    "hourclose": "18"
-                },
-                {
-                    "weekday": 4,
-                    "houropen": "10",
-                    "hourclose": "18"
-                },
-                {
-                    "weekday": 5,
-                    "houropen": null,
-                    "hourclose": null
-                },
-                {
-                    "weekday": 6,
-                    "houropen": null,
-                    "hourclose": null
+                    "houropen": "10:00",
+                    "hourclose": "18:00"
                 }
             ],
             "tickets": true
