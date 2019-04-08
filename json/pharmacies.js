@@ -2,7 +2,7 @@ var pharmacydata = {
 
     pharmacies: [
         {
-            "type": "Museus"
+            "type": "Farmácias"
         },
         {
             "name": "Imperial",

@@ -9,25 +9,23 @@ function mouseUpMic() {
 function getValue(e) {
   if (e.keyCode == 13) {
     var value = document.getElementById('search').value;
-    console.log(value);
-}
-  
+  }
 }
 
 var map = L.map('mapid', {
   crs: L.CRS.Simple,
   minZoom: -1,
   maxZoom: 2,
-  zoomControl:false
+  zoomControl: false
 });
 
-var bounds = [[0,0], [1173,2111]];
+var bounds = [[0, 0], [1173, 2111]];
 var image = L.imageOverlay('imagens/map.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
-var tecnico = L.latLng([ 730, 1220 ]);
+var tecnico = L.latLng([730, 1220]);
 L.marker(tecnico).addTo(map);
-map.setView( [730, 1220], 0);
+map.setView([730, 1220], 0);
 
 
 
@@ -42,11 +40,12 @@ function switchAngle(id) {
 }
 function toListofLocals(page) {
 
+  
   localStorage.setItem("pageData1", JSON.stringify(page));
 }
 
 function toLocal(page) {
-
+  console.log(page);
   localStorage.setItem("pageData2", JSON.stringify(page));
 }
 
@@ -55,7 +54,7 @@ function loadListofLocals() {
 
   var data = JSON.parse(localStorage.getItem("pageData1"));
   document.getElementById("tipoLugar").innerHTML = data[0].type;
-  for (var i = 1; i < data.length; i++) {
+  for (let i = 1; i < data.length; i++) {
     var f = function () {
       var divContainer = document.createElement('div');
       var divRow = document.createElement('div');
@@ -73,13 +72,12 @@ function loadListofLocals() {
       divDivider.className = "dropdown-divider mt-0 p-0";
       link.href = "place.html";
 
-      if (data[i].type == "Museus") {
-        link.onclick = toLocal(getMuseum(data[i].name));
+      if (data[0].type == "Museus") {
+        link.addEventListener("click",toLocal(getMuseum(data[i].name)))
       }
 
-
-      else if (data[i].type == "Lojas") {
-        link.onclick = toLocal(getStores(data[i].name));
+      else if (data[0].type == "Lojas") {
+        link.addEventListener("click",toLocal(getStore(data[i].name)))
       }
 
 
@@ -108,7 +106,7 @@ function loadLocal() {
   var data = JSON.parse(localStorage.getItem("pageData2"));
   console.log(data);
   document.getElementById("tipoLugar").innerHTML = data.type;
-  document.getElementById("name").innerHTML = data.name;
+  document.getElementById("Localname").innerHTML = data.name;
   document.getElementById("distance").innerHTML = data.distance;
   var divContainer = document.createElement('div');
 
