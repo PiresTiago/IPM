@@ -25,7 +25,9 @@ var storedata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1240,
+            "y" : 550
         },
         {
             "name": "Mango",
@@ -48,7 +50,9 @@ var storedata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1520,
+            "y" : 620
         },
         {
             "name": "Cortefiel",
@@ -71,7 +75,9 @@ var storedata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1500,
+            "y" : 670
         },
         {
             "name": "Seaside",
@@ -94,7 +100,9 @@ var storedata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1410,
+            "y" : 830
         },
         {
             "name": "Zara Home",
@@ -117,7 +125,9 @@ var storedata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "x" : 1470,
+            "y" : 705
         },
         
     ]
