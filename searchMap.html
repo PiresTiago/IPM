@@ -50,6 +50,20 @@
             </div>
         </nav>
 
+        <div class="toast position-absolute" id="toast" role="alert" aria-live="assertive" aria-atomic="true"
+            data-delay="100000">
+            <div class="toast-header">
+
+                <strong class="mr-auto">Erro pesquisa</strong>
+
+                <button type="button" class="ml-2 mb-1 close" onclick="fixInput()" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Local não encontrado, tente novamente.
+            </div>
+        </div>
         <div class="mx-2">
             <div class="mt-2 h5 font-weight-bold">
                 <a href="./maps.html"><i class="fas fa-chevron-left"></i></a>
@@ -69,6 +83,8 @@
                         class="fas fa-microphone fa-3x" onmousedown="mouseDownMic()"
                         onmouseup="mouseUpMic()"></i></button>
             </div>
+
+
         </div>
 
 
@@ -81,19 +97,57 @@
         document.getElementById("search").addEventListener("keydown", function (e) {
             var keyCode = e.keyCode || e.which;
             if (keyCode === 13) {
-                search(document.getElementById('search').value);
+                search(document.getElementById('search').value.toLowerCase());
             }
         }, false)
-        function search(name) {
 
+        $('.toast').toast('hide');
+
+        function fixInput() {
+            document.getElementById("search").style = "z-index:10";
+        }
+
+        function search(name) {
+            document.getElementById("search").style = "z-index:-10";
             var attractions = getAttractionData();
             var museums = getMuseumData();
             var pharmacies = getPharmacyData();
             var restaurants = getRestaurantData();
             var stores = getStoreData();
-            
-            var object=null;
-    
+
+            var object = null;
+
+            if (getAttractionType() == name) {
+                toListofLocals(getAttractionData());
+                window.location = "placesSearch.html";
+                return;
+            }
+
+            if (getMuseumType() == name) {
+                toListofLocals(getMuseumData());
+                window.location = "placesSearch.html";
+                return;
+            }
+
+            if (getPharmacyType() == name) {
+                toListofLocals(getPharmacyData());
+                window.location = "placesSearch.html";
+                return;
+            }
+
+            if (getRestaurantType() == name) {
+                toListofLocals(getRestaurantData());
+                window.location = "placesSearch.html";
+                return;
+            }
+
+            if (getStoreType() == name) {
+                toListofLocals(getStoreData());
+                window.location = "placesSearch.html";
+                return;
+            }
+
+
             object = getAttraction(name);
             if (object != null) {
                 localStorage.setItem("pageData2", JSON.stringify(object));
@@ -123,8 +177,9 @@
                 localStorage.setItem("pageData2", JSON.stringify(object));
                 window.location = "placeSearch.html";
             }
-            if (object == null)
-                alert("Local não encontrado, tente de novo");
+            if (object == null) {
+                $('.toast').toast('show');
+            }
 
         }
     </script>

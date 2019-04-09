@@ -138,6 +138,10 @@ function getStoreData() {
     return storedata.stores;
 }
 
+function getStoreType(){
+    return storedata.stores[0].type.toLowerCase();
+}
+
 function getStore(name) {
     for (var i = 0; i < storedata.stores.length; i++) {
         if (storedata.stores[i].name == name)

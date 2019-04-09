@@ -14,10 +14,17 @@
     <link rel="stylesheet" href="./css/stylesheet.css">
 
     <script src="js/scripts.js"></script>
+    
+    <script src="json/attractions.js"></script>
+    <script src="json/museums.js"></script>
+    <script src="json/pharmacies.js"></script>
+    <script src="json/restaurants.js"></script>
+    <script src="json/stores.js"></script>
+  
 
 </head>
 
-<body onload="loadLocal(); getTime()">
+<body onload="loadListofLocals(); getTime()">
     <img id="watch" src="imagens/watch.png">
     <div id="screen">
     <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
@@ -43,49 +50,13 @@
 
         <div class="mx-2" id="main">
             <div class="mt-2 h5 font-weight-bold">
-                <a href="./places.html"><i class="fas fa-chevron-left"></i></a>
-                <div class="ml-1" id="Localname" 
-                style="width:88%;height:30px; float:right;font-size:1rem"></div>
-                <p style="font-size:10px;margin:0px 0px 5px 0px; text-align: right; line-height: 2px;" id="tipoLugar"></p>
-
-                <div class="dropdown-divider m-0 p-0"></div>
-
-
-                <div class="row m-0 p-0">
-                    <div style="font-size: 15px;" class="col-12 m-0 p-0 font-weight-bold d-inline-block text-truncate">
-                        <span>Horário de funcionamento</span>
-                    </div>
-                </div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block">
-                        Segunda a Sexta:<span id="weekdays"></span>
-                    </div>
-                </div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        Sábado:<span id="saturday"></span>
-                    </div>
-                </div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        Domingo:<span id="sunday"></span>
-                    </div>
-                </div>
-                <div class="dropdown-divider mt-4 p-0"></div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 15px;"
-                        class="col-7 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
-                        Direções
-                    </div>
-                    <div id="buyTicket" style="font-size: 15px;" class="col-4 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
-                        Comprar
-                    </div>
-
-                </div>
-
-
+                <a href="./searchMap.html"><i class="fas fa-chevron-left"></i></a>
+                <span class="ml-1" id="tipoLugar"></span>
+                <div class="dropdown-divider mt-1 p-0"></div>
             </div>
+
         </div>
+
     </div>
 
     <!-- Optional JavaScript -->

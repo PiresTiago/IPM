@@ -154,6 +154,10 @@ function getRestaurantData() {
     return restaurantdata.restaurants;
 }
 
+function getRestaurantType(){
+    return restaurantdata.restaurants[0].type.toLowerCase();
+}
+
 function getRestaurant(name) {
     for (var i = 0; i < restaurantdata.restaurants.length; i++) {
         if (restaurantdata.restaurants[i].name == name)

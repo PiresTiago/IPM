@@ -127,6 +127,10 @@ function getMuseumData() {
     return museumdata.museums;
 }
 
+function getMuseumType(){
+    return museumdata.museums[0].type.toLowerCase();
+}
+
 function getMuseum(name) {
     for (var i = 0; i < museumdata.museums.length; i++) {
         if (museumdata.museums[i].name == name)

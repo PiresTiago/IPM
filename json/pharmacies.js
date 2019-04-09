@@ -137,6 +137,10 @@ function getPharmacyData() {
     return pharmacydata.pharmacies;
 }
 
+function getPharmacyType(){
+    return pharmacydata.pharmacies[0].type.toLowerCase();
+}
+
 function getPharmacy(name) {
     for (var i = 0; i < pharmacydata.pharmacies.length; i++) {
         if (pharmacydata.pharmacies[i].name == name)

@@ -127,6 +127,10 @@ function getAttractionData() {
     return attractiondata.attractions;
 }
 
+function getAttractionType(){
+    return attractiondata.attractions[0].type.toLowerCase();
+}
+
 function getAttraction(name) {
     for (var i = 0; i < attractiondata.attractions.length; i++) {
         if (attractiondata.attractions[i].name == name)
