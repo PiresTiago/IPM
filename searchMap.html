@@ -13,31 +13,42 @@
     <link rel="stylesheet" href="./css/stylesheet.css">
 
     <script src="js/scripts.js"></script>
+
+    <script src="json/attractions.js"></script>
+    <script src="json/museums.js"></script>
+    <script src="json/pharmacies.js"></script>
+    <script src="json/restaurants.js"></script>
+    <script src="json/stores.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
 </head>
 
 <body onload="getTime()">
     <img id="watch" src="imagens/watch.png">
     <div id="screen">
-    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
-        <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-75"></div>
-        <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- Toggle change icon -->
-        <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
-        </button>
-        <div class="col-4 h5 m-0 p-0 font-weight-normal" id="time" ></div>
+        <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
+            <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-75"></div>
+            <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!-- Toggle change icon -->
+                <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i>
+            </button>
+            <div class="col-4 h5 m-0 p-0 font-weight-normal" id="time"></div>
 
-        <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-            <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
-            </li>
-        </ul>
-        </div>
-    </nav>
+            <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px
+                                height=45px class="mr-2">Mapas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px
+                                class="mr-2">MyWeb</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <div class="mx-2">
             <div class="mt-2 h5 font-weight-bold">
@@ -45,17 +56,18 @@
                 <span class="ml-0">Pesquise por:</span>
                 <div class="dropdown-divider mt-1 p-0"></div>
             </div>
-            
+
             <div class="input-group input-group-sm mb-3">
                 <input type="text" class="form-control input submit" id="search" onkeyup="getValue(event)"
-            aria-describedby="inputGroup-sizing-sm">
-             
-                
+                    aria-describedby="inputGroup-sizing-sm">
+
+
             </div>
 
             <div class="text-center">
                 <button id="mic" type="button" class="rounded-circle btn btn-secondary"><i
-                        class="fas fa-microphone fa-3x" onmousedown="mouseDownMic()" onmouseup="mouseUpMic()" ></i></button>
+                        class="fas fa-microphone fa-3x" onmousedown="mouseDownMic()"
+                        onmouseup="mouseUpMic()"></i></button>
             </div>
         </div>
 
@@ -65,13 +77,63 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        document.getElementById("search").addEventListener("keydown", function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                search(document.getElementById('search').value);
+            }
+        }, false)
+        function search(name) {
 
+            var attractions = getAttractionData();
+            var museums = getMuseumData();
+            var pharmacies = getPharmacyData();
+            var restaurants = getRestaurantData();
+            var stores = getStoreData();
+            
+            var object=null;
+    
+            object = getAttraction(name);
+            if (object != null) {
+                localStorage.setItem("pageData2", JSON.stringify(object));
+                window.location = "placeSearch.html";
+            }
+
+            object = getMuseum(name);
+            if (object != null) {
+                localStorage.setItem("pageData2", JSON.stringify(object));
+                window.location = "placeSearch.html";
+            }
+
+            object = getPharmacy(name);
+            if (object != null) {
+                localStorage.setItem("pageData2", JSON.stringify(object));
+                window.location = "placeSearch.html";
+            }
+
+            object = getRestaurant(name);
+            if (object != null) {
+                localStorage.setItem("pageData2", JSON.stringify(object));
+                window.location = "placeSearch.html";
+            }
+
+            object = getStore(name);
+            if (object != null) {
+                localStorage.setItem("pageData2", JSON.stringify(object));
+                window.location = "placeSearch.html";
+            }
+            if (object == null)
+                alert("Local não encontrado, tente de novo");
+
+        }
+    </script>
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    
-  
-  }</script>
+
+
+    }</script>
 
 </body>
 

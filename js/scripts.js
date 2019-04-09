@@ -43,8 +43,6 @@ function getMap() {
 }
 
 
-
-
 function switchAngle(id) {
   if (document.getElementById(id).classList.contains('fa-angle-down')) {
     document.getElementById(id).classList.add('fa-angle-up');
@@ -54,12 +52,15 @@ function switchAngle(id) {
     document.getElementById(id).classList.remove('fa-angle-up');
   }
 }
-function toListofLocals(page) {
 
 
-  localStorage.setItem("pageData1", JSON.stringify(page));
+function searchLocal(name){
+  
 }
 
+function toListofLocals(page) {
+  localStorage.setItem("pageData1", JSON.stringify(page));
+}
 
 function loadListofLocals() {
 
