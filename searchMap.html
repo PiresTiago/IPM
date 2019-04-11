@@ -63,40 +63,30 @@
                 </div>
             </div>
         </nav>
-
-        <div class="toast position-absolute" id="toast" role="alert" aria-live="assertive" aria-atomic="true"
-            data-delay="100000">
-            <div class="toast-header">
-
-                <strong class="mr-auto">Erro pesquisa</strong>
-
-                <button type="button" class="ml-2 mb-1 close" onclick="fixInput()" data-dismiss="toast"
-                    aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                Local não encontrado, tente novamente.
-            </div>
+        
+        <div class="alert alert-dark position-absolute alert-dismissible" role="alert" style="display:none; z-index: 10">
+            <strong>Erro de Pesquisa</strong> Local não encontrado
+            <button type="button" onclick="closeAlert()" class="close mt-2" >
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+
         <div class="mx-2">
-            <div class="mt-2 h5 font-weight-bold">
+            <div class="mt-2 h4 font-weight-bold">
                 <a href="./maps.html"><i class="fas fa-chevron-left"></i></a>
                 <span class="ml-0">Pesquise por:</span>
-                <div class="dropdown-divider mt-1 p-0"></div>
+                <div class="dropdown-divider mt-2 p-0"></div>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
+            <div class="input-group input-group-lg mb-5">
                 <input type="text" class="form-control input submit" id="search" onkeyup="getValue(event)"
-                    aria-describedby="inputGroup-sizing-sm">
-
-
+                    aria-describedby="inputGroup-sizing-lg">
             </div>
 
             <div class="text-center">
-                <button id="mic" type="button" class="rounded-circle btn btn-secondary"><i
-                        class="fas fa-microphone fa-3x" onmousedown="mouseDownMic()"
-                        onmouseup="mouseUpMic()"></i></button>
+                <button id="mic" type="button" style="width: 100px;height: 100px"
+                    class="rounded-circle btn btn-secondary"><i class="fas fa-microphone fa-4x"
+                        onmousedown="mouseDownMic()" onmouseup="mouseUpMic()"></i></button>
             </div>
 
 
@@ -116,14 +106,7 @@
             }
         }, false)
 
-        $('.toast').toast('hide');
-
-        function fixInput() {
-            document.getElementById("search").style = "z-index:10";
-        }
-
         function search(name) {
-            document.getElementById("search").style = "z-index:-10";
             var attractions = getAttractionData();
             var museums = getMuseumData();
             var pharmacies = getPharmacyData();
@@ -193,10 +176,14 @@
                 window.location = "placeSearch.html";
             }
             if (object == null) {
-                $('.toast').toast('show');
+                $('.alert').show()
             }
 
         }
+    function closeAlert(){
+        $('.alert').hide()
+    }
+
     </script>
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>

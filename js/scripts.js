@@ -29,7 +29,7 @@ function changeBattery() {
   }
 }
 
-setInterval(changeBattery, 20000);
+setInterval(changeBattery, 50000);
 
 function getTime() {
   var currentTime = new Date();
