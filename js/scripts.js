@@ -11,19 +11,36 @@ function getValue(e) {
     var value = document.getElementById('search').value;
   }
 }
+var battery = 4;
+
+function changeBattery() {
+  var file = "battery" + battery + ".png";
+  var image = document.getElementById('battery')
+  image.src = "imagens/" + file;
+  image.innerHTML = image;
+  if (battery >= 2)
+    battery--;
+  else if (battery == 1) {
+    var screen = document.getElementById('screen');
+    while (screen.firstChild) {
+      screen.removeChild(screen.firstChild);
+    }
+    screen.style = "background-color:black";
+  }
+}
+
+setInterval(changeBattery, 20000);
 
 function getTime() {
-  var hours = new Date().getHours();
-  var minutes = new Date().getMinutes();
-  var paragraph = document.getElementById("time");
-
-  if(minutes < 10) 
-    var text = document.createTextNode(hours + ":0" + minutes);
-  else
-    var text = document.createTextNode(hours + ":" + minutes);
-
-  paragraph.appendChild(text);
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  if (minutes < 10)
+    var minutes = "0" + minutes;
+  var time_string = hours + ":" + minutes + " ";
+  document.getElementById("time").innerHTML = time_string;
 }
+setInterval(getTime, 1000);
 
 function getMap() {
   var map = L.map('mapid', {
@@ -32,14 +49,14 @@ function getMap() {
     maxZoom: 2,
     zoomControl: false
   });
-  
+
   var bounds = [[0, 0], [1173, 2111]];
   var image = L.imageOverlay('imagens/map.png', bounds).addTo(map);
   map.fitBounds(bounds);
-  
-  var tecnico = L.latLng([ 625, 1340 ]);
+
+  var tecnico = L.latLng([625, 1340]);
   L.marker(tecnico).addTo(map);
-  map.setView( [625, 1340], 0);
+  map.setView([625, 1340], 0);
 }
 
 
@@ -47,6 +64,7 @@ function switchAngle(id) {
   if (document.getElementById(id).classList.contains('fa-angle-down')) {
     document.getElementById(id).classList.add('fa-angle-up');
     document.getElementById(id).classList.remove('fa-angle-down');
+
   } else {
     document.getElementById(id).classList.add('fa-angle-down');
     document.getElementById(id).classList.remove('fa-angle-up');
@@ -54,8 +72,8 @@ function switchAngle(id) {
 }
 
 
-function searchLocal(name){
-  
+function searchLocal(name) {
+
 }
 
 function toListofLocals(page) {
@@ -74,11 +92,11 @@ function loadListofLocals() {
       var divDivider = document.createElement('div');
       var link = document.createElement('a');
 
-      
+
 
       divContainer.className = "container";
       divRowName.className = "row mt-0 mb-4 p-0 font-weight-bold";
-      
+
       divDivider.className = "dropdown-divider mt-0 p-0";
       link.href = "place.html";
 
@@ -111,16 +129,16 @@ function loadListofLocals() {
           localStorage.setItem("pageData2", JSON.stringify(getPharmacy(data[i].name)))
         })
       }
-      spanDist.style="position:absolute;margin: 25px 0px 0px 100px;font-weight:normal;font-size:15px"
+      spanDist.style = "position:absolute;margin: 25px 0px 0px 100px;font-weight:normal;font-size:15px"
 
-      spanDist.innerText=data[i].distance;
+      spanDist.innerText = data[i].distance;
       link.innerHTML = data[i].name;
 
       divContainer.appendChild(divRowName);
       divRowName.appendChild(spanDist);
       divRowName.appendChild(link);
 
-      
+
 
 
       document.getElementById("main").appendChild(divContainer);
@@ -134,30 +152,30 @@ function loadLocal() {
   var data = JSON.parse(localStorage.getItem("pageData2"));
   document.getElementById("tipoLugar").innerHTML = data.type;
   document.getElementById("Localname").innerHTML = data.name;
-  document.getElementById("weekdays").innerHTML = data.schedule[0].houropen+
-  '-'+data.schedule[0].hourclose;
+  document.getElementById("weekdays").innerHTML = data.schedule[0].houropen +
+    '-' + data.schedule[0].hourclose;
 
-  if (data.schedule[1].houropen == null){
+  if (data.schedule[1].houropen == null) {
     document.getElementById("saturday").innerHTML = 'Fechado';
   }
-  else{
-    document.getElementById("saturday").innerHTML = data.schedule[1].houropen+
-  '-'+data.schedule[1].hourclose;
-  }
-  
-  if (data.schedule[2].houropen == null){
-    document.getElementById("sunday").innerHTML = 'Fechado';
-  }
-  else{
-    document.getElementById("sunday").innerHTML = data.schedule[2].houropen+
-  '-'+data.schedule[2].hourclose;
+  else {
+    document.getElementById("saturday").innerHTML = data.schedule[1].houropen +
+      '-' + data.schedule[1].hourclose;
   }
 
-  if (data.tickets){
-    document.getElementById("buyTicket").style= "display: block;visibility: visible;";
+  if (data.schedule[2].houropen == null) {
+    document.getElementById("sunday").innerHTML = 'Fechado';
   }
-  else{
-    document.getElementById("buyTicket").style= "display: none; visibility: hidden;";
+  else {
+    document.getElementById("sunday").innerHTML = data.schedule[2].houropen +
+      '-' + data.schedule[2].hourclose;
+  }
+
+  if (data.tickets) {
+    document.getElementById("buyTicket").style = "display: block;visibility: visible;";
+  }
+  else {
+    document.getElementById("buyTicket").style = "display: none; visibility: hidden;";
   }
 
   var divContainer = document.createElement('div');

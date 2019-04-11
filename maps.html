@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
   <!-- Required meta tags -->
@@ -12,43 +13,66 @@
 
   <title>iGo</title>
   <link rel="stylesheet" href="./css/stylesheet.css">
-  
-  
-</head>
-<body onload="getMap(); getTime()">
-	<img id="watch" src="imagens/watch.png">
-	<div id="screen">
-    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
-      <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-75"></div>
-      <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- Toggle change icon -->
-      <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
-      </button>
-      <div class="col-4 h5 m-0 p-0 font-weight-normal" id="time" ></div>
 
-      <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
-          </li>
-        </ul>
+
+</head>
+
+<body onload="getMap(); getTime(); changeBattery();">
+  <img id="watch" src="imagens/watch.png">
+  <div id="screen">
+    <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
+
+      <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
+      <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <!-- Toggle change icon -->
+        <i id="menuswitch" class="fas fa-angle-down text-white" onclick="switchAngle('menuswitch')"></i>
+      </button>
+      <div class="col-2 h5 m-0 p-0 font-weight-normal">
+        <img src="imagens/gps.png" width=60%>
+      </div>
+
+      <div class="col-2 h5 m-0 p-0 font-weight-normal">
+        <img id="battery" width=70%>
+      </div>
+      <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
+        <div class="row">
+          <div class="col-6 mb-3 mt-3">
+            <a class="nav-link text-light" href="maps.html">
+              <img src="imagens/maps.png" width=100% class="mr-2">Mapas</a>
+          </div>
+          <div class="col-6 mb-3 mt-3">
+            <a class="nav-link text-light" href="#">
+              <img src="imagens/social.png" width=100% class="mr-2">MyWeb</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a class="nav-link text-light" href="#">
+              <img src="imagens/meteo.png" width=35% class="mr-2">
+              <p>Meteorologia</p>
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
-    
+
     <div id="mapid"></div>
 
     <div class="row">
       <div class="col">
         <a href="./nearMap.html">
-          <img src="imagens/near.png" width="40%" style="position: absolute; margin:-60px 0px 0px 20px;">
+          <i class="fas fa-street-view" style="position:absolute; padding:10px; background-color:black;color:white;
+          margin:-70px 0px 0px 15px;font-size: 35px;border-style: solid;
+          border-radius: 50% "></i>
         </a>
       </div>
       <div class="col">
         <a href="./searchMap.html">
-          <img src="imagens/search.png" width="40%" style="position:absolute; margin:-60px 0px 0px 15px;">
+          <i class="fas fa-search" style="position:absolute; padding:10px; background-color:black;color:white;
+          margin:-70px 0px 0px 25px;font-size: 35px;border-style: solid;
+          border-radius: 50% "></i>
         </a>
       </div>
 
@@ -64,8 +88,9 @@
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/leaflet.js"></script>
   <script src="js/scripts.js"></script>
-  
+
 </body>
 
 </body>
+
 </html>

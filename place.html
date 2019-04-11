@@ -17,36 +17,54 @@
 
 </head>
 
-<body onload="loadLocal(); getTime()">
+<body onload="loadLocal(); getTime();changeBattery();">
     <img id="watch" src="imagens/watch.png">
     <div id="screen">
-    <nav class="navbar navbar-light bg-secondary text-light px-2 m-0 sticky-top">
-        <div class="col-3 p-0 m-0"><img src="imagens/meteo.png" class="w-75"></div>
-        <button class="navbar-toggler border-0 col-3 p-0 m-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- Toggle change icon -->
-        <i id="menuswitch" class="fas fa-angle-down" onclick="switchAngle('menuswitch')"></i> 
-        </button>
-        <div class="col-4 h5 m-0 p-0 font-weight-normal" id="time" ></div>
+        <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
-        <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-            <a class="nav-link text-light" href="maps.html"><img src="imagens/maps.png" width=45px height=45px class="mr-2">Mapas</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-light" href="#"><img src="imagens/web.png" width=45px height=45px class="mr-2">MyWeb</a>
-            </li>
-        </ul>
-        </div>
-    </nav>
+            <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
+            <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!-- Toggle change icon -->
+                <i id="menuswitch" class="fas fa-angle-down text-white" onclick="switchAngle('menuswitch')"></i>
+            </button>
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/gps.png" width=60%>
+            </div>
+
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img id="battery" width=70%>
+            </div>
+            <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
+                <div class="row">
+                    <div class="col-6 mb-3 mt-3">
+                        <a class="nav-link text-light" href="maps.html">
+                            <img src="imagens/maps.png" width=100% class="mr-2">Mapas</a>
+                    </div>
+                    <div class="col-6 mb-3 mt-3">
+                        <a class="nav-link text-light" href="#">
+                            <img src="imagens/social.png" width=100% class="mr-2">MyWeb</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a class="nav-link text-light" href="#">
+                            <img src="imagens/meteo.png" width=35% class="mr-2">
+                            <p>Meteorologia</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
 
         <div class="mx-2" id="main">
             <div class="mt-2 h5 font-weight-bold">
                 <a href="./places.html"><i class="fas fa-chevron-left"></i></a>
-                <div class="ml-1" id="Localname" 
-                style="width:88%;height:30px; float:right;font-size:1rem"></div>
-                <p style="font-size:10px;margin:0px 0px 5px 0px; text-align: right; line-height: 2px;" id="tipoLugar"></p>
+                <div class="ml-1" id="Localname" style="width:88%;height:30px; float:right;font-size:1rem"></div>
+                <p style="font-size:10px;margin:0px 0px 5px 0px; text-align: right; line-height: 2px;" id="tipoLugar">
+                </p>
 
                 <div class="dropdown-divider m-0 p-0"></div>
 
@@ -77,7 +95,8 @@
                         class="col-7 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
                         Direções
                     </div>
-                    <div id="buyTicket" style="font-size: 15px;" class="col-4 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
+                    <div id="buyTicket" style="font-size: 15px;"
+                        class="col-4 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
                         Comprar
                     </div>
 
