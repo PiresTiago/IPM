@@ -20,12 +20,13 @@
     <script src="json/restaurants.js"></script>
     <script src="json/stores.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
 </head>
 
 <body onload="getTime();changeBattery();">
     <img id="watch" src="imagens/watch.png">
+
     <div id="screen">
+
         <nav class="navbar navbar-light bg-dark  text-light px-2 m-0 sticky-top">
 
             <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
@@ -63,13 +64,15 @@
                 </div>
             </div>
         </nav>
-        
-        <div class="alert alert-dark position-absolute alert-dismissible" role="alert" style="display:none; z-index: 10">
+
+        <div class="alert alert-dark position-absolute alert-dismissible" role="alert"
+            style="display:none; z-index: 10">
             <strong>Erro de Pesquisa</strong> Local não encontrado
-            <button type="button" onclick="closeAlert()" class="close mt-2" >
+            <button type="button" onclick="closeAlert()" class="close mt-2">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+
 
         <div class="mx-2">
             <div class="mt-2 h4 font-weight-bold">
@@ -78,10 +81,11 @@
                 <div class="dropdown-divider mt-2 p-0"></div>
             </div>
 
-            <div class="input-group input-group-lg mb-5">
-                <input type="text" class="form-control input submit" id="search" onkeyup="getValue(event)"
-                    aria-describedby="inputGroup-sizing-lg">
+            <div class="input-group input-group-lg mb-4">
+                <input type="text" class="form-control input submit" id="search" onclick="showKeyboard()"
+                    onkeyup="getValue(event)" aria-describedby="inputGroup-sizing-lg">
             </div>
+            <div id="keyboard" style="display:none;" class="position-absolute"></div>
 
             <div class="text-center">
                 <button id="mic" type="button" style="width: 100px;height: 100px"
@@ -93,25 +97,37 @@
         </div>
 
 
-
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script>
-        document.getElementById("search").addEventListener("keydown", function (e) {
-            var keyCode = e.keyCode || e.which;
-            if (keyCode === 13) {
-                search(document.getElementById('search').value.toLowerCase());
-            }
-        }, false)
-    </script>
+
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="jkeyboard/lib/js/jkeyboard.js"></script>
+    <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
+
+    <script>
+        document.getElementById("search").addEventListener("keydown", function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13 ) {
+                search(document.getElementById('search').value.toLowerCase());
+            }
+        }, false)
+
+        function showKeyboard() {
+            document.getElementById('keyboard').style = "display:block";
+        }
 
 
-    }</script>
+        $('#keyboard').jkeyboard({
+            input: $('#search'),
+            layout: 'english'
+        });
+
+    </script>
 
 </body>
 
