@@ -142,8 +142,8 @@ function getPharmacyType(){
 }
 
 function getPharmacy(name) {
-    for (var i = 0; i < pharmacydata.pharmacies.length; i++) {
-        if (pharmacydata.pharmacies[i].name == name)
+    for (var i = 1; i < pharmacydata.pharmacies.length; i++) {
+        if (pharmacydata.pharmacies[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())
             return pharmacydata.pharmacies[i];
     }
     return null;

@@ -25,10 +25,11 @@ var museumdata = {
                     "hourclose": "18:00"
                 }
             ],
-            "tickets": true
+            "tickets": true,
+            "overflow":false
         },
         {
-            "name": "Campo pequeno",
+            "name": "Campo Pequeno",
             "distance": "1 km",
             "type": "Tauromaquia",
             "schedule": [
@@ -48,7 +49,8 @@ var museumdata = {
                     "hourclose": "19:00"
                 }
             ],
-            "tickets": true
+            "tickets": true,
+            "overflow":false
         },
         {
             "name": "Câmara dos Azuis",
@@ -71,7 +73,8 @@ var museumdata = {
                     "hourclose": null
                 }
             ],
-            "tickets": true
+            "tickets": true,
+            "overflow":true
         },
         {
             "name": "Calouste Gulbenkian",
@@ -94,7 +97,8 @@ var museumdata = {
                     "hourclose": "18:00"
                 }
             ],
-            "tickets": true
+            "tickets": true,
+            "overflow":true
         },
         {
             "name": "Whisky & Companhia",
@@ -117,7 +121,8 @@ var museumdata = {
                     "hourclose": "18:00"
                 }
             ],
-            "tickets": true
+            "tickets": true,
+            "overflow":true
         },
     ]
 };
@@ -132,8 +137,8 @@ function getMuseumType(){
 }
 
 function getMuseum(name) {
-    for (var i = 0; i < museumdata.museums.length; i++) {
-        if (museumdata.museums[i].name == name)
+    for (var i = 1; i < museumdata.museums.length; i++) {
+        if (museumdata.museums[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())
             return museumdata.museums[i];
     }
     return null;

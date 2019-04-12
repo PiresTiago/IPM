@@ -26,6 +26,7 @@ var restaurantdata = {
                 }
             ],
             "tickets": false,
+            "overflow":false,
             "x" : 1145,
             "y" : 637
         },
@@ -50,7 +51,8 @@ var restaurantdata = {
                     "hourclose": "00:00"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":false
         },
         {
             "name": "Café Império",
@@ -73,7 +75,8 @@ var restaurantdata = {
                     "hourclose": "22:30"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":false
         },
         {
             "name": "Hamburgueria do Técnico",
@@ -96,7 +99,8 @@ var restaurantdata = {
                     "hourclose": null
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":true
         },
         {
             "name": "McDonald's",
@@ -119,7 +123,8 @@ var restaurantdata = {
                     "hourclose": "00:00"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":false
         },
         {
             "name": "100 Montaditos",
@@ -142,7 +147,8 @@ var restaurantdata = {
                     "hourclose": "00:00"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":false
         },
         
         
@@ -159,8 +165,8 @@ function getRestaurantType(){
 }
 
 function getRestaurant(name) {
-    for (var i = 0; i < restaurantdata.restaurants.length; i++) {
-        if (restaurantdata.restaurants[i].name == name)
+    for (var i = 1; i < restaurantdata.restaurants.length; i++) {
+        if (restaurantdata.restaurants[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())
             return restaurantdata.restaurants[i];
     }
     return null;

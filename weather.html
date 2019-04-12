@@ -5,26 +5,19 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/leaflet.css">
 
     <title>iGo</title>
     <link rel="stylesheet" href="./css/stylesheet.css">
 
-    <script src="js/scripts.js"></script>
-
-    <script src="json/attractions.js"></script>
-    <script src="json/museums.js"></script>
-    <script src="json/pharmacies.js"></script>
-    <script src="json/restaurants.js"></script>
-    <script src="json/stores.js"></script>
-
 
 </head>
 
-<body onload="loadListofLocals(); getTime();changeBattery();">
+<body onload="getMap(); getTime(); changeBattery();">
     <img id="watch" src="imagens/watch.png">
     <div id="screen">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
@@ -46,7 +39,7 @@
             <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
                 <div class="row">
                     <div class="col-6 mb-3 mt-3">
-                        <a class="nav-link text-light" href="maps.html">
+                        <a class="nav-link text-light " href="maps.html">
                             <img src="imagens/maps.png" width=100% class="mr-2">Mapas</a>
                     </div>
                     <div class="col-6 mb-3 mt-3">
@@ -55,34 +48,37 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <a class="nav-link text-light" href="#">
-                            <img src="imagens/meteo.png" width=35% class="mr-2">
-                            <p>Meteorologia</p>
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <a class="nav-link text-light" href="weather.html">
+                            <img src="imagens/meteo.png" width=100% class="mr-2">
+                            <p style="margin-left:-10px">Meteorologia</p>
                         </a>
                     </div>
+                    <div class="col-3"></div>
                 </div>
             </div>
         </nav>
 
-
-        <div class="mx-2" id="main">
-            <div class="mt-2 h5 font-weight-bold">
-                <a href="./searchMap.html"><i class="fas fa-chevron-left"></i></a>
-                <span class="ml-1" id="tipoLugar"></span>
-                <div class="dropdown-divider mt-1 p-0"></div>
-            </div>
-
+        <nav class="nav justify-content-center nav-tabs nav-fill nav-justified">
+            <a class="nav-item nav-link active" href="#">Hoje</a>
+            <a class="nav-item nav-link" href="#">Amanhã</a>
+        </nav>
+        <div>
         </div>
 
-    </div>
 
+
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/leaflet.js"></script>
+    <script src="js/scripts.js"></script>
+
 </body>
 
 </html>

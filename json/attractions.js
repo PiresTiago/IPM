@@ -25,7 +25,8 @@ var attractiondata = {
                     "hourclose": "23:59"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":true
         },
         {
             "name": "Jardim Arco do Cego",
@@ -48,7 +49,8 @@ var attractiondata = {
                     "hourclose": "23:59"
                 }
             ],
-            "tickets": false
+            "tickets": false,
+            "overflow":true
         },        
         {
             "name": "Fonte Luminosa",
@@ -71,30 +73,8 @@ var attractiondata = {
                     "hourclose": "23:59"
                 }
             ],
-            "tickets": false
-        },
-        {
-            "name": "Igreja de São Jorge de Arroios",
-            "distance": "800 m",
-            "type": "Farmácia",
-            "schedule": [
-                {
-                    "weekday": 0,
-                    "houropen": "08:30",
-                    "hourclose": "22:00"
-                },
-                {
-                    "weekday": 0,
-                    "houropen": "08:30",
-                    "hourclose": "22:00"
-                },
-                {
-                    "weekday": 2,
-                    "houropen": "7:30",
-                    "hourclose": "22:00"
-                }
-            ],
-            "tickets": false
+            "tickets": false,
+            "overflow":false
         },
         {
             "name": "Teatro Villaret",
@@ -117,7 +97,8 @@ var attractiondata = {
                     "hourclose": "18:00"
                 }
             ],
-            "tickets": true
+            "tickets": true,
+            "overflow":false
         }        
     ]
 };
@@ -132,8 +113,8 @@ function getAttractionType(){
 }
 
 function getAttraction(name) {
-    for (var i = 0; i < attractiondata.attractions.length; i++) {
-        if (attractiondata.attractions[i].name == name)
+    for (var i = 1; i < attractiondata.attractions.length; i++) {
+        if (attractiondata.attractions[i].name.toLocaleLowerCase() == name.toLocaleLowerCase())
             return attractiondata.attractions[i];
     }
     return null;

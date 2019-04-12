@@ -60,51 +60,50 @@
 
 
         <div class="mx-2" id="main">
-            <div class="mt-2 h5 font-weight-bold">
-                <a href="./places.html"><i class="fas fa-chevron-left"></i></a>
-                <div class="ml-1" id="Localname" style="width:88%;height:30px; float:right;font-size:1rem"></div>
-                <p style="font-size:10px;margin:0px 0px 5px 0px; text-align: right; line-height: 2px;" id="tipoLugar">
-                </p>
+            <div class="mt-2 h4 font-weight-bold">
+                <a id="return" href="./places.html"><i class="fas fa-chevron-left"></i></a>
+                <div class="ml-1" id="Localname" style="width:88%;height:30px; float:right;"></div>
+                <p class="text-right m-0 mt-2" style="font-size:12px; line-height: 2px;" id="tipoLugar"></p>
+                <div class="dropdown-divider mt-2 p-0 border"></div>
+            </div>
 
-                <div class="dropdown-divider m-0 p-0"></div>
-
-
-                <div class="row m-0 p-0">
-                    <div style="font-size: 15px;" class="col-12 m-0 p-0 font-weight-bold d-inline-block text-truncate">
-                        <span>Horário de funcionamento</span>
-                    </div>
+            <div class="row m-0 p-0">
+                <div style="font-size: 18px;" class="col-12 mb-2 p-0 font-weight-bold">
+                    <span>Horário de funcionamento</span>
                 </div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block">
-                        Segunda a Sexta:<span id="weekdays"></span>
-                    </div>
+            </div>
+            <div class="row m-0 mb-1 p-0">
+                <div style="font-size: 14px;" class="col-12 m-0 p-0">
+                    Segunda a Sexta : <span id="weekdays"></span>
                 </div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        Sábado:<span id="saturday"></span>
-                    </div>
+            </div>
+            <div class="row m-0 mb-1 p-0">
+                <div style="font-size: 14px;" class="col-12 m-0 p-0 ">
+                    Sábado : <span id="saturday"></span>
                 </div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 10px;" class="col-9 m-0 p-0 d-inline-block text-truncate">
-                        Domingo:<span id="sunday"></span>
-                    </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div style="font-size: 14px;" class="col-12 m-0 p-0 ">
+                    Domingo : <span id="sunday"></span>
                 </div>
-                <div class="dropdown-divider mt-4 p-0"></div>
-                <div class="row m-0 p-0">
-                    <div style="font-size: 15px;"
-                        class="col-7 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
-                        Direções
-                    </div>
-                    <div id="buyTicket" style="font-size: 15px;"
-                        class="col-4 m-0 p-1 d-inline-block bg-info text-light text-center rounded">
-                        Comprar
-                    </div>
-
+            </div>
+            <div class="dropdown-divider mt-4 p-0 border"></div>
+            <div class="row m-0 p-0 justify-content-center font-weight-bold">
+                <div class="col-5 mt-2 p-3 text-light text-center rounded" 
+                style="font-size: 15px;background-image: linear-gradient(#007ff5, #1f5e99);">
+                    Direções
                 </div>
-
+                <div class="col-1 empty"></div>
+                <div class="col-5 mt-2 p-3 bg-info text-light text-center rounded" 
+                style="font-size: 15px;" id="buyTicket">
+                    Comprar
+                </div>
 
             </div>
+
+
         </div>
+    </div>
     </div>
 
     <!-- Optional JavaScript -->

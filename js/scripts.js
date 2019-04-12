@@ -72,8 +72,96 @@ function switchAngle(id) {
 }
 
 
-function searchLocal(name) {
+function search(name) {
+  var attractions = getAttractionData();
+  var museums = getMuseumData();
+  var pharmacies = getPharmacyData();
+  var restaurants = getRestaurantData();
+  var stores = getStoreData();
 
+  var object = null;
+
+  if (getAttractionType() == name) {
+    toListofLocals(getAttractionData());
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "placesSearch.html";
+    return;
+  }
+
+  if (getMuseumType() == name) {
+    toListofLocals(getMuseumData());
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "places.html";
+    return;
+  }
+
+  if (getPharmacyType() == name) {
+    toListofLocals(getPharmacyData());
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "places.html";
+    return;
+  }
+
+  if (getRestaurantType() == name) {
+    toListofLocals(getRestaurantData());
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "places.html";
+    return;
+  }
+
+  if (getStoreType() == name) {
+    toListofLocals(getStoreData());
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "places.html";
+    return;
+  }
+
+  object = getAttraction(name);
+  if (object != null) {
+    localStorage.setItem("pageData2", JSON.stringify(object));
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "place.html";
+    return;
+  }
+
+  object = getMuseum(name);
+  if (object != null) {
+    localStorage.setItem("pageData2", JSON.stringify(object));
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "place.html";
+    return;
+  }
+
+  object = getPharmacy(name);
+  if (object != null) {
+    localStorage.setItem("pageData2", JSON.stringify(object));
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "place.html";
+    return;
+  }
+
+  object = getRestaurant(name);
+  if (object != null) {
+    localStorage.setItem("pageData2", JSON.stringify(object));
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "place.html";
+    return;
+  }
+
+  object = getStore(name);
+  if (object != null) {
+    localStorage.setItem("pageData2", JSON.stringify(object));
+    localStorage.setItem("return", "searchMap.html")
+    window.location = "place.html";
+    return;
+  }
+  if (object == null) {
+    $('.alert').show()
+  }
+
+}
+function closeAlert() {
+  $('.alert').hide()
 }
 
 function toListofLocals(page) {
@@ -82,21 +170,29 @@ function toListofLocals(page) {
 
 function loadListofLocals() {
 
+  var previousPage = localStorage.getItem("return");
+  localStorage.removeItem("return");
+  if (previousPage != null) {
+    document.getElementById("return").href = previousPage;
+  }
+
   var data = JSON.parse(localStorage.getItem("pageData1"));
   document.getElementById("tipoLugar").innerHTML = data[0].type;
   for (let i = 1; i < data.length; i++) {
     var f = function () {
       var divContainer = document.createElement('div');
-      var divRowName = document.createElement('div');
-      var spanDist = document.createElement('span');
+      var divRow = document.createElement('div');
+      var divColName = document.createElement('div');
+      var divColDist = document.createElement('div');
       var divDivider = document.createElement('div');
       var link = document.createElement('a');
 
 
 
       divContainer.className = "container";
-      divRowName.className = "row mt-0 mb-4 p-0 font-weight-bold";
-
+      divRow.className = "row m-0 pt-3 pb-3 font-weight-bold"
+      divColName.className = "col-8 m-0 p-0 font-weight-bold text-truncate";
+      divColDist.className = "col-4 m-0 p-0 font-weight-bold text-right";
       divDivider.className = "dropdown-divider mt-0 p-0";
       link.href = "place.html";
 
@@ -129,67 +225,87 @@ function loadListofLocals() {
           localStorage.setItem("pageData2", JSON.stringify(getPharmacy(data[i].name)))
         })
       }
-      spanDist.style = "position:absolute;margin: 25px 0px 0px 100px;font-weight:normal;font-size:15px"
+      if (data[i].overflow) {
+        var divRowName = document.createElement('div');
+        var divRowDist = document.createElement('div');
+        divRowDist.innerText = data[i].distance;
+        divRowName.innerText = data[i].name;
 
-      spanDist.innerText = data[i].distance;
-      link.innerHTML = data[i].name;
+        divRowName.className = "col-12 m-0 p-0 font-weight-bold";
+        divRowDist.className = "col-12 mt-1 p-0 font-weight-bold text-right";
 
-      divContainer.appendChild(divRowName);
-      divRowName.appendChild(spanDist);
-      divRowName.appendChild(link);
+        divContainer.appendChild(link);
+        link.appendChild(divRowName);
+        link.appendChild(divRowDist);
+
+        document.getElementById("main").appendChild(divContainer);
+        document.getElementById("main").appendChild(divDivider);
+
+      }
+      else {
+        divColDist.innerText = data[i].distance;
+        divColName.innerText = data[i].name;
 
 
+        divContainer.appendChild(link);
+        link.appendChild(divRow);
+        divRow.appendChild(divColName);
+        divRow.appendChild(divColDist);
+
+        document.getElementById("main").appendChild(divContainer);
+        document.getElementById("main").appendChild(divDivider);
+      }
 
 
-      document.getElementById("main").appendChild(divContainer);
-      document.getElementById("main").appendChild(divDivider);
     }();
   }
 
 }
 
 function loadLocal() {
+
+  var previousPage = localStorage.getItem("return");
+  localStorage.removeItem("return");
+  
+  if (previousPage != null) {
+    document.getElementById("return").href = previousPage;
+  }
+
   var data = JSON.parse(localStorage.getItem("pageData2"));
-  document.getElementById("tipoLugar").innerHTML = data.type;
-  document.getElementById("Localname").innerHTML = data.name;
-  document.getElementById("weekdays").innerHTML = data.schedule[0].houropen +
+  console.log(data);
+  if (data.overflow) {
+    //font-size:18px CABEM TODOS
+    document.getElementById("Localname").style = "width:88%;height:30px; float:right;font-size:20px;"
+  }
+  document.getElementById("tipoLugar").textContent = data.type;
+  document.getElementById("Localname").textContent = data.name;
+  document.getElementById("weekdays").textContent = data.schedule[0].houropen +
     '-' + data.schedule[0].hourclose;
 
   if (data.schedule[1].houropen == null) {
-    document.getElementById("saturday").innerHTML = 'Fechado';
+    document.getElementById("saturday").textContent = 'Fechado';
   }
   else {
-    document.getElementById("saturday").innerHTML = data.schedule[1].houropen +
+    document.getElementById("saturday").textContent = data.schedule[1].houropen +
       '-' + data.schedule[1].hourclose;
   }
 
   if (data.schedule[2].houropen == null) {
-    document.getElementById("sunday").innerHTML = 'Fechado';
+    document.getElementById("sunday").textContent = 'Fechado';
   }
   else {
-    document.getElementById("sunday").innerHTML = data.schedule[2].houropen +
+    document.getElementById("sunday").textContent = data.schedule[2].houropen +
       '-' + data.schedule[2].hourclose;
   }
 
   if (data.tickets) {
-    document.getElementById("buyTicket").style = "display: block;visibility: visible;";
+    //document.getElementById("empty").style = "display: block;";
+    document.getElementById("buyTicket").style = "display: block";
   }
   else {
-    document.getElementById("buyTicket").style = "display: none; visibility: hidden;";
+    //document.getElementById("empty").style = "display: none;";
+    document.getElementById("buyTicket").style = "display: none";
   }
-
-  var divContainer = document.createElement('div');
-
-  var divDist = document.createElement('div');
-  var divDivider = document.createElement('div');
-  var divRow = document.createElement('div');
-  var divCol = document.createElement('div');
-
-  divContainer.className = "mt-2 h5 font-weight-bold";
-
-
-
-
 
 }
 
