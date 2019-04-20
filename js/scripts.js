@@ -266,7 +266,7 @@ function loadLocal() {
 
   var previousPage = localStorage.getItem("return");
   localStorage.removeItem("return");
-  
+
   if (previousPage != null) {
     document.getElementById("return").href = previousPage;
   }
@@ -299,13 +299,21 @@ function loadLocal() {
   }
 
   if (data.tickets) {
-    //document.getElementById("empty").style = "display: block;";
-    document.getElementById("buyTicket").style = "display: block";
-  }
-  else {
-    //document.getElementById("empty").style = "display: none;";
-    document.getElementById("buyTicket").style = "display: none";
-  }
+    var emptyCol=document.createElement('div');
+   
+    var link = document.createElement('a')
 
+    emptyCol.className="col-1";
+    link.className="bg-info rounded mt-2 p-3 col-5 text-light text-center"
+ 
+    link.style="font-size: 15px;";
+    link.innerText="Comprar";
+    
+    link.href="buyTicket.html"
+
+    localStorage.setItem("LocalName", data.name);
+    document.getElementById("Buttons").appendChild(emptyCol);
+    document.getElementById("Buttons").appendChild(link);
+    
+  }
 }
-
