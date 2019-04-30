@@ -1,3 +1,6 @@
+var map=null;
+
+
 function mouseDownMic() {
   document.getElementById("mic").classList.add('bg-danger');
 }
@@ -11,25 +14,6 @@ function getValue(e) {
     var value = document.getElementById('search').value;
   }
 }
-var battery = 4;
-
-function changeBattery() {
-  var file = "battery" + battery + ".png";
-  var image = document.getElementById('battery')
-  image.src = "imagens/" + file;
-  image.innerHTML = image;
-  if (battery >= 2)
-    battery--;
-  else if (battery == 1) {
-    var screen = document.getElementById('screen');
-    while (screen.firstChild) {
-      screen.removeChild(screen.firstChild);
-    }
-    screen.style = "background-color:black";
-  }
-}
-
-setInterval(changeBattery, 50000);
 
 function getTime() {
   var currentTime = new Date();
@@ -43,22 +27,42 @@ function getTime() {
 setInterval(getTime, 1000);
 
 function getMap() {
-  var map = L.map('mapid', {
+  var LeafIcon = L.Icon.extend({
+    options: {
+       iconSize:  [60, 50],
+       shadowSize: [50, 64],
+    }
+  });
+
+  map = L.map('mapid', {
     crs: L.CRS.Simple,
     minZoom: -1,
     maxZoom: 2,
     zoomControl: false
   });
 
+  var HereIcon = new LeafIcon({
+    iconUrl: 'css/images/markerHere.png',
+    shadowUrl: 'css/images/marker-shadow.png'
+  })
+
   var bounds = [[0, 0], [1173, 2111]];
   var image = L.imageOverlay('imagens/map.png', bounds).addTo(map);
   map.fitBounds(bounds);
 
   var tecnico = L.latLng([625, 1340]);
-  L.marker(tecnico).addTo(map);
+  L.marker((tecnico), {icon: HereIcon}).addTo(map);
   map.setView([625, 1340], 0);
+
 }
 
+function openMap(){
+  document.getElementById('mapid').style=""
+}
+
+function closeMap() {
+  document.getElementById('mapid').style = "display:none"
+}
 
 function switchAngle(id) {
   if (document.getElementById(id).classList.contains('fa-angle-down')) {
@@ -299,21 +303,16 @@ function loadLocal() {
   }
 
   if (data.tickets) {
-    var emptyCol=document.createElement('div');
-   
     var link = document.createElement('a')
 
-    emptyCol.className="col-1";
-    link.className="bg-info rounded mt-2 p-3 col-5 text-light text-center"
- 
+    link.className="bg-info rounded mt-2 pl-3 pr-3 pb-1 pt-1 col-5 text-light text-center"
+
     link.style="font-size: 15px;";
-    link.innerText="Comprar";
-    
+    link.innerText="Comprar Bilhete(s)";
+
     link.href="buyTicket.html"
 
     localStorage.setItem("LocalName", data.name);
-    document.getElementById("Buttons").appendChild(emptyCol);
     document.getElementById("Buttons").appendChild(link);
-    
   }
 }

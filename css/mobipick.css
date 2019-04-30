@@ -21,7 +21,7 @@
 	width:70px;
 
 }
-/* All buttons */ 
+/* All buttons */
 .mobipick-main a {
 
 	display:inline-block;
@@ -52,7 +52,7 @@ li.mobipick-hide {
 }
 .mobipick-groups a {
 	font:bold 1.5em Helvetica,Arial,sans-serif;
-
+  height:40px;
 	border-radius: 10%;
 
 }
@@ -69,7 +69,7 @@ li.mobipick-hide {
 	-webkit-appearance:none;
 	-webkit-border-radius:0
 }
-/* set and cancel buttons */ 
+/* set and cancel buttons */
 .mobipick-buttons {
 	*display:inline;
 }

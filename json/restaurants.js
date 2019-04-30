@@ -52,6 +52,8 @@ var restaurantdata = {
                 }
             ],
             "tickets": false,
+            "x" : 1145,
+            "y" : 650,
             "overflow":false
         },
         {
@@ -76,6 +78,8 @@ var restaurantdata = {
                 }
             ],
             "tickets": false,
+            "x" : 1560,
+            "y" : 490,
             "overflow":false
         },
         {
@@ -100,6 +104,8 @@ var restaurantdata = {
                 }
             ],
             "tickets": false,
+            "x" : 1115,
+            "y" : 605,
             "overflow":true
         },
         {
@@ -124,6 +130,8 @@ var restaurantdata = {
                 }
             ],
             "tickets": false,
+            "x" : 795,
+            "y" : 450,
             "overflow":false
         },
         {
@@ -148,6 +156,8 @@ var restaurantdata = {
                 }
             ],
             "tickets": false,
+            "x" : 1065,
+            "y" : 413,
             "overflow":false
         },
         

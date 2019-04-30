@@ -79,32 +79,34 @@
 
                 <!-- One "tab" for each step in the form: -->
                 <div class="tab">
-                    <div class="h4 font-weight-bold mx-2">
-                        <a id="return" rel="external" href="./place.html"><i
-                                class="fas fa-chevron-left text-dark"></i></a>
-                    </div>
 
-                    <div class="row text-center font-weight-bold m-0 mt--5 justify-content-center ">
-                        <div class="col-2 m-0 p-0">
+                    <div class="row text-center font-weight-bold m-0">
+                        <div class="col-0 h4 font-weight-bold">
+                            <a id="return" rel="external" href="./place.html">
+                                <i class="fas fa-chevron-left text-dark"></i>
+                            </a>
+                        </div>
+                        <div class="col-2 m-0 mt-1 ml-4 p-0">
                             Dia
                         </div>
-                        <div class="col-1 m-0 p-0">
+                        <div class="col-1 m-0 mt-1 p-0">
                             /
                         </div>
-                        <div class="col-2 m-0 p-0">
+                        <div class="col-2 m-0 mt-1 p-0">
                             Mês
                         </div>
-                        <div class="col-1 m-0 p-0">
+                        <div class="col-1 m-0 mt-1 p-0">
                             /
                         </div>
-                        <div class="col-2 m-0 p-0">
+                        <div class="col-2 m-0 mt-1 p-0">
                             Ano
                         </div>
                     </div>
 
-                    <div class="justify-content-center" style=" margin-left:30px;">
-                        <div class="col-11">
-                            <input id="inputDate" type="text" min="15-09-2019" max="2020-12-31" />
+                    <div class="row justify-content-center" style="margin-top:-10px!important">
+                        <div class="col-10">
+                            <input id="inputDate" style="text-align:center" onChange="buttonTab0();" type="text"
+                                min="2019-04-30" max="2020-12-31" />
                         </div>
                     </div>
 
@@ -113,6 +115,7 @@
                         <div class="col-6 m-0 ml-3 p-0 text-left" style="font-size:15px">
                             Bilhete Adulto
                         </div>
+
                         <div class="col-1 m-0 p-0">
                             <button type="button" id="adult0" class="btn btn-primary btn-sm pt-0 pb-0 bg-info"
                                 style="font-size:18px" onclick="decreaseTickets('adultButton')">
@@ -127,7 +130,6 @@
                             </button>
                         </div>
                     </div>
-
                     <div class="row mt-3 font-weight-bold text-center">
                         <div class="col-6 m-0 ml-3 p-0 text-left " style="font-size:15px">
                             Bilhete Criança
@@ -141,120 +143,141 @@
                         <div class=" col-2 ml-1 mr-1 p-0 border rounded border-dark" id="kid"></div>
                         <div class="col-1 m-0 p-0">
                             <button type="button" class="btn btn-primary btn-sm pt-0 pb-0 bg-info"
-                                style="font-size:18px" onclick="increaseTickets('kidButton')"">
-                                        +
-                            </button>    
+                                style="font-size:18px" onclick="increaseTickets('kidButton')">
+                                +
+                            </button>
                         </div>
-                    </div>          
+                    </div>
+                    <div class="row m-0 mt-3 p-0 font-weight-bold">
+                        <div class="col-8 m-0 p-0">
+                            TOTAL:
+                        </div>
+                        <div id="tmpTotal" class="col-2 m-0 ml-2 p-0 text-center"></div>
+
+                    </div>
+
                 </div>
-                <div class=" tab">
-                       
-                                <div class="h4 font-weight-bold mx-2">
-                                    <a id="return" rel="external" href="./place.html"><i
-                                            class="fas fa-chevron-left text-dark"></i></a>
-                                    <span class="ml-0" style="font-size:20px">Dados Pessoais:</span>
-                                    <div class="dropdown-divider mt-2 p-0"></div>
-                                </div>
-                                <div class="row m-0 ml-2 p-0 font-weight-bold">Nome</div>
-                                <div class="row m-0 ml-2 p-0">
-                                    <input id="name" value="Jorge Pereira Mendes" onclick="showKeyboard(this.id)"
-                                    oninput="this.className = ''">
-                                </div>
-                                <div class="row m-0 ml-2 mt-2 p-0 font-weight-bold">Idade</div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-4 m-0 ml-2 p-0">
-                                        <input type="number" id="age" value="30" class="text-right" onclick="showKeyboard(this.id)"
-                                       oninput="this.className = ''">
-                                    </div>
-                                    <div class="col-4 m-0 ml-2 mt-3 p-0 text-left">Anos</div>
-                                </div>
-                                <div class="row m-0 ml-2 mt-2 p-0 font-weight-bold">Nacionalidade</div>
-                                <div class="row m-0 ml-2 p-0">
-                                    <input id="nationality" value="Portuguesa" onclick="showKeyboard(this.id)"
-                                    oninput="this.className = ''">
-                                </div>
-                                <div class="row m-0 ml-2 mt-2 p-0 font-weight-bold">Telemóvel</div>
-                                <div class="row m-0 ml-2 p-0">
-                                    <input type="number" id="phone" value="919676996" onclick="showKeyboard(this.id)"
-                                    oninput="this.className = ''">
-                                </div>
-                                <div class="row m-0 ml-2 mt-2 p-0 font-weight-bold">Morada</div>
-                                <div class="row m-0 ml-2 p-0">
-                                    <input id="adress" value="Rua do Alecrim Nº67" onclick="showKeyboard(this.id)"
-                                     oninput="this.className = ''">
-                                </div>
-                                <div class="row m-0 ml-2 mt-2 p-0 font-weight-bold">Código Postal</div>
-                                <div class="row m-0 ml-2 p-0">
-                                    <input id="zipcode" value="9500-112" onclick="showKeyboard(this.id)"
-                                    oninput="this.className = ''">
-                                </div>
 
+                <div class="tab">
+                    <div class="h4 font-weight-bold">
+                        <a id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-chevron-left text-dark"></i></a>
+                        <div class="dropdown-divider mt-2 p-0"></div>
+                    </div>
+                    <div>
+                        <label class="form-check-label" for="exampleRadios1">
+                            <input type="radio" onclick="makeButtonActive()" name="payment" id="paypal" value="paypal">
+                            Paypal
+                        </label>
+                    </div>
+                    <div class="form-check m-0 p-0">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <input type="radio" onclick="makeButtonActive()" name="payment" id="card" value="card">
+                            Cartão de Débito
+                        </label>
+                    </div>
+                    <div class="form-check m-0 mb-3 p-0">
+                        <label class="form-check-label" for="exampleRadios3">
+                            <input type="radio" onclick="makeButtonActive()" name="payment" id="mbway" value="mbway">
+                            MB WAY
+                        </label>
+                    </div>
 
-                                <div id="keyboard" style="display:none;" class="position-absolute"></div>
+                </div>
+
+                <div class="tab">
+                    <div class="h4 font-weight-bold">
+                        <a id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-chevron-left text-dark"></i></a>
+                        <div class="dropdown-divider mt-2 p-0"></div>
+                    </div>
+                    <div class="row m-0 p-0">
+                        <div class="col-7 m-0 ml-2 p-0">Olá Jorge,</div>
+                        <img src="./imagens/paypal.svg" style="width:50px!important; position:absolute; right:35px"
+                            alt="">
+                    </div>
+
+                    <div class="row m-0 ml-2 mt-3 p-0 font-weight-bold h5">Pague com</div>
+
+                    <div class="row m-0 ml-2 mt-2 p-0 float-left">
+                        <img src="./imagens/visa.png" class="mr-2" height="25px" alt="">Visa x-1234
+                    </div>
+
+                    <div class="row m-0 ml-2 mt-5 p-0">Clique continuar para pagar.</div>
+
+                </div>
+
+                <div class="tab">
+                    <div class="h4 font-weight-bold">
+                        <a id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-chevron-left text-dark"></i></a>
+                        <div class="dropdown-divider mt-2 p-0"></div>
+                    </div>
+                    <div class="row m-0 ml-2 mb-1 p-0 h6 font-weight-bold">Detalhes do Cartão</div>
+                    <div class="row m-0 ml-2 mt-4 p-0">
+                        <div class="m-0 p-0 align-self-center font-weight-bold col-3 justify-content-left">Nome:</div>
+                        <div class="m-0 p-0  col-9">
+                            Jorge Mendes
                         </div>
-
-                        <div class="tab">
-                            <div class="h4 font-weight-bold mx-2">
-                                <a id="return" rel="external" href="./place.html"><i
-                                        class="fas fa-chevron-left text-dark"></i></a>
-                                <span class="ml-0" style="font-size:18px">Meios de Pagamento:</span>
-                                <div class="dropdown-divider mt-2 p-0"></div>
-                            </div>
-                            <div class="form-check m-0 p-0">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                    value="option1">
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Paypal
-                                </label>
-                            </div>
-                            <div class="form-check m-0 p-0">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                    value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Cartão de Débito
-                                </label>
-                            </div>
-                            <div class="form-check m-0 mb-3 p-0">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                    value="option3">
-                                <label class="form-check-label" for="exampleRadios3">
-                                    MB WAY
-                                </label>
-                            </div>
-
+                    </div>
+                    <div class="row m-0 ml-2 mt-1 p-0">
+                        <div class="m-0 p-0 align-self-center font-weight-bold col-4 justify-content-left">Número:</div>
+                        <img src="./imagens/visa.png" class="mr-2 align-self-center" height="25px" alt="">
+                        <div class="m-0 p-0 col-6 ">
+                            Visa x-1234
                         </div>
-
-                        <div class="tab">
-                            <div class="h4 font-weight-bold mx-2">
-                                <a id="return" rel="external" href="./place.html"><i
-                                        class="fas fa-chevron-left text-dark"></i></a>
-                            </div>
-                            <div class="row m-0 p-0 justify-content-center font-weight-bold">
-                                Resumo da sua compra:
-                            </div>
-                            <div id="NumAdults" class="row m-0 p-0 justify-content-center"></div>
-                            <div id="NumKids" class="row m-0 mb-2 p-0 justify-content-center"></div>
-                            <div id="nameLocal" class="row m-0 mb-2 p-0 justify-content-center"></div>
-                            <div id="total" class="row m-0 mb-1 p-0 justify-content-center font-weight-bold"></div>
+                    </div>
+                    <div class="row m-0 ml-2 mt-1 p-0">
+                        <div class="m-0 p-0 align-self-center font-weight-bold col-4 justify-content-left">Validade:
                         </div>
-
-                        <div style="overflow:auto;margin-top:20px">
-                            <div>
-                                <button style="float: left;" type="button" id="prevBtn" onclick="nextPrev(-1)"
-                                    class="btn btn-primary btn-sm p-3 bg-info text-center rounded font-weight-bold">Anterior</button>
-                                <button style="float:right;" type="button" id="nextBtn" onclick="nextPrev(1)"
-                                    class="btn btn-primary btn-sm p-3 bg-info text-center rounded font-weight-bold">Continuar</button>
-                            </div>
+                        <div class="m-0 p-0  col-3">
+                            07/20
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Circles which indicates the steps of the form: -->
-                        <div style="text-align:center;margin-top:10px;">
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
-                        </div>
+                <div class="tab">
+                    <div class="h4 font-weight-bold">
+                        <a id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-chevron-left text-dark"></i></a>
+                        <div class="dropdown-divider mt-2 p-0"></div>
+                    </div>
+                    <div class="row m-0 ml-2 mt-3 p-0 font-weight-bold h6">Nº de Telemóvel</div>
+                    <div class="row m-0 ml-2 mt-2 p-0 float-left">
+                        965 433 442
+                    </div>
+                    <div class="row m-0 p-0 mt-5 justify-content-end">
+                        <img src="./imagens/mbway.png" height="80px">
+                    </div>
+                </div>
 
+                <div class="tab">
+                    <div class="h4 font-weight-bold">
+                        <a id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-chevron-left text-dark"></i></a>
+
+                    </div>
+                    <div class="row m-0 p-0 justify-content-center font-weight-bold">
+                        Resumo da sua compra:
+                    </div>
+                    <div id="NumAdults" class="row m-0 p-0 justify-content-center"></div>
+                    <div id="NumKids" class="row m-0 mb-2 p-0 justify-content-center"></div>
+                    <div id="nameLocal" class="row m-0 mb-2 p-0 justify-content-center"></div>
+                    <div class="row m-0 mb-2 p-0 justify-content-center" id="total"></div>
+
+                </div>
+
+                <div id="buttons" style="overflow:auto;position: absolute; bottom: 5px;">
+                    <div>
+                        <button style="float: left;" type="button" id="prevBtn" onclick="showWarning()"
+                            class="border-0 btn btn-primary btn-sm p-3 bg-danger text-center rounded font-weight-bold">Cancelar</button>
+                        <button style="float:right;margin-left:35px " type="button" id="nextBtn" onclick="nextPrev(1)"
+                            class=" border-0 btn btn-primary btn-sm p-3 bg-info text-center rounded font-weight-bold">Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Circles which indicates the steps of the form: -->
+                <div style="text-align:center;margin-top:10px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
             </form>
 
         </div>
@@ -264,10 +287,7 @@
     <link rel="stylesheet" href="external/jquery.mobile-1.3.0.min.css" />
     <link href="css/mobipick.css" rel="stylesheet" type="text/css" />
     <link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" />
-    <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/shCore.js"></script>
-    <script type="text/javascript" src="js/shBrushJScript.js"></script>
-    <script type="text/javascript" src="js/shBrushXml.js"></script>
     <script type="text/javascript" src="external/modernizr.custom.min.js"></script>
     <script type="text/javascript" src="external/xdate.js"></script>
     <script type="text/javascript" src="external/xdate.i18n.js"></script>
@@ -282,7 +302,6 @@
     <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
 
     <script>
-
         var LocalName = localStorage.getItem("LocalName");
         document.getElementById('nameLocal').innerText = 'para ' + LocalName
 
@@ -296,21 +315,28 @@
             picker.on("change", function () {
                 var date = $(this).val();
 
-                // formatted date					
+                // formatted date
                 var dateObject = $(this).mobipick("option", "date");
             });
         });
 
         var AdultTickets = 0;
         var KidTickets = 0;
+        var TotalPrice
+        var i = 0;
 
         document.getElementById('kid').innerText = KidTickets;
         document.getElementById('adult').innerText = AdultTickets;
+        document.getElementById('tmpTotal').innerText = 0 + '€';
 
         document.getElementById('kid0').disabled = true;
         document.getElementById('adult0').disabled = true;
 
         function increaseTickets(buttonName) {
+
+            if (document.getElementsByTagName('input')[0].value != "") {
+                makeButtonActive();
+            }
             if (buttonName == "kidButton") {
                 KidTickets++;
                 document.getElementById('kid').innerText = KidTickets;
@@ -322,6 +348,8 @@
                 document.getElementById('adult').innerText = AdultTickets;
                 document.getElementById('adult0').disabled = false;
             }
+            TotalPrice = (AdultTickets * 3) + (KidTickets * 1.5);
+            document.getElementById('tmpTotal').innerText = TotalPrice + '€'
         }
 
         function decreaseTickets(buttonName) {
@@ -339,10 +367,16 @@
                     document.getElementById('adult0').disabled = true;
                 }
             }
+            TotalPrice = (AdultTickets * 3) + (KidTickets * 1.5);
+            document.getElementById('tmpTotal').innerText = TotalPrice + '€'
+            if (AdultTickets == 0 && KidTickets == 0) {
+                document.getElementById('nextBtn').disabled = true;
+            }
         }
 
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
+
 
         function showTab(n) {
             // This function will display the specified tab of the form ...
@@ -351,6 +385,11 @@
             // ... and fix the Previous/Next buttons:
             if (n == 0) {
                 document.getElementById("prevBtn").style.display = "none";
+                if (AdultTickets == 0 && KidTickets == 0) {
+                    document.getElementById('nextBtn').disabled = true;
+                }
+                else
+                    document.getElementById('nextBtn').disabled = false;
             } else {
                 document.getElementById("prevBtn").style.display = "inline";
             }
@@ -364,73 +403,87 @@
         }
 
         function nextPrev(n) {
+
             // This function will figure out which tab to display
             var x = document.getElementsByClassName("tab");
-            // Exit the function if any field in the current tab is invalid:
-            if ((currentTab == 0 && AdultTickets == 0 && KidTickets == 0) || (n == 1 && !validateForm()))
-                return false;
 
-            if (AdultTickets != 0) {
-                if (AdultTickets == 1) {
-                    document.getElementById('NumAdults').innerText = '1x Bilhete Adulto'
+            if (currentTab == 0) {
+                if (AdultTickets != 0) {
+                    if (AdultTickets == 1) {
+                        document.getElementById('NumAdults').innerText = '1x Bilhete Adulto'
+                    }
+                    else {
+                        document.getElementById('NumAdults').innerText = AdultTickets + 'x Bilhetes Adulto'
+                    }
+                }
+
+                if (KidTickets != 0) {
+                    if (KidTickets == 1) {
+                        document.getElementById('NumKids').innerText = '1x Bilhete Criança'
+                    }
+                    else {
+                        document.getElementById('NumKids').innerText = KidTickets + 'x Bilhetes Criança'
+                    }
+                }
+
+                if (KidTickets == 0 || AdultTickets == 0) {
+                    document.getElementById('nameLocal').className = "row m-0 p-0 justify-content-center mb-5"
                 }
                 else {
-                    document.getElementById('NumAdults').innerText = AdultTickets + 'x Bilhetes Adulto'
+                    document.getElementById('nameLocal').className = "row m-0 p-0 justify-content-center mb-4"
                 }
+
+                document.getElementById('total').innerText = 'TOTAL:' + TotalPrice + '€'
             }
 
-            if (KidTickets != 0) {
-                if (KidTickets == 1) {
-                    document.getElementById('NumKids').innerText = '1x Bilhete Criança'
-                }
-                else {
-                    document.getElementById('NumKids').innerText = KidTickets + 'x Bilhetes Criança'
-                }
-            }
-
-            if (KidTickets == 0 || AdultTickets == 0) {
-                document.getElementById('nameLocal').className = "row m-0 p-0 justify-content-center mb-5"
-            }
-            else {
-                document.getElementById('nameLocal').className = "row m-0 p-0 justify-content-center mb-4"
-            }
-
-            var TotalPrice = (AdultTickets * 3) + (KidTickets * 1.5);
-            document.getElementById('total').innerText = "TOTAL: " + TotalPrice + ' €'
             // Hide the current tab:
             x[currentTab].style.display = "none";
             // Increase or decrease the current tab by 1:
-            currentTab = currentTab + n;
+
+            if ((currentTab == 2 || currentTab == 3 || currentTab == 4) && n > 0) {
+                currentTab = 5
+                i = 5
+            }
+
+            else if ((currentTab == 3 || currentTab == 4 || currentTab == 5) && n < 0) {
+                currentTab = 1;
+                i = 1
+            }
+
+            else if (currentTab == 1 && document.getElementById('card').checked && n > 0) {
+                currentTab = 3
+                i = 3
+            }
+
+            else if (currentTab == 1 && document.getElementById('mbway').checked && n > 0) {
+                currentTab = 4
+                i = 4
+            }
+
+            else {
+                currentTab = currentTab + n;
+                if (n == -1) {
+                    i--;
+                }
+                else {
+                    i++;
+                }
+
+            }
+            if (currentTab == 1) {
+                document.getElementById('nextBtn').disabled = true;
+            }
             // if you have reached the end of the form... :
             if (currentTab >= x.length) {
                 //...the form gets submitted:
-                window.location = 'maps.html'
-                return false;
+                confirmationPage()
+                n = 2
+                i = 2
             }
-            // Otherwise, display the correct tab:
-            showTab(currentTab);
-        }
-
-        function validateForm() {
-            // This function deals with validation of the form fields
-            var x, y, i, valid = true;
-            x = document.getElementsByClassName("tab");
-            y = x[currentTab].getElementsByTagName("input");
-            // A loop that checks every input field in the current tab:
-            for (i = 0; i < y.length; i++) {
-                // If a field is empty...
-                if (y[i].value == "") {
-                    // add an "invalid" class to the field:
-                    y[i].className += " invalid";
-                    // and set the current valid status to false:
-                    valid = false;
-                }
+            else {
+                // Otherwise, display the correct tab:
+                showTab(currentTab);
             }
-            // If the valid status is true, mark the step as finished and valid:
-            if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
-            }
-            return valid; // return the valid status
         }
 
         function fixStepIndicator(n) {
@@ -443,17 +496,94 @@
             x[n].className += " active";
         }
 
-        function showKeyboard(id) {
-            console.log(id)
-            $('#keyboard').jkeyboard({
-            input: $('#'+id),
-            layout: 'english'
-        });
-            document.getElementById('keyboard').style = "display:block";
+
+        function showWarning() {
+
+            var yes = document.createElement('a'),
+                no = document.createElement('a'),
+                container = document.createElement('div'),
+                warningText = document.createElement('div'),
+                buttons = document.createElement('div');
+
+            container.className = "position-absolute bg-light font-weight-bold text-center rounded-lg"
+            container.style = "width:200px;height:150px; margin:-160px 0px 0px 15px; border-style:solid;border-width:3px;z-index:10"
+            container.id = "warningDIV";
+
+            warningText.className = "mt-3"
+            warningText.innerText = "TEM A CERTEZA QUE DESEJA CANCELAR?"
+
+            buttons.className = "position-absolute"
+            buttons.style = "bottom:5px"
+
+            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-4 bg-danger text-center rounded text-light"
+            yes.innerText = "SIM"
+            yes.rel = "external"
+            yes.addEventListener("click", function () {
+                exitPage();
+            })
+
+            no.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-2 bg-secondary text-center rounded text-light"
+            no.innerText = "NÃO"
+            no.rel = "external"
+            no.addEventListener("click", function () {
+                hideWarning();
+            })
+
+            buttons.appendChild(no);
+            buttons.appendChild(yes);
+            container.appendChild(warningText);
+            container.appendChild(buttons);
+            document.getElementsByClassName('tab')[i].appendChild(container);
         }
 
-        
+        function exitPage() {
+            window.location = "./place.html"
+        }
 
+        function hideWarning() {
+            document.getElementById('warningDIV').remove();
+        }
+
+        function makeButtonActive() {
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function buttonTab0() {
+            if (AdultTickets != 0 || KidTickets != 0) {
+                document.getElementById('nextBtn').disabled = false;
+            }
+        }
+
+        function confirmationPage() {
+            var divText = document.createElement('div'),
+                returnToLocal = document.createElement('a'),
+                //container = document.createElement('div'),
+                screen = document.getElementsByTagName('screen');
+
+            while (screen.length > 1) {
+                screen[1].parentNode.removeChild(screen[1]);
+            }
+
+            //container.className = "bg-light"
+            //container.style = "z-index:1;position: absolute;top: 50%;left: 50%; margin-top: -118px; margin-left: -116px;width: 6.4cm; height: 7.48cm; overflow: scroll; overflow-x: hidden;z-index: 1;scrollbar-width: none;"
+
+            divText.innerText = "Compra Efetuada"
+            divText.className = "font-weight-bold h5"
+            divText.style = "margin-left:40px;margin-top:60px"
+
+            returnToLocal.innerText = "Voltar";
+            returnToLocal.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-4 bg-info text-center rounded text-light";
+            returnToLocal.style = "left:60px; bottom:20px;position:absolute"
+            returnToLocal.href = "./place.html"
+            returnToLocal.rel = "external"
+
+            //container.appendChild(divText);
+            //container.appendChild(returnToLocal);
+            document.getElementById('buttons').remove();
+
+            document.getElementById('screen').appendChild(divText);
+            document.getElementById('screen').appendChild(returnToLocal);
+        }
     </script>
 
 </body>

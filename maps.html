@@ -17,7 +17,7 @@
 
 </head>
 
-<body onload="getMap(); getTime(); changeBattery();">
+<body onload="getMap(); getTime();">
   <img id="watch" src="imagens/watch.png">
   <div id="screen">
     <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
@@ -34,7 +34,7 @@
       </div>
 
       <div class="col-2 h5 m-0 p-0 font-weight-normal">
-        <img id="battery" width=70%>
+          <img src="imagens/battery4.png" width=70%>
       </div>
       <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
         <div class="row">
@@ -65,16 +65,12 @@
     <div class="row">
       <div class="col">
         <a href="./nearMap.html">
-          <i class="fas fa-street-view bg-dark" style="position:absolute; padding:10px; color:white;
-          margin:-70px 0px 0px 15px;font-size: 35px;border-style: solid;
-          border-radius: 50% "></i>
+          <i id="mapsicon" class="fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
         </a>
       </div>
       <div class="col">
         <a href="./searchMap.html">
-          <i class="fas fa-search bg-dark" style="position:absolute; padding:10px; color:white;
-          margin:-70px 0px 0px 25px;font-size: 35px;border-style: solid;
-          border-radius: 50% "></i>
+          <i id="mapsicon" class="fas fa-search bg-dark border border-white rounded-circle text-white"></i>
         </a>
       </div>
 
@@ -89,7 +85,7 @@
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/leaflet.js"></script>
   <script src="js/scripts.js"></script>
-
+  
 </body>
 
 </html>

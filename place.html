@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="./css/leaflet.css">
     <title>iGo</title>
+
     <link rel="stylesheet" href="./css/stylesheet.css">
 
     <script src="js/scripts.js"></script>
 
 </head>
 
-<body onload="loadLocal(); getTime();changeBattery();">
+<body onload="loadLocal(); getTime(); ">
     <img id="watch" src="imagens/watch.png">
     <div id="screen">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
@@ -34,7 +35,7 @@
             </div>
 
             <div class="col-2 h5 m-0 p-0 font-weight-normal">
-                <img id="battery" width=70%>
+                <img src="imagens/battery4.png" width=70%>
             </div>
             <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
                 <div class="row">
@@ -59,42 +60,42 @@
         </nav>
 
 
-        <div class="mx-2" id="main">
+        <div class="mx-2" id="mainplace">
             <div class="mt-2 h4 font-weight-bold">
                 <a id="return" href="./places.html"><i class="fas fa-chevron-left"></i></a>
-                <div class="ml-1" id="Localname" style="width:88%;height:30px; float:right;"></div>
-                <p class="text-right m-0 mt-2" style="font-size:12px; line-height: 2px;" id="tipoLugar"></p>
+                <div class="ml-1" id="Localname"></div>
+                <p class="text-right m-0 mt-2 placedesc" id="tipoLugar"></p>
                 <div class="dropdown-divider mt-2 p-0 border"></div>
             </div>
+            <div id="mapid" style="display:none;">
+                <button class="btn btn-lg btn-dark border leaflet-bottom"
+                    style="border-radius:50%; margin-left: 90px;margin-bottom: 10px;pointer-events: auto;"
+                    onclick="closeMap()">
+                    X</button>
+            </div>
 
-            <div class="row m-0 p-0">
-                <div style="font-size: 18px;" class="col-12 mb-2 p-0 font-weight-bold">
+            <div class="row m-0 p-0" id="titleplace">
+                <div class="col-12 mb-2 p-0 font-weight-bold">
                     <span>Horário de funcionamento</span>
                 </div>
             </div>
             <div class="row m-0 mb-1 p-0">
-                <div style="font-size: 14px;" class="col-12 m-0 p-0">
+                <div class="col-12 m-0 p-0">
                     Segunda a Sexta : <span id="weekdays"></span>
                 </div>
             </div>
             <div class="row m-0 mb-1 p-0">
-                <div style="font-size: 14px;" class="col-12 m-0 p-0 ">
+                <div class="col-12 m-0 p-0 ">
                     Sábado : <span id="saturday"></span>
                 </div>
             </div>
             <div class="row m-0 p-0">
-                <div style="font-size: 14px;" class="col-12 m-0 p-0 ">
+                <div class="col-12 m-0 p-0 ">
                     Domingo : <span id="sunday"></span>
                 </div>
             </div>
             <div class="dropdown-divider mt-4 p-0 border"></div>
-            <div class="row m-0 p-0 justify-content-center font-weight-bold" id="Buttons">
-                <div class="col-5 mt-2 p-3 text-light text-center rounded" 
-                style="font-size: 15px;background-image: linear-gradient(#007ff5, #1f5e99);">
-                    Direções
-                </div>
-                
-
+            <div id="Buttons" class="row m-0 p-0 justify-content-center font-weight-bold">
             </div>
 
 
@@ -107,7 +108,9 @@
 
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
+    <script src="./js/leaflet.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

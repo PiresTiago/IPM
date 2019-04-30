@@ -119,3 +119,33 @@ input[type="number"] {
     -webkit-appearance: none; 
     margin: 0; 
   }
+#mainplace {
+    font-size: 14px;
+}
+
+#titleplace {
+    font-size: 18px;
+}
+
+#mapsicon {
+    position:absolute; 
+    padding:10px; 
+    margin:-70px 0px 0px 25px;
+    font-size: 35px; 
+}
+
+.placedesc {
+    font-size:12px; 
+    line-height: 2px;
+}
+
+#buttonplace {
+    font-size: 15px;
+    background-image: linear-gradient(#007ff5, #1f5e99);
+}
+
+#Localname {
+    width:88%;
+    height:30px;
+    float:right;
+}
