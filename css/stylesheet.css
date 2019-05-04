@@ -41,7 +41,7 @@ span {
     margin-left: -122px;
     width: 6.5cm;
     height: 8.66cm;
-    overflow: scroll;
+    overflow: hidden;
     overflow-x: hidden;
     z-index: 1;
     scrollbar-width: none;
@@ -148,4 +148,9 @@ input[type="number"] {
     width:88%;
     height:30px;
     float:right;
+}
+
+.cont  {
+    height: 6cm;
+    overflow-y: scroll;
 }
