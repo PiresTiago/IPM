@@ -65,13 +65,13 @@ function closeMap() {
 }
 
 function switchAngle(id) {
-  if (document.getElementById(id).classList.contains('fa-angle-down')) {
-    document.getElementById(id).classList.add('fa-angle-up');
-    document.getElementById(id).classList.remove('fa-angle-down');
+  if (document.getElementById(id).classList.contains('fa-home')) {
+    document.getElementById(id).classList.add('fa-times');
+    document.getElementById(id).classList.remove('fa-home');
 
   } else {
-    document.getElementById(id).classList.add('fa-angle-down');
-    document.getElementById(id).classList.remove('fa-angle-up');
+    document.getElementById(id).classList.add('fa-home');
+    document.getElementById(id).classList.remove('fa-times');
   }
 }
 
