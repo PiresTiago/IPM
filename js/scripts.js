@@ -56,6 +56,11 @@ function getMap() {
 
 }
 
+function goHome(){
+  alert("OLA")
+  window.location="maps.html"
+}
+
 function openMap(){
   document.getElementById('mapid').style=""
 }
@@ -65,13 +70,13 @@ function closeMap() {
 }
 
 function switchAngle(id) {
-  if (document.getElementById(id).classList.contains('fa-home')) {
-    document.getElementById(id).classList.add('fa-times');
-    document.getElementById(id).classList.remove('fa-home');
+  if (document.getElementById(id).classList.contains('fa-caret-down')) {
+    document.getElementById(id).classList.add('fa-caret-up');
+    document.getElementById(id).classList.remove('fa-caret-down');
 
   } else {
-    document.getElementById(id).classList.add('fa-home');
-    document.getElementById(id).classList.remove('fa-times');
+    document.getElementById(id).classList.add('fa-caret-down');
+    document.getElementById(id).classList.remove('fa-caret-up');
   }
 }
 
@@ -302,17 +307,23 @@ function loadLocal() {
       '-' + data.schedule[2].hourclose;
   }
 
-  if (data.tickets) {
-    var link = document.createElement('a')
+  document.getElementById("location").innerText=data.location;
 
-    link.className="bg-info rounded mt-2 pl-3 pr-3 pb-1 pt-1 col-5 text-light text-center"
+  if (data.tickets) {
+    var link = document.createElement('a'),
+    divider=document.createElement('div');
+
+    divider.className="dropdown-divider mt-2 p-0 border"
+
+    link.className="bg-info rounded m-0 p-2 col-10 text-light text-center"
 
     link.style="font-size: 15px;";
     link.innerText="Comprar Bilhete(s)";
 
     link.href="buyTicket.html"
-
+  
     localStorage.setItem("LocalName", data.name);
+    document.getElementById("divider").appendChild(divider);
     document.getElementById("Buttons").appendChild(link);
   }
 }

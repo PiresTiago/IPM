@@ -80,6 +80,7 @@ var museumdata = {
             "name": "Calouste Gulbenkian",
             "distance": "1,5 km",
             "type": "Arte Moderna",
+            "location" : "Alameda junto à alameda",
             "schedule": [
                 {
                     "weekday": 0,

@@ -24,29 +24,34 @@
 
 <body onload="getTime();">
     <img id="watch" src="imagens/watch.png">
-
+    <a href="maps.html">
+        <div class="container rounded p-0 pt-1 bg-light text-center" style="border-style: solid;border-width: 1px; width:30px;height:35px; 
+          margin:307px 0px 0px 790px; position: absolute">
+            <i class="fas fa-home"></i>
+        </div>
+    </a>
     <div id="screen">
 
-        <nav class="navbar navbar-light bg-dark  text-light px-2 m-0 sticky-top">
+        <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
             <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
             <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation" onclick="switchAngle('menuswitch')">
                 <!-- Toggle change icon -->
-                <i id="menuswitch" class="fas fa-home text-white" onclick="switchAngle('menuswitch')"></i>
+                <i id="menuswitch" class="fas fa-caret-down text-white"></i>
             </button>
             <div class="col-2 h5 m-0 p-0 font-weight-normal">
-                <img src="imagens/gps.png" width=60%>
+                <img src="imagens/gps.png" class="float-right" width=60%>
             </div>
 
             <div class="col-2 h5 m-0 p-0 font-weight-normal">
-                    <img src="imagens/battery4.png" width=70%>
+                <img src="imagens/battery4.png" class="float-right" width=70%>
             </div>
             <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
                 <div class="row">
                     <div class="col-6 mb-3 mt-3">
-                        <a class="nav-link text-light" href="maps.html">
+                        <a class="nav-link text-light " href="maps.html">
                             <img src="imagens/maps.png" width=100% class="mr-2">Mapas</a>
                     </div>
                     <div class="col-6 mb-3 mt-3">
@@ -55,12 +60,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <a class="nav-link text-light" href="#">
-                            <img src="imagens/meteo.png" width=35% class="mr-2">
-                            <p>Meteorologia</p>
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <a class="nav-link text-light" href="weather.html">
+                            <img src="imagens/meteo.png" width=100% class="mr-2">
+                            <p style="margin-left:-10px">Meteorologia</p>
                         </a>
                     </div>
+                    <div class="col-3"></div>
                 </div>
             </div>
         </nav>

@@ -27,44 +27,54 @@
 <body onload="getTime();">
 
     <div id="demo" data-role="page" data-add-back-btn="true" class="ui-body-b">
+
         <img id="watch" src="imagens/watch.png">
+
+        <a rel="external" href="maps.html" style="color:black!important">
+            <div class="container rounded p-0 pt-1 bg-light text-center" style="border-style: solid;border-width: 1px; width:30px;height:35px; 
+              margin:307px 0px 0px 790px; position: absolute">
+                <i class="fas fa-home"></i>
+            </div>
+        </a>
 
         <div id="screen">
 
-            <nav class="navbar navbar-light bg-dark  text-light px-2 m-0 sticky-top">
+            <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
-                <div class="col-4 h6 m-0 p-0" id="time"></div>
+                <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
                 <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Toggle navigation" onclick="switchAngle('menuswitch')">
                     <!-- Toggle change icon -->
-                    <i id="menuswitch" class="fas fa-home text-white" onclick="switchAngle('menuswitch')"></i>
+                    <i id="menuswitch" class="fas fa-caret-down text-white"></i>
                 </button>
                 <div class="col-2 h5 m-0 p-0 font-weight-normal">
-                    <img src="imagens/gps.png" width=60%>
+                    <img src="imagens/gps.png" class="float-right" width=60%>
                 </div>
 
                 <div class="col-2 h5 m-0 p-0 font-weight-normal">
-                    <img src="imagens/battery4.png" width=70%>
+                    <img src="imagens/battery4.png" class="float-right" width=70%>
                 </div>
                 <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
                     <div class="row">
                         <div class="col-6 mb-3 mt-3">
-                            <a rel="external" class="nav-link text-light font-weight-normal" href="maps.html">
+                            <a class="nav-link text-light " href="maps.html">
                                 <img src="imagens/maps.png" width=100% class="mr-2">Mapas</a>
                         </div>
                         <div class="col-6 mb-3 mt-3">
-                            <a rel="external" class="nav-link text-light font-weight-normal" href="#">
+                            <a class="nav-link text-light" href="#">
                                 <img src="imagens/social.png" width=100% class="mr-2">MyWeb</a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12">
-                            <a rel="external" class="nav-link text-light font-weight-normal" href="#">
-                                <img src="imagens/meteo.png" width=35% class="mr-2">
-                                <p>Meteorologia</p>
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <a class="nav-link text-light" href="weather.html">
+                                <img src="imagens/meteo.png" width=100% class="mr-2">
+                                <p style="margin-left:-10px">Meteorologia</p>
                             </a>
                         </div>
+                        <div class="col-3"></div>
                     </div>
                 </div>
             </nav>
@@ -333,13 +343,13 @@
         document.getElementById('adult0').disabled = true;
 
         function increaseTickets(buttonName) {
-        
+
             if (document.getElementsByTagName('input')[0].value != "") {
                 makeButtonActive();
             }
             if (buttonName == "kidButton") {
                 KidTickets++;
-                if(KidTickets >= 10) {
+                if (KidTickets >= 10) {
                     showWarningLimit(buttonName, KidTickets);
                 }
                 document.getElementById('kid').innerText = KidTickets;
@@ -348,7 +358,7 @@
             }
             else {
                 AdultTickets++;
-                if(AdultTickets >= 10) {
+                if (AdultTickets >= 10) {
                     showWarningLimit(buttonName, AdultTickets);
                 }
                 document.getElementById('adult').innerText = AdultTickets;
@@ -361,7 +371,7 @@
         function dimTickets() {
 
         }
-        
+
         function decreaseTickets(buttonName) {
             if (buttonName == "kidButton") {
                 KidTickets--;
@@ -560,12 +570,12 @@
             container.id = "warningDIV";
 
             warningText.className = "mt-3"
-            if(buttonName == 'kidButton') {
+            if (buttonName == 'kidButton') {
                 warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR " + tickets + " BILHETES DE CRIANÇA?";
             } else {
                 warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR " + tickets + " BILHETES DE ADULTO?";
             }
-           
+
             buttons.className = "position-absolute"
             buttons.style = "bottom:5px"
 
