@@ -8,6 +8,7 @@ var pharmacydata = {
             "name": "Imperial",
             "distance": "500 m",
             "type": "Farmácia",
+            "location" : "Av. Guerra Junqueiro 30B, 1000-189 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -33,6 +34,7 @@ var pharmacydata = {
             "name": "Leonel Pinheiro",
             "distance": "550 m",
             "type": "Farmácia",
+            "location" : "R. Dona Filipa de Vilhena 9, 1000-137 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -58,6 +60,7 @@ var pharmacydata = {
             "name": "Palma",
             "distance": "700 m",
             "type": "Farmácia",
+            "location" : "R. De Dona Estefânia 197, 1500-155 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -83,6 +86,7 @@ var pharmacydata = {
             "name": "Avenidas",
             "distance": "850 m",
             "type": "Farmácia",
+            "location" : "Av. da República 27-A, 1050-186 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -108,6 +112,7 @@ var pharmacydata = {
             "name": "Duque D' Ávila",
             "distance": "950 m",
             "type": "Farmácia",
+            "location" : "Av. Duque de Ávila 32C D, 1000-141 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,

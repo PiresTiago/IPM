@@ -8,6 +8,7 @@ var museumdata = {
             "name": "Faraday",
             "distance": "40 m",
             "type": "Tecnologia",
+            "location" : "Instituto Superior Técnico",
             "schedule": [
                 {
                     "weekday": 0,
@@ -32,6 +33,7 @@ var museumdata = {
             "name": "Campo Pequeno",
             "distance": "1 km",
             "type": "Tauromaquia",
+            "location" : "1000-082 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -56,6 +58,7 @@ var museumdata = {
             "name": "Câmara dos Azuis",
             "distance": "1,4 km",
             "type": "Arte e Antuiguidades",
+            "location" : "Av. Elias Garcia 157, 1050-242 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -80,7 +83,7 @@ var museumdata = {
             "name": "Calouste Gulbenkian",
             "distance": "1,5 km",
             "type": "Arte Moderna",
-            "location" : "Alameda junto à alameda",
+            "location" : "Alameda Av. de Berna 45A, 1067-001 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -105,6 +108,7 @@ var museumdata = {
             "name": "Whisky & Companhia",
             "distance": "1,6 km",
             "type": "Bebidas",
+            "location" : "Rua Visconde Seabra, 12C, 1700-370 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,

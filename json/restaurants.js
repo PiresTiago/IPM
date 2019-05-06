@@ -8,6 +8,7 @@ var restaurantdata = {
             "name": "Vasco da Gama",
             "distance": "350 m",
             "type": "Restaurante típico",
+            "location" : "Av. de António José de Almeida 28A, 1000-044 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -34,6 +35,7 @@ var restaurantdata = {
             "name": "Frankie Hot Dogs",
             "distance": "450 m",
             "type": "Comida Rápida",
+            "location" : "R. Alves Redol 13, 1000-030 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -60,6 +62,7 @@ var restaurantdata = {
             "name": "Café Império",
             "distance": "500 m",
             "type": "Restaurante típico",
+            "location" : "Av. Alm. Reis 205 A, Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -86,6 +89,7 @@ var restaurantdata = {
             "name": "Hamburgueria do Técnico",
             "distance": "500 m",
             "type": "Informal",
+            "location" : "Av. João Crisóstomo 5B, 1000-176 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -112,6 +116,7 @@ var restaurantdata = {
             "name": "McDonald's",
             "distance": "700 m",
             "type": "Comida Rápida",
+            "location" : "Av. da República 10F, 1050-191 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -138,6 +143,7 @@ var restaurantdata = {
             "name": "100 Montaditos",
             "distance": "750 m",
             "type": "Informal",
+            "location" : "Av. Duque de Ávila 47, 1000-139 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,

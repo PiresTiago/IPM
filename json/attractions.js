@@ -8,6 +8,7 @@ var attractiondata = {
             "name": "Jardim Irmã Lúcia",
             "distance": "550 m",
             "type": "Parque",
+            "location" : "Praça de Londres, 1000-191 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -32,6 +33,7 @@ var attractiondata = {
             "name": "Jardim Arco do Cego",
             "distance": "600 m",
             "type": "Parque",
+            "location" : "R. Dona Filipa de Vilhena, 1000-140 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -56,6 +58,7 @@ var attractiondata = {
             "name": "Fonte Luminosa",
             "distance": "800 m",
             "type": "Ponto de Referência Histórico",
+            "location" : "Alameda Dom Afonso Henriques, 1900-221 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -80,6 +83,7 @@ var attractiondata = {
             "name": "Teatro Villaret",
             "distance": "1,5 km",
             "type": "Teatro",
+            "location" : "Av. Fontes Pereira de Melo 30A, 1050-217 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,

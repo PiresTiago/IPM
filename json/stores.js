@@ -8,6 +8,7 @@ var storedata = {
             "name": "Fnac IST",
             "distance": "350 m",
             "type": "Tecnologia",
+            "location" : "Instituto Superior Técnico",
             "schedule": [
                 {
                     "weekday": 0,
@@ -33,6 +34,7 @@ var storedata = {
             "name": "Mango",
             "distance": "550 m",
             "type": "Loja de Vestuário feminino",
+            "location" : "Av. Guerra Junqueiro 3D, 1000-166 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -58,6 +60,7 @@ var storedata = {
             "name": "Cortefiel",
             "distance": "550 m",
             "type": "Loja de Roupa",
+            "location" : "Av. Guerra Junqueiro 10, 1000-124 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -83,6 +86,7 @@ var storedata = {
             "name": "Seaside",
             "distance": "550 m",
             "type": "Loja de Roupa",
+            "location" : "Praça de Londres 7D, 1000-167 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -108,6 +112,7 @@ var storedata = {
             "name": "Zara Home",
             "distance": "650 m",
             "type": "Loja de Decoração e Bricolage",
+            "location" : "Av. Guerra Junqueiro 16, 1000-167 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
