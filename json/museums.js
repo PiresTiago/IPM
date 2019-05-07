@@ -52,7 +52,7 @@ var museumdata = {
                 }
             ],
             "tickets": true,
-            "overflow":false
+            "overflow":true
         },
         {
             "name": "Câmara dos Azuis",
@@ -83,7 +83,7 @@ var museumdata = {
             "name": "Calouste Gulbenkian",
             "distance": "1,5 km",
             "type": "Arte Moderna",
-            "location" : "Alameda Av. de Berna 45A, 1067-001 Lisboa",
+            "location" : "Av. de Berna 45A, 1067-001 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,

@@ -77,7 +77,7 @@ var attractiondata = {
                 }
             ],
             "tickets": false,
-            "overflow":false
+            "overflow":true
         },
         {
             "name": "Teatro Villaret",

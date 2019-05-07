@@ -32,7 +32,7 @@
 
         <a rel="external" href="maps.html" style="color:black!important">
             <div class="container rounded p-0 pt-1 bg-light text-center" style="border-style: solid;border-width: 1px; width:30px;height:35px; 
-              margin:307px 0px 0px 790px; position: absolute">
+              margin:312px 0px 0px 1112px; position: absolute">
                 <i class="fas fa-home"></i>
             </div>
         </a>
@@ -58,18 +58,18 @@
                 <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
                     <div class="row">
                         <div class="col-6 mb-3 mt-3">
-                            <a class="nav-link text-light " href="maps.html">
+                            <a class="nav-link text-light " rel="external" href="maps.html">
                                 <img src="imagens/maps.png" width=100% class="mr-2">Mapas</a>
                         </div>
                         <div class="col-6 mb-3 mt-3">
-                            <a class="nav-link text-light" href="#">
+                            <a class="nav-link text-light" rel="external" href="#">
                                 <img src="imagens/social.png" width=100% class="mr-2">MyWeb</a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-6">
-                            <a class="nav-link text-light" href="weather.html">
+                            <a class="nav-link text-light" rel="external" href="weather.html">
                                 <img src="imagens/meteo.png" width=100% class="mr-2">
                                 <p style="margin-left:-10px">Meteorologia</p>
                             </a>
@@ -349,7 +349,7 @@
             }
             if (buttonName == "kidButton") {
                 KidTickets++;
-                if (KidTickets >= 10) {
+                if (KidTickets == 11) {
                     showWarningLimit(buttonName, KidTickets);
                 }
                 document.getElementById('kid').innerText = KidTickets;
@@ -358,7 +358,7 @@
             }
             else {
                 AdultTickets++;
-                if (AdultTickets >= 10) {
+                if (AdultTickets == 11) {
                     showWarningLimit(buttonName, AdultTickets);
                 }
                 document.getElementById('adult').innerText = AdultTickets;
@@ -526,7 +526,7 @@
                 buttons = document.createElement('div');
 
             container.className = "position-absolute bg-light font-weight-bold text-center rounded-lg"
-            container.style = "width:200px;height:150px; margin:-160px 0px 0px 15px; border-style:solid;border-width:3px;z-index:10"
+            container.style = "width:230px;height:150px; margin:-160px 0px 0px 0px; border-style:solid;border-width:3px;z-index:10"
             container.id = "warningDIV";
 
             warningText.className = "mt-3"
@@ -535,7 +535,8 @@
             buttons.className = "position-absolute"
             buttons.style = "bottom:5px"
 
-            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-4 bg-danger text-center rounded text-light"
+            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 bg-danger text-center rounded text-light"
+            yes.style="margin-left:55px"
             yes.innerText = "SIM"
             yes.rel = "external"
             yes.addEventListener("click", function () {
@@ -566,14 +567,14 @@
                 buttons = document.createElement('div');
 
             container.className = "position-absolute bg-light font-weight-bold text-center rounded-lg"
-            container.style = "width:200px;height:150px; margin:-160px 0px 0px 15px; border-style:solid;border-width:3px;z-index:10"
+            container.style = "width:230px;height:160px; margin:-160px 0px 0px 0px; border-style:solid;border-width:3px;z-index:10"
             container.id = "warningDIV";
 
             warningText.className = "mt-3"
             if (buttonName == 'kidButton') {
-                warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR " + tickets + " BILHETES DE CRIANÇA?";
+                warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR MAIS DE 10 BILHETES DE CRIANÇA?";
             } else {
-                warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR " + tickets + " BILHETES DE ADULTO?";
+                warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR MAIS DE 10 BILHETES DE ADULTO?";
             }
 
             buttons.className = "position-absolute"
@@ -587,7 +588,8 @@
                 decreaseTickets(buttonName);
             })
 
-            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-4 bg-danger text-center rounded text-light"
+            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 bg-danger text-center rounded text-light"
+            yes.style="margin-left:55px"
             yes.innerText = "SIM"
             yes.rel = "external"
             yes.addEventListener("click", function () {
