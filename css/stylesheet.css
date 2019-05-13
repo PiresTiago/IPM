@@ -4,6 +4,8 @@ body {
 }
 
 
+p { margin:0 }
+
 a, a:hover {
     color: black;
     text-decoration: none;

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/leaflet.css">
+
+    <title>iGo</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+
+
+</head>
+
+<body onload="getMap(); getTime();">
+    <img id="watch" src="imagens/watch.png">
+
+    <a href="maps.html">
+        <div class="container rounded p-0 pt-1 bg-light text-center" style="border-style: solid;border-width: 1px; width:30px;height:35px; 
+  margin:312px 0px 0px 1112px; position: absolute">
+            <i class="fas fa-home"></i>
+        </div>
+    </a>
+
+    <div id="screen">
+        <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
+
+            <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
+            <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" onclick="switchAngle('menuswitch')">
+                <!-- Toggle change icon -->
+                <i id="menuswitch" class="fas fa-caret-down text-white"></i>
+            </button>
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/gps.png" class="float-right" width=60%>
+            </div>
+
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/battery4.png" class="float-right" width=70%>
+            </div>
+            <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
+                <div class="row justify-content-center">
+                    <div class="col-6 mb-2 mt-3">
+                        <a class="nav-link text-light " href="maps.html">
+                            <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt"></i>
+                            Mapas
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6 mb-3 mt-2">
+                        <a class="nav-link text-light text-center" href="myweb.html">
+                            <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users "></i>
+                            MyWeb
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="dropdown-divider p-0 border position-absolute" style="width:95%;bottom: 45px;left: 6px"></div>
+        <div class="row text-center justify-content-center position-absolute" style="font-size:25px; bottom: 5px">
+            
+            <div class="col-4">
+                <a href="nearWeb.html" class="ml-2">
+                    <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
+                </a>
+            </div>
+
+            <div class="col-4 ">
+                <a href="myweb.html" class="ml-3">
+                    <i class="p-2 fas fa-home bg-dark border border-dark rounded-circle text-white"></i>
+                </a>
+            </div>
+
+            <div class="col-4 ">
+                <a href="profile.html" class="ml-3">
+                    <i class="p-2 fas fa-user-circle bg-dark border border-white rounded-circle text-white"></i>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/leaflet.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

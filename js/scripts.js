@@ -1,4 +1,4 @@
-var map=null;
+var map = null;
 
 
 function mouseDownMic() {
@@ -29,8 +29,8 @@ setInterval(getTime, 1000);
 function getMap() {
   var LeafIcon = L.Icon.extend({
     options: {
-       iconSize:  [60, 50],
-       shadowSize: [50, 64],
+      iconSize: [60, 50],
+      shadowSize: [50, 64],
     }
   });
 
@@ -51,18 +51,18 @@ function getMap() {
   map.fitBounds(bounds);
 
   var tecnico = L.latLng([625, 1340]);
-  L.marker((tecnico), {icon: HereIcon}).addTo(map);
+  L.marker((tecnico), { icon: HereIcon }).addTo(map);
   map.setView([625, 1340], 0);
 
 }
 
-function goHome(){
+function goHome() {
   alert("OLA")
-  window.location="maps.html"
+  window.location = "maps.html"
 }
 
-function openMap(){
-  document.getElementById('mapid').style=""
+function openMap() {
+  document.getElementById('mapid').style = ""
 }
 
 function closeMap() {
@@ -307,23 +307,151 @@ function loadLocal() {
       '-' + data.schedule[2].hourclose;
   }
 
-  document.getElementById("location").innerText=data.location;
+  document.getElementById("location").innerText = data.location;
 
   if (data.tickets) {
     var link = document.createElement('a'),
-    divider=document.createElement('div');
+      divider = document.createElement('div');
 
-    divider.className="dropdown-divider mt-2 p-0 border"
+    divider.className = "dropdown-divider mt-2 p-0 border"
 
-    link.className="bg-info rounded m-0 p-2 col-10 text-light text-center"
+    link.className = "bg-info rounded m-0 p-2 col-10 text-light text-center"
 
-    link.style="font-size: 15px;";
-    link.innerText="Comprar Bilhete(s)";
+    link.style = "font-size: 15px;";
+    link.innerText = "Comprar Bilhete(s)";
 
-    link.href="buyTicket.html"
-  
+    link.href = "buyTicket.html"
+
     localStorage.setItem("LocalName", data.name);
     document.getElementById("divider").appendChild(divider);
     document.getElementById("Buttons").appendChild(link);
   }
+}
+
+function like(id) {
+ 
+  if (document.getElementById(id).className=="fa-2x fas fa-heart text-danger") {
+    document.getElementById(id).className="fa-2x far fa-heart";
+
+  }
+  else if (document.getElementById(id).className=="fa-2x far fa-heart") {
+    document.getElementById(id).className="fa-2x fas fa-heart text-danger";
+  }
+}
+
+function likeProfile(id){
+ 
+  if (document.getElementById(id+"1").className=="fa-2x fas fa-heart text-danger") {
+    document.getElementById(id).removeChild(document.getElementById(id).firstChild)
+    var icoLike=document.createElement('i')
+    icoLike.id=id+"1"
+    icoLike.className="fa-2x far fa-heart"
+    document.getElementById(id).appendChild(icoLike)
+  }
+  else if (document.getElementById(id+"1").className=="fa-2x far fa-heart") {
+    document.getElementById(id).removeChild(document.getElementById(id).firstChild)
+    var icoLike=document.createElement('i')
+    icoLike.id=id+"1"
+    icoLike.className="fa-2x fas fa-heart text-danger"
+    document.getElementById(id).appendChild(icoLike)
+  }
+
+}
+function toProfile(PersonData) {
+
+  localStorage.setItem("PersonData", JSON.stringify(PersonData));
+}
+
+function loadProfile() {
+
+  var PersonData = JSON.parse(localStorage.getItem("PersonData"))
+
+  localStorage.removeItem("PersonData");
+
+  console.log(PersonData)
+
+  document.getElementById('nameProfile').innerText = PersonData.name;
+  document.getElementById("ageProfile").innerText = PersonData.age;
+  document.getElementById("imgProfile").src = PersonData.imgProfile;
+
+  for (let i = 0; i < PersonData.posts.length; i++) {
+    var divContainer = document.createElement('div'),
+      divCard = document.createElement('div'),
+      divRow = document.createElement('div'),
+      divCol1 = document.createElement('div'),
+      divCol2 = document.createElement('div'),
+      divCol3 = document.createElement('div'),
+      imgProfile = document.createElement('img'),
+      spanName = document.createElement('span'),
+      spanTime = document.createElement('span'),
+      imgPost = document.createElement('img'),
+      location = document.createElement('p'),
+      divBody = document.createElement('div'),
+      buttonLike = document.createElement('button'),
+      buttonComments = document.createElement('button'),
+      icoLike = document.createElement('i'),
+      icoComments = document.createElement('i')
+
+    divContainer.className = "row justify-content-center mb-4"
+    divCard.className = "card col-10 m-0"
+    divRow.className = "row justify-content-center"
+    divCol1.className = "col-3 m-0 p-0 text-center"
+    divCol2.className = "col-7 mt-2 m-0 p-0 text-left"
+    divCol3.className = "col-2 mt-2 m-0 p-0 text-center text-muted"
+
+    imgProfile.className = "rounded-circle mt-1 mb-1 p-0"
+    imgProfile.style = "width:35px"
+    imgProfile.src=PersonData.imgProfile
+
+    spanName.innerText = PersonData.name
+    spanName.style = "font-size:15px"
+
+    spanTime.innerText=PersonData.posts[i].timeOfPost
+
+
+    imgPost.className = "card-img-top"
+    imgPost.src=PersonData.posts[i].imgSrc
+    location.className = "mt-1 font-weight-bold"
+    location.innerText=PersonData.posts[i].location
+    divBody.className = "card-body mt-1 m-0 p-1"
+    buttonLike.className = "btn float-left p-0 m-0"
+    buttonLike.id=PersonData.posts[i].imgSrc
+    buttonComments.className = "btn float-right p-0 m-0"
+    buttonComments.id="comments"
+
+    buttonLike.addEventListener("click", function () {
+      likeProfile(PersonData.posts[i].imgSrc)
+    })
+    icoComments.addEventListener("click", function () {
+      readcomments(this.id)
+    })
+
+    icoLike.className="fa-2x far fa-heart"
+    icoLike.id=PersonData.posts[i].imgSrc+"1"
+    icoComments.className="fa-2x far fa-comment-dots"
+
+    divContainer.appendChild(divCard)
+    divCard.appendChild(divRow)
+    divRow.appendChild(divCol1)
+    divCol1.appendChild(imgProfile)
+    divRow.appendChild(divCol2)
+    divCol2.appendChild(spanName)
+    divRow.appendChild(divCol3)
+    divCol3.appendChild(spanTime)
+    
+    divCard.appendChild(imgPost)
+    divCard.appendChild(location)
+    divCard.appendChild(divBody)
+    divBody.appendChild(buttonLike)
+    buttonLike.appendChild(icoLike)
+    divBody.appendChild(buttonComments)
+    buttonComments.appendChild(icoComments)
+    document.getElementById('screen').appendChild(divContainer)
+  }
+
+
+
+
+
+
 }
