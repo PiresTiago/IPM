@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="./css/stylesheet.css">
     <script src="json/peopleMyWeb.js"></script>
     <script src="js/scripts.js"></script>
-
-
 </head>
 
 <body onload="getTime();">
@@ -29,7 +27,7 @@
         </div>
     </a>
 
-    <div id="screen">
+    <div id="screen" style="overflow: hidden;">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
             <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
@@ -47,28 +45,30 @@
                 <img src="imagens/battery4.png" class="float-right" width=70%>
             </div>
             <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
-                <div class="row justify-content-center">
-                    <div class="col-6 mb-2 mt-3">
-                        <a class="nav-link text-light " href="maps.html">
-                            <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt"></i>
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-4 mb-2 mt-4 m-0 p-0">
+                        <a class="nav-link text-light font-weight-bold m-0 p-0" href="maps.html">
+                            <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt mb-1"></i>
                             Mapas
                         </a>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-6 mb-3 mt-2">
-                        <a class="nav-link text-light text-center" href="myweb.html">
-                            <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users "></i>
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-4 mb-4 mt-4 m-0 p-0">
+                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0" href="myweb.html">
+                            <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
                             MyWeb
                         </a>
                     </div>
                 </div>
             </div>
         </nav>
+
         <div class="row mt-2 mb-2 ml-3 m-0 p-0 h5 font-weight-bold">Perto de Si</div>
-        <div class="cont" style="Overflow-x: hidden;height: 60%">
-            
+        <div class="cont" style="Overflow-x: hidden; height: 61%;">
+
             <div class="row justify-content-center mb-4">
+
                 <div class="card col-10 m-0">
                     <div class="row justify-content-center">
 
@@ -90,7 +90,9 @@
                         </div>
                     </div>
 
-                    <img src="imagens/PeopleMyWeb/jorgeMendes/3.jpeg" class="card-img-top" alt="...">
+                    <img src="imagens/PeopleMyWeb/jorgeMendes/3.jpeg" class="card-img-top">
+
+
                     <p class="mt-1 font-weight-bold">#Budapeste</p>
                     <div class="card-body mt-1 m-0 p-1">
                         <button class="btn float-left p-0 m-0"><i onclick="like(this.id)" id="likej"
@@ -100,6 +102,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row justify-content-center mt-3 mb-4">
                 <div class="card col-10 m-0">
                     <div class="row justify-content-center">
@@ -122,7 +125,8 @@
                         </div>
                     </div>
 
-                    <img src="imagens/PeopleMyWeb/jorgeMendes/3.jpeg" class="card-img-top" alt="...">
+                    <img src="imagens/PeopleMyWeb/jorgeMendes/3.jpeg" class="card-img-top">
+
                     <p class="mt-1 font-weight-bold">#Budapeste</p>
                     <div class="card-body mt-1 m-0 p-1">
                         <button class="btn float-left p-0 m-0"><i onclick="like(this.id)" id="likej"
@@ -165,17 +169,17 @@
                 </div>
             </div>
         </div>
-        <div class="dropdown-divider p-0 border position-absolute" style="width:95%;bottom: 45px;left: 6px"></div>
-        <div class="row text-center justify-content-center position-absolute" style="font-size:25px; bottom: 5px">
+        <div class="dropdown-divider mb-1 m-0 p-0 border position-relative"></div>
+        <div class="row text-center justify-content-center position-relative" style="font-size:25px;">
 
             <div class="col-4">
-                <a href="nearWeb.html" class="ml-2">
+                <a href="nearWeb.html">
                     <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
                 </a>
             </div>
 
             <div class="col-4 ">
-                <a href="myweb.html" class="ml-3">
+                <a href="myweb.html">
                     <i class="p-2 fas fa-home bg-dark border border-dark rounded-circle text-white"></i>
                 </a>
             </div>
