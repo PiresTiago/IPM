@@ -64,29 +64,6 @@
             </div>
         </nav>
 
-        <div class="dropdown-divider p-0 border position-fixed"
-            style="width:6.5cm;bottom: 35%;left: 50%;margin-left: -122px;"></div>
-        <div class="row text-center justify-content-center position-fixed" style="font-size:25px; bottom: 30%">
-
-            <div class="col-4">
-                <a href="nearWeb.html" class="ml-2">
-                    <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
-                </a>
-            </div>
-
-            <div class="col-4 ">
-                <a href="myweb.html" class="ml-3">
-                    <i class="p-2 fas fa-home bg-dark border border-dark rounded-circle text-white"></i>
-                </a>
-            </div>
-
-            <div class="col-4 ">
-                <a href="#" class="ml-3">
-                    <i class="p-2 fas fa-user-circle bg-dark border border-white rounded-circle text-white"></i>
-                </a>
-            </div>
-        </div>
-
         <div class="row mb-4 justify-content-center m-0 p-0">
             <div class="col-7 mt-2 ">
                 <a id="return" href="./myweb.html"><i class="h4 font-weight-bold fas fa-chevron-left"></i></a>
@@ -98,10 +75,25 @@
             </div>
         </div>
 
+        <div class="row text-center position-fixed" style="font-size:25px; bottom: 30%; z-index: 10;">
+            <div class="col-4">
+                <a href="nearWeb.html" class="ml-3">
+                    <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
+                </a>
+            </div>
 
+            <div class="col-4">
+                <a href="myweb.html" class="ml-3">
+                    <i class="p-2 fas fa-home bg-dark border border-white rounded-circle text-white"></i>
+                </a>
+            </div>
 
-
-
+            <div class="col-4">
+                <a onclick="toProfile(getPerson('Jorge Mendes'))" href="profile.html" class="ml-2">
+                    <i class="p-2 fas fa-user-circle bg-dark border border-white rounded-circle text-white"></i>
+                </a>
+            </div>
+        </div>
 
     </div>
     <!-- Optional JavaScript -->
