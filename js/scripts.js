@@ -449,7 +449,8 @@ function loadProfile() {
     document.getElementById('ProfilePosts').appendChild(divContainer)
   }
 
-
+  function loadFeed() {
+  }
 
 
 
