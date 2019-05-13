@@ -446,7 +446,7 @@ function loadProfile() {
     buttonLike.appendChild(icoLike)
     divBody.appendChild(buttonComments)
     buttonComments.appendChild(icoComments)
-    document.getElementById('screen').appendChild(divContainer)
+    document.getElementById('ProfilePosts').appendChild(divContainer)
   }
 
 

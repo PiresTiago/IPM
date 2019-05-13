@@ -13,6 +13,8 @@
 
     <title>iGo</title>
     <link rel="stylesheet" href="./css/stylesheet.css">
+    <script src="json/peopleMyWeb.js"></script>
+    <script src="js/scripts.js"></script>
 
 
 </head>
@@ -27,7 +29,7 @@
         </div>
     </a>
 
-    <div id="screen" style="overflow-y: scroll;">
+    <div id="screen">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
             <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
@@ -64,36 +66,45 @@
             </div>
         </nav>
 
-        <div class="row mb-4 justify-content-center m-0 p-0">
-            <div class="col-7 mt-2 ">
-                <a id="return" href="./myweb.html"><i class="h4 font-weight-bold fas fa-chevron-left"></i></a>
-                <p id="nameProfile" class="font-weight-bold text-left"></p>
-                <p id="ageProfile" class="text-left"></p>
-            </div>
-            <div class="col-5 m-0 p-0">
-                <img src="" id="imgProfile" class="rounded-circle mx-auto d-block mt-3 mr-4 m-0 p-0 " width="85px">
+        <div class="cont" id="ProfilePosts" style="Overflow-x: hidden;">
+            <div class="row mb-4 justify-content-center m-0 p-0">
+                <div class="col-7 mt-2 ">
+                    <a id="return" href="./myweb.html"><i class="h4 font-weight-bold fas fa-chevron-left"></i></a>
+                    <p id="nameProfile" class="font-weight-bold text-left"></p>
+                    <p id="ageProfile" class="text-left"></p>
+                </div>
+                <div class="col-5 m-0 p-0">
+                    <img src="" id="imgProfile" class="rounded-circle mx-auto d-block mt-3 mr-4 m-0 p-0 " width="85px">
+                </div>
             </div>
         </div>
 
-        <div class="row text-center position-fixed" style="font-size:25px; bottom: 30%; z-index: 10;">
+        <div class="dropdown-divider p-0 border position-absolute" style="width:95%;bottom: 45px;left: 6px"></div>
+        <div class="row text-center justify-content-center position-absolute" style="font-size:25px; bottom: 5px">
+
             <div class="col-4">
-                <a href="nearWeb.html" class="ml-3">
+                <a href="nearWeb.html" class="ml-2">
                     <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
                 </a>
             </div>
 
-            <div class="col-4">
+            <div class="col-4 ">
                 <a href="myweb.html" class="ml-3">
-                    <i class="p-2 fas fa-home bg-dark border border-white rounded-circle text-white"></i>
+                    <i class="p-2 fas fa-home bg-dark border border-dark rounded-circle text-white"></i>
                 </a>
             </div>
 
-            <div class="col-4">
-                <a onclick="toProfile(getPerson('Jorge Mendes'))" href="profile.html" class="ml-2">
+            <div class="col-4 ">
+                <a onclick="toProfile(getPerson('Jorge Mendes'))" href="profile.html" class="ml-3">
                     <i class="p-2 fas fa-user-circle bg-dark border border-white rounded-circle text-white"></i>
                 </a>
             </div>
         </div>
+
+
+
+
+
 
     </div>
     <!-- Optional JavaScript -->

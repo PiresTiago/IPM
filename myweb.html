@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="getMap(); getTime();">
+<body onload="getTime();">
     <img id="watch" src="imagens/watch.png">
 
     <a href="maps.html">
@@ -29,7 +29,7 @@
         </div>
     </a>
 
-    <div id="screen" style="overflow-y: scroll;">
+    <div id="screen">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
             <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
@@ -66,94 +66,94 @@
             </div>
         </nav>
 
+        <div class="cont" style="Overflow-x: hidden;">
+            <div class="row justify-content-center mt-3 mb-4">
+                <div class="card col-10 m-0">
+                    <div class="row justify-content-center">
 
-        <div class="row justify-content-center mt-3 mb-4">
-            <div class="card col-10 m-0">
-                <div class="row justify-content-center">
+                        <div class="col-3 m-0 p-0 text-center">
+                            <a onclick="toProfile(getPerson('Jorge Mendes'))" href="./profile.html">
+                                <img src="imagens/PeopleMyWeb/jorgeMendes/profile.jpg"
+                                    class="rounded-circle mt-1 mb-1 p-0" width="35px">
+                            </a>
+                        </div>
 
-                    <div class="col-3 m-0 p-0 text-center">
-                        <a onclick="toProfile(getPerson('Jorge Mendes'))" href="./profile.html">
-                            <img src="imagens/PeopleMyWeb/jorgeMendes/profile.jpg" class="rounded-circle mt-1 mb-1 p-0"
-                                width="35px">
-                        </a>
+                        <div class="col-7 mt-2 m-0 p-0 text-left">
+                            <a onclick="toProfile(getPerson('Jorge Mendes'))" href="./profile.html">
+                                <span style="font-size:15px">Jorge Mendes</span>
+                            </a>
+                        </div>
+
+                        <div class="col-2 mt-2 m-0 p-0 text-center text-muted">
+                            <span id="timeofPost">2h</span>
+                        </div>
                     </div>
 
-                    <div class="col-7 mt-2 m-0 p-0 text-left">
-                        <a onclick="toProfile(getPerson('Jorge Mendes'))" href="./profile.html">
-                            <span style="font-size:15px">Jorge Mendes</span>
-                        </a>
-                    </div>
-
-                    <div class="col-2 mt-2 m-0 p-0 text-center text-muted">
-                        <span id="timeofPost">2h</span>
+                    <img src="imagens/PeopleMyWeb/jorgeMendes/3.jpeg" class="card-img-top" alt="...">
+                    <p class="mt-1 font-weight-bold">#Budapeste</p>
+                    <div class="card-body mt-1 m-0 p-1">
+                        <button class="btn float-left p-0 m-0"><i onclick="like(this.id)" id="likej"
+                                class="fa-2x far fa-heart"></i></button>
+                        <button class="btn float-right p-0 m-0"><i onclick="readComments()" id=comments"
+                                class="fa-2x far fa-comment-dots"></i></button>
                     </div>
                 </div>
+            </div>
 
-                <img src="imagens/PeopleMyWeb/jorgeMendes/3.jpeg" class="card-img-top" alt="...">
-                <p class="mt-1 font-weight-bold">#Budapeste</p>
-                <div class="card-body mt-1 m-0 p-1">
-                    <button class="btn float-left p-0 m-0"><i onclick="like(this.id)" id="likej"
-                            class="fa-2x far fa-heart"></i></button>
-                    <button class="btn float-right p-0 m-0"><i onclick="readComments()" id=comments"
-                            class="fa-2x far fa-comment-dots"></i></button>
+            <div class="row justify-content-center mb-4">
+                <div class="card col-10 m-0">
+                    <div class="row justify-content-center">
+                        <div class="col-3 m-0 p-0 text-center">
+                            <a onclick="toProfile(getPerson('Duarte Lima'))" href="./profile.html">
+                                <img src="imagens/PeopleMyWeb/duarteLima/profile.jpeg"
+                                    class="rounded-circle mt-1 mb-1 p-0" width="35px">
+                            </a>
+                        </div>
+                        <div class="col-7 mt-2 m-0 p-0 text-left">
+                            <a onclick="toProfile(getPerson('Duarte Lima'))" href="./profile.html">
+                                <span style="font-size:15px">Duarte Lima</span>
+                            </a>
+                        </div>
+                        <div class="col-2 mt-2 m-0 p-0 text-center text-muted">
+                            <span id="timeofPost">5h</span>
+                        </div>
+                    </div>
+
+                    <img src="imagens/PeopleMyWeb/duarteLima/1.jpg" class="card-img-top" alt="...">
+                    <p class="mt-1 font-weight-bold">Passeio com os amigos</p>
+                    <div class="card-body mt-1 m-0 p-1">
+                        <button class="btn float-left p-0 m-0"><i onclick="like(this.id)" id="liked"
+                                class="fa-2x far fa-heart"></i></button>
+                        <button class="btn float-right p-0 m-0"><i onclick="readComments()" id=comments"
+                                class="fa-2x far fa-comment-dots"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-center mb-4">
-            <div class="card col-10 m-0">
-                <div class="row justify-content-center">
-                    <div class="col-3 m-0 p-0 text-center">
-                        <a onclick="toProfile(getPerson('Duarte Lima'))" href="./profile.html">
-                            <img src="imagens/PeopleMyWeb/duarteLima/profile.jpeg" class="rounded-circle mt-1 mb-1 p-0"
-                                width="35px">
-                        </a>
-                    </div>
-                    <div class="col-7 mt-2 m-0 p-0 text-left">
-                        <a onclick="toProfile(getPerson('Duarte Lima'))" href="./profile.html">
-                            <span style="font-size:15px">Duarte Lima</span>
-                        </a>
-                    </div>
-                    <div class="col-2 mt-2 m-0 p-0 text-center text-muted">
-                        <span id="timeofPost">5h</span>
-                    </div>
-                </div>
-
-                <img src="imagens/PeopleMyWeb/duarteLima/1.jpg" class="card-img-top" alt="...">
-                <p class="mt-1 font-weight-bold">Passeio com os amigos</p>
-                <div class="card-body mt-1 m-0 p-1">
-                    <button class="btn float-left p-0 m-0"><i onclick="like(this.id)" id="liked"
-                            class="fa-2x far fa-heart"></i></button>
-                    <button class="btn float-right p-0 m-0"><i onclick="readComments()" id=comments"
-                            class="fa-2x far fa-comment-dots"></i></button>
-                </div>
-            </div>
-        </div>
 
 
-
-
-        <div class="row text-center position-fixed" style="font-size:25px; bottom: 30%">
+        <div class="dropdown-divider p-0 border position-absolute" style="width:95%;bottom: 45px;left: 6px"></div>
+        <div class="row text-center justify-content-center position-absolute" style="font-size:25px; bottom: 5px">
 
             <div class="col-4">
-                <a href="nearWeb.html" class="ml-3">
+                <a href="nearWeb.html" class="ml-2">
                     <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
                 </a>
             </div>
 
             <div class="col-4 ">
                 <a href="myweb.html" class="ml-3">
-                    <i class="p-2 fas fa-home bg-dark border border-white rounded-circle text-white"></i>
+                    <i class="p-2 fas fa-home bg-dark border border-dark rounded-circle text-white"></i>
                 </a>
             </div>
 
-            <div class="col-4">
-                <a onclick="toProfile(getPerson('Jorge Mendes'))" href="profile.html" class="ml-2">
+            <div class="col-4 ">
+                <a onclick="toProfile(getPerson('Jorge Mendes'))" href="profile.html" class="ml-3">
                     <i class="p-2 fas fa-user-circle bg-dark border border-white rounded-circle text-white"></i>
                 </a>
             </div>
         </div>
-
 
 
 
@@ -166,7 +166,6 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/leaflet.js"></script>
-    <script src="js/scripts.js"></script>
 
     <script>
         function abc() {
