@@ -220,7 +220,7 @@ var peopledata = {
         {
             "name": "Joana Silva",
             "age": "22 anos",
-            "imgProfile": "imagens/PeopleMyWeb/joanaSilva/profile.",
+            "imgProfile": "imagens/PeopleMyWeb/joanaSilva/profile.jpg",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/joanaSilva/1.jpg",
