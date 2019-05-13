@@ -329,46 +329,46 @@ function loadLocal() {
 }
 
 function like(id) {
- 
-  if (document.getElementById(id).className=="fa-2x fas fa-heart text-danger") {
-    document.getElementById(id).className="fa-2x far fa-heart";
+
+  if (document.getElementById(id).className == "fa-2x fas fa-heart text-danger") {
+    document.getElementById(id).className = "fa-2x far fa-heart";
 
   }
-  else if (document.getElementById(id).className=="fa-2x far fa-heart") {
-    document.getElementById(id).className="fa-2x fas fa-heart text-danger";
+  else if (document.getElementById(id).className == "fa-2x far fa-heart") {
+    document.getElementById(id).className = "fa-2x fas fa-heart text-danger";
   }
 }
 
-function likeProfile(id){
- 
-  if (document.getElementById(id+"1").className=="fa-2x fas fa-heart text-danger") {
+function likeProfile(id) {
+
+  if (document.getElementById(id + "1").className == "fa-2x fas fa-heart text-danger") {
     document.getElementById(id).removeChild(document.getElementById(id).firstChild)
-    var icoLike=document.createElement('i')
-    icoLike.id=id+"1"
-    icoLike.className="fa-2x far fa-heart"
+    var icoLike = document.createElement('i')
+    icoLike.id = id + "1"
+    icoLike.className = "fa-2x far fa-heart"
     document.getElementById(id).appendChild(icoLike)
   }
-  else if (document.getElementById(id+"1").className=="fa-2x far fa-heart") {
+  else if (document.getElementById(id + "1").className == "fa-2x far fa-heart") {
     document.getElementById(id).removeChild(document.getElementById(id).firstChild)
-    var icoLike=document.createElement('i')
-    icoLike.id=id+"1"
-    icoLike.className="fa-2x fas fa-heart text-danger"
+    var icoLike = document.createElement('i')
+    icoLike.id = id + "1"
+    icoLike.className = "fa-2x fas fa-heart text-danger"
     document.getElementById(id).appendChild(icoLike)
   }
 
 }
 function toProfile(PersonData) {
-
   localStorage.setItem("PersonData", JSON.stringify(PersonData));
+}
+
+function toFeed(PeopleData) {
+  localStorage.setItem("PeopleData", JSON.stringify(PeopleData))
 }
 
 function loadProfile() {
 
   var PersonData = JSON.parse(localStorage.getItem("PersonData"))
-
   localStorage.removeItem("PersonData");
-
-  console.log(PersonData)
 
   document.getElementById('nameProfile').innerText = PersonData.name;
   document.getElementById("ageProfile").innerText = PersonData.age;
@@ -401,23 +401,23 @@ function loadProfile() {
 
     imgProfile.className = "rounded-circle mt-1 mb-1 p-0"
     imgProfile.style = "width:35px"
-    imgProfile.src=PersonData.imgProfile
+    imgProfile.src = PersonData.imgProfile
 
     spanName.innerText = PersonData.name
     spanName.style = "font-size:15px"
 
-    spanTime.innerText=PersonData.posts[i].timeOfPost
+    spanTime.innerText = PersonData.posts[i].timeOfPost
 
 
     imgPost.className = "card-img-top"
-    imgPost.src=PersonData.posts[i].imgSrc
+    imgPost.src = PersonData.posts[i].imgSrc
     location.className = "mt-1 font-weight-bold"
-    location.innerText=PersonData.posts[i].location
+    location.innerText = PersonData.posts[i].location
     divBody.className = "card-body mt-1 m-0 p-1"
     buttonLike.className = "btn float-left p-0 m-0"
-    buttonLike.id=PersonData.posts[i].imgSrc
+    buttonLike.id = PersonData.posts[i].imgSrc
     buttonComments.className = "btn float-right p-0 m-0"
-    buttonComments.id="comments"
+    buttonComments.id = "comments"
 
     buttonLike.addEventListener("click", function () {
       likeProfile(PersonData.posts[i].imgSrc)
@@ -426,9 +426,9 @@ function loadProfile() {
       readcomments(this.id)
     })
 
-    icoLike.className="fa-2x far fa-heart"
-    icoLike.id=PersonData.posts[i].imgSrc+"1"
-    icoComments.className="fa-2x far fa-comment-dots"
+    icoLike.className = "fa-2x far fa-heart"
+    icoLike.id = PersonData.posts[i].imgSrc + "1"
+    icoComments.className = "fa-2x far fa-comment-dots"
 
     divContainer.appendChild(divCard)
     divCard.appendChild(divRow)
@@ -438,7 +438,7 @@ function loadProfile() {
     divCol2.appendChild(spanName)
     divRow.appendChild(divCol3)
     divCol3.appendChild(spanTime)
-    
+
     divCard.appendChild(imgPost)
     divCard.appendChild(location)
     divCard.appendChild(divBody)
@@ -449,10 +449,87 @@ function loadProfile() {
     document.getElementById('ProfilePosts').appendChild(divContainer)
   }
 
-  function loadFeed() {
-  }
-
-
-
-
 }
+
+function loadFeed() {
+
+  var PeopleData = JSON.parse(localStorage.getItem("PeopleData"))
+  localStorage.removeItem("PeopleData");
+
+  for (let i = 0; i < PeopleData.length; i++) {
+    var divContainer = document.createElement('div'),
+      divCard = document.createElement('div'),
+      divRow = document.createElement('div'),
+      divCol1 = document.createElement('div'),
+      divCol2 = document.createElement('div'),
+      divCol3 = document.createElement('div'),
+      imgProfile = document.createElement('img'),
+      spanName = document.createElement('span'),
+      spanTime = document.createElement('span'),
+      imgPost = document.createElement('img'),
+      location = document.createElement('p'),
+      divBody = document.createElement('div'),
+      buttonLike = document.createElement('button'),
+      buttonComments = document.createElement('button'),
+      icoLike = document.createElement('i'),
+      icoComments = document.createElement('i')
+
+    divContainer.className = "row justify-content-center mb-4"
+    divCard.className = "card col-10 m-0"
+    divRow.className = "row justify-content-center"
+    divCol1.className = "col-3 m-0 p-0 text-center"
+    divCol2.className = "col-7 mt-2 m-0 p-0 text-left"
+    divCol3.className = "col-2 mt-2 m-0 p-0 text-center text-muted"
+
+    imgProfile.className = "rounded-circle mt-1 mb-1 p-0"
+    imgProfile.style = "width:35px"
+    imgProfile.src = PeopleData[i].imgProfile
+
+    spanName.innerText = PeopleData[i].name
+    spanName.style = "font-size:15px"
+
+    spanTime.innerText = PeopleData[i].posts[0].timeOfPost
+
+
+    imgPost.className = "card-img-top"
+    imgPost.src = PeopleData[i].posts[0].imgSrc
+    location.className = "mt-1 font-weight-bold"
+    location.innerText = PeopleData[i].posts[0].location
+    divBody.className = "card-body mt-1 m-0 p-1"
+    buttonLike.className = "btn float-left p-0 m-0"
+    buttonLike.id = PeopleData[i].posts[0].imgSrc
+    buttonComments.className = "btn float-right p-0 m-0"
+    buttonComments.id = "comments"
+
+    buttonLike.addEventListener("click", function () {
+      likeProfile(PeopleData[i].posts[0].imgSrc)
+    })
+    icoComments.addEventListener("click", function () {
+      readcomments(this.id)
+    })
+
+    icoLike.className = "fa-2x far fa-heart"
+    icoLike.id = PeopleData[i].posts[0].imgSrc + "1"
+    icoComments.className = "fa-2x far fa-comment-dots"
+
+    divContainer.appendChild(divCard)
+    divCard.appendChild(divRow)
+    divRow.appendChild(divCol1)
+    divCol1.appendChild(imgProfile)
+    divRow.appendChild(divCol2)
+    divCol2.appendChild(spanName)
+    divRow.appendChild(divCol3)
+    divCol3.appendChild(spanTime)
+
+    divCard.appendChild(imgPost)
+    divCard.appendChild(location)
+    divCard.appendChild(divBody)
+    divBody.appendChild(buttonLike)
+    buttonLike.appendChild(icoLike)
+    divBody.appendChild(buttonComments)
+    buttonComments.appendChild(icoComments)
+    document.getElementById('FeedContainer').appendChild(divContainer)
+  }
+}
+
+

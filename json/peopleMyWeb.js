@@ -39,7 +39,7 @@ var peopledata = {
             "imgProfile": "imagens/PeopleMyWeb/joeBerardo/profile.jpg",
             "posts": [
                 {
-                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/1.jpeg",
+                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/1.jpg",
                     "timeOfPost": "1h",
                     "location": "Porto",
                     "comments": [
@@ -59,7 +59,7 @@ var peopledata = {
                     "location": "Lisboa"
                 },
                 {
-                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/3.jpeg",
+                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/3.jpg",
                     "timeOfPost": "2d",
                     "location": "Lisboa"
                 }
@@ -98,7 +98,7 @@ var peopledata = {
             "imgProfile": "imagens/PeopleMyWeb/ederLopes/profile.jpg",
             "posts": [
                 {
-                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/1.jpeg",
+                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/1.jpg",
                     "timeOfPost": "1h",
                     "location": "Porto",
                     "comments": [
@@ -113,12 +113,12 @@ var peopledata = {
                     ]
                 },
                 {
-                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/2.jpg",
+                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/2.jpeg",
                     "timeOfPost": "1d",
                     "location": "Lisboa"
                 },
                 {
-                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/3.jpeg",
+                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/3.jpg",
                     "timeOfPost": "2d",
                     "location": "Lisboa"
                 }
