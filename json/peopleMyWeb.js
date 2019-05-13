@@ -34,6 +34,97 @@ var peopledata = {
             ],
         },
         {
+            "name": "Joe Berardo",
+            "age": "74 anos",
+            "imgProfile": "imagens/PeopleMyWeb/joeBerardo/profile.jpg",
+            "posts": [
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/1.jpeg",
+                    "timeOfPost": "1h",
+                    "location": "Porto",
+                    "comments": [
+                        {
+                            "name": "Armando",
+                            "comment": "Que louco!"
+                        },
+                        {
+                            "name": "Daniel",
+                            "comment": "FIXE!"
+                        },
+                    ]
+                },
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/2.jpg",
+                    "timeOfPost": "1d",
+                    "location": "Lisboa"
+                },
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/joeBerardo/3.jpeg",
+                    "timeOfPost": "2d",
+                    "location": "Lisboa"
+                }
+            ],
+        },
+        {
+            "name": "José Castelo Branco",
+            "age": "56 anos",
+            "imgProfile": "imagens/PeopleMyWeb/joseCasteloBranco/profile.jpg",
+            "posts": [
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/joseCasteloBranco/1.jpeg",
+                    "timeOfPost": "1h",
+                    "location": "Porto",
+                    "comments": [
+                        {
+                            "name": "Armando",
+                            "comment": "Que louco!"
+                        },
+                        {
+                            "name": "Daniel",
+                            "comment": "FIXE!"
+                        },
+                    ]
+                },
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/joseCasteloBranco/2.jpg",
+                    "timeOfPost": "1d",
+                    "location": "Lisboa"
+                }
+            ],
+        },
+        {
+            "name": "Eder Lopes",
+            "age": "31 anos",
+            "imgProfile": "imagens/PeopleMyWeb/ederLopes/profile.jpg",
+            "posts": [
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/1.jpeg",
+                    "timeOfPost": "1h",
+                    "location": "Porto",
+                    "comments": [
+                        {
+                            "name": "Armando",
+                            "comment": "Que louco!"
+                        },
+                        {
+                            "name": "Daniel",
+                            "comment": "FIXE!"
+                        },
+                    ]
+                },
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/2.jpg",
+                    "timeOfPost": "1d",
+                    "location": "Lisboa"
+                },
+                {
+                    "imgSrc": "imagens/PeopleMyWeb/ederLopes/3.jpeg",
+                    "timeOfPost": "2d",
+                    "location": "Lisboa"
+                }
+            ],
+        },
+        {
             "name": "Duarte Lima",
             "age": "63 anos",
             "imgProfile": "imagens/PeopleMyWeb/duarteLima/profile.jpeg",
