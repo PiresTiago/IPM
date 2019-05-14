@@ -20,16 +20,16 @@
     <script src="json/pharmacies.js"></script>
     <script src="json/restaurants.js"></script>
     <script src="json/stores.js"></script>
-
+    <script src="json/peopleMyWeb.js"></script>
 
 </head>
 
 <body onload="loadListofLocals(); getTime();">
     <img id="watch" src="imagens/watch.png">
+
     <a href="maps.html">
         <div class="container rounded p-0 pt-1 bg-light text-center" style="border-style: solid;border-width: 1px; width:30px;height:35px; 
-          margin:312px 0px 0px 1112px; position: absolute">
-            <i class="fas fa-home"></i>
+      margin:312px 0px 0px 1112px; position: absolute">
         </div>
     </a>
     <div id="screen">
@@ -60,7 +60,8 @@
                 </div>
                 <div class="row justify-content-center m-0 p-0">
                     <div class="col-4 mb-4 mt-4 m-0 p-0">
-                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0" href="myweb.html">
+                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0"
+                            onclick="loadMyWeb(getPeopleData())" href="myweb.html">
                             <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
                             MyWeb
                         </a>

@@ -22,13 +22,23 @@
 <body onload="getTime(); loadFeed();">
     <img id="watch" src="imagens/watch.png">
 
+
     <a href="maps.html">
         <div class="container rounded p-0 pt-1 bg-light text-center" style="border-style: solid;border-width: 1px; width:30px;height:35px; 
-  margin:312px 0px 0px 1112px; position: absolute">
-            <i class="fas fa-home"></i>
+      margin:312px 0px 0px 1112px; position: absolute">
         </div>
     </a>
 
+    <div id="commentsContainer" style="display:none">
+        <div class=" mb-2 m-0 p-0 h4 font-weight-bold">
+            <a id="return" onclick="hideComments()">
+                <i class="ml-2 mt-1 font-weight-bold fas fa-chevron-left"></i>
+            </a>
+            <span class="ml-2">Comentários</span>
+
+        </div>
+        <div class="dropdown-divider border mb-2 m-0 p-0"></div>
+    </div>
     <div id="screen">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
@@ -57,7 +67,8 @@
                 </div>
                 <div class="row justify-content-center m-0 p-0">
                     <div class="col-4 mb-4 mt-4 m-0 p-0">
-                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0" href="myweb.html">
+                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0"
+                            onclick="loadMyWeb(getPeopleData())" href="myweb.html">
                             <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
                             MyWeb
                         </a>
@@ -66,26 +77,25 @@
             </div>
         </nav>
 
-        <div class="cont" id="FeedContainer" style="Overflow-x: hidden;height: 73%;"></div>
+        <div class="cont" id="FeedContainer" style="Overflow-x: hidden;height: 75%;"></div>
 
-        <div class="dropdown-divider mb-1 m-0 p-0 border position-relative"></div>
+        <div class="dropdown-divider  m-0 p-0 border position-relative"></div>
         <div class="row text-center justify-content-between position-relative m-0 p-0" style="font-size:25px;">
 
             <div class="col-3 m-0 p-0">
-                <a href="nearWeb.html">
-                    <i class="p-2 fas fa-street-view  bg-dark border border-white rounded-circle text-white"></i>
+                <a onclick="toNearWeb(getPeopleData())" href="nearWeb.html">
+                    <i class="p-2 fas fa-street-view rounded-circle text-dark"></i>
                 </a>
             </div>
-
             <div class="col-3 m-0 p-0 ">
                 <a onclick="toFeed(getPeopleData())" href="myweb.html">
-                    <i class="p-2 fas fa-rss bg-dark border border-dark rounded-circle text-white"></i>
+                    <i class="p-2 fas fa-home rounded-circle text-dark"></i>
                 </a>
             </div>
 
             <div class="col-3 m-0 p-0">
                 <a onclick="toProfile(getPerson('Jorge Mendes'))" href="profile.html">
-                    <i class="p-2 fas fa-user-circle bg-dark border border-white rounded-circle text-white"></i>
+                    <i class="p-2 fas fa-user-circle rounded-circle text-dark"></i>
                 </a>
             </div>
         </div>
