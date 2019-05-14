@@ -13,12 +13,16 @@ var peopledata = {
 
                     "comments": [
                         {
-                            "name": "Armando",
-                            "comment": "Que louco!"
+                            "name": "Vanessa",
+                            "comment": "CAMPEÕES!"
                         },
                         {
-                            "name": "Daniel",
-                            "comment": "E FOI O ÉDER QUE OS *****!"
+                            "name": "Ricardo",
+                            "comment": "Orgulho!!"
+                        },
+                        {
+                            "name": "Catarina",
+                            "comment": "Granda taça!"
                         },
                     ]
                 },
@@ -77,20 +81,37 @@ var peopledata = {
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/mariaCaetano/1.jpg",
-                    "timeOfPost": "3h",
+                    "timeOfPost": "15h",
                     "location": "Paris",
-
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/mariaCaetano/2.jpg",
                     "timeOfPost": "7d",
                     "location": "Bélgica",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/mariaCaetano/3.jpg",
                     "timeOfPost": "15d",
                     "location": "Paris",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 }
             ],
@@ -104,18 +125,36 @@ var peopledata = {
                     "imgSrc": "imagens/PeopleMyWeb/rebecaPhillips/1.jpg",
                     "timeOfPost": "1d",
                     "location": "Dubai",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/rebecaPhillips/2.jpg",
                     "timeOfPost": "7d",
                     "location": "Índia",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/rebecaPhillips/3.jpg",
                     "timeOfPost": "15d",
                     "location": "Singapura",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 }
             ],
@@ -127,20 +166,38 @@ var peopledata = {
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/johnRonson/1.jpg",
-                    "timeOfPost": "3h",
+                    "timeOfPost": "21h",
                     "location": "Las Vegas",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Giro!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/johnRonson/2.jpg",
                     "timeOfPost": "5d",
                     "location": "Grand Canyon",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Giro!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/johnRonson/3.jpg",
                     "timeOfPost": "19d",
                     "location": "New York",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Giro!"
+                        },
+                    ]
 
                 }
             ],
@@ -152,14 +209,26 @@ var peopledata = {
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/joanaSilva/1.jpg",
-                    "timeOfPost": "5d",
+                    "timeOfPost": "1d",
                     "location": "Coimbra",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/joanaSilva/2.jpg",
-                    "timeOfPost": "1h",
+                    "timeOfPost": "10d",
                     "location": "Monte Everest",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
 
                 },
             ],
@@ -171,9 +240,14 @@ var peopledata = {
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/teresaCoutim/1.jpg",
-                    "timeOfPost": "1h",
+                    "timeOfPost": "3d",
                     "location": "Lisboa",
-
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Gira!"
+                        },
+                    ]
                 },
             ],
         },
@@ -186,18 +260,36 @@ var peopledata = {
                     "imgSrc": "imagens/PeopleMyWeb/ruiFigueiredo/1.jpg",
                     "timeOfPost": "7d",
                     "location": "Lisboa",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Giro!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/ruiFigueiredo/2.jpg",
-                    "timeOfPost": "5anos",
+                    "timeOfPost": "15d",
                     "location": "Paris",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Giro!"
+                        },
+                    ]
 
                 },
                 {
                     "imgSrc": "imagens/PeopleMyWeb/ruiFigueiredo/3.jpg",
-                    "timeOfPost": "2anos",
+                    "timeOfPost": "21d",
                     "location": "Estrasburgo",
+                    "comments": [
+                        {
+                            "name": "Vanessa",
+                            "comment": "Giro!"
+                        },
+                    ]
 
                 }
             ],

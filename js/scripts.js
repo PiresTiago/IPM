@@ -71,10 +71,14 @@ function closeMap() {
 
 function switchAngle(id) {
   if (document.getElementById(id).classList.contains('fa-caret-down')) {
+    document.getElementById("commentsContainer").classList.remove("d-block");
+    document.getElementById("commentsContainer").classList.add("d-none");
     document.getElementById(id).classList.add('fa-caret-up');
     document.getElementById(id).classList.remove('fa-caret-down');
 
   } else {
+    document.getElementById("commentsContainer").classList.remove("d-none");
+    document.getElementById("commentsContainer").classList.add("d-block");
     document.getElementById(id).classList.add('fa-caret-down');
     document.getElementById(id).classList.remove('fa-caret-up');
   }
@@ -363,7 +367,7 @@ function like(id) {
 }
 
 function displayComments(Post) {
-  document.getElementById('commentsContainer').style = "background-color: #F4F4F4;position: absolute;top: 54%;left: 50%;margin-top: -158px; margin-left: -122px;width: 6.5cm;height: 6.5cm;  z-index: 10;display: block;"
+  document.getElementById('commentsContainer').style = "background-color: #F4F4F4;position: absolute;top: 53.5%;left: 50%;margin-top: -158px; margin-left: -122px;width: 6.5cm;height: 6.6cm;  z-index: 10;display: block;"
   for (let i = 0; i < Post.comments.length; i++) {
     var name = document.createElement('p'),
       text = document.createElement('p'),

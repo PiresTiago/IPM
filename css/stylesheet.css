@@ -1,8 +1,13 @@
 body {
     background-color: #F4F4F4;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
+html {
+    max-width: 100%;
+    overflow-x: hidden;  
+}
 
 p { margin:0 }
 
@@ -157,10 +162,6 @@ input[type="number"] {
     overflow-y: scroll;
 }
 
-html {
-    overflow: scroll;
-    overflow-x: hidden;
-}
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
