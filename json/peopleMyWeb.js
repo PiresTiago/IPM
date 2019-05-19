@@ -5,6 +5,9 @@ var peopledata = {
             "name": "Eder Lopes",
             "age": "31 anos",
             "imgProfile": "imagens/PeopleMyWeb/ederLopes/profile.jpg",
+            "about": "Campeão Europeu",
+            "followers": "1.5M",
+            "following": "150",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/ederLopes/1.jpg",
@@ -32,6 +35,9 @@ var peopledata = {
             "name": "Joe Berardo",
             "age": "74 anos",
             "imgProfile": "imagens/PeopleMyWeb/joeBerardo/profile.jpg",
+            "about": "Tenho uma granda coleção de obras.",
+            "followers": "253",
+            "following": "4",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/joeBerardo/1.jpg",
@@ -55,6 +61,9 @@ var peopledata = {
             "name": "Jorge Mendes",
             "age": "53 anos",
             "imgProfile": "imagens/PeopleMyWeb/jorgeMendes/profile.jpg",
+            "about": "Representante de Futebol",
+            "followers": "122m",
+            "following": "88",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/jorgeMendes/1.jpg",
@@ -78,6 +87,9 @@ var peopledata = {
             "name": "Maria Caetano",
             "age": "27 anos",
             "imgProfile": "imagens/PeopleMyWeb/mariaCaetano/profile.jpg",
+            "about": "Influenciadora",
+            "followers": "600m",
+            "following": "322",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/mariaCaetano/1.jpg",
@@ -120,6 +132,9 @@ var peopledata = {
             "name": "Rebeca Phillips",
             "age": "27 anos",
             "imgProfile": "imagens/PeopleMyWeb/rebecaPhillips/profile.jpg",
+            "about": "Influenciadora",
+            "followers": "554m",
+            "following": "258",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/rebecaPhillips/1.jpg",
@@ -163,6 +178,9 @@ var peopledata = {
             "name": "John Ronson",
             "age": "35 anos",
             "imgProfile": "imagens/PeopleMyWeb/johnRonson/profile.jpg",
+            "about": "Solteiro",
+            "followers": "790",
+            "following": "438",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/johnRonson/1.jpg",
@@ -206,6 +224,9 @@ var peopledata = {
             "name": "Joana Silva",
             "age": "22 anos",
             "imgProfile": "imagens/PeopleMyWeb/joanaSilva/profile.jpg",
+            "about": "Estudante IST",
+            "followers": "230",
+            "following": "302",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/joanaSilva/1.jpg",
@@ -237,6 +258,9 @@ var peopledata = {
             "name": "Teresa Coutim",
             "age": "25 anos",
             "imgProfile": "imagens/PeopleMyWeb/teresaCoutim/profile.jpg",
+            "about": "LEIC-A",
+            "followers": "304",
+            "following": "304",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/teresaCoutim/1.jpg",
@@ -255,6 +279,9 @@ var peopledata = {
             "name": "Rui Figueiredo",
             "age": "24 anos",
             "imgProfile": "imagens/PeopleMyWeb/ruiFigueiredo/profile.jpg",
+            "about": "Influenciador",
+            "followers": "325m",
+            "following": "512",
             "posts": [
                 {
                     "imgSrc": "imagens/PeopleMyWeb/ruiFigueiredo/1.jpg",

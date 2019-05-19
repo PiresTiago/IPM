@@ -28,16 +28,6 @@
         </div>
     </a>
 
-    <div id="commentsContainer" style="display:none">
-        <div class=" mb-2 m-0 p-0 h4 font-weight-bold">
-            <a id="return" onclick="hideComments()">
-                <i class="ml-2 mt-1 font-weight-bold fas fa-chevron-left"></i>
-            </a>
-            <span class="ml-2">Comentários</span>
-
-        </div>
-        <div class="dropdown-divider border mb-2 m-0 p-0"></div>
-    </div>
     <div id="screen">
         <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
 
@@ -76,19 +66,49 @@
             </div>
         </nav>
 
+        <div id="commentsContainer" style="display:none">
+            <div class=" mb-2 m-0 p-0 h4 font-weight-bold">
+                <a id="return" onclick="hideComments()">
+                    <i class="ml-2 mt-1 font-weight-bold fas fa-chevron-left"></i>
+                </a>
+                <span class="ml-2">Comentários</span>
+
+            </div>
+            <div class="dropdown-divider border mb-2 m-0 p-0"></div>
+        </div>
+
         <div class="row ml-2 mt-1 m-0 p-0 h4 font-weight-bold">
             <a id="return" onclick="toFeed(getPeopleData())" href="myweb.html"><i
                     class="font-weight-bold fas fa-chevron-left"></i></a>
         </div>
         <div class="cont" id="ProfilePosts" style="Overflow-x: hidden;height: 65%;">
             <div class="row mb-4 justify-content-center m-0 p-0">
-                <div class="col-7 mt-2 ">
+                <div class="col-7 mt-2 pl-2 pt-2 m-0 p-0">
                     <p id="nameProfile" class="font-weight-bold text-left"></p>
                     <p id="ageProfile" class="text-left"></p>
+                    <p id="about" style="font-size: 15px" class="text-left mt-2"></p>
                 </div>
                 <div class="col-5 m-0 p-0">
                     <img src="" id="imgProfile" class="rounded-circle mx-auto d-block mt-3 mr-4 m-0 p-0 " width="85px">
                 </div>
+            </div>
+
+            <div class="row justify-content-between text-center font-weight-bold m-0 p-0">
+                <div id="numPosts" class="col-4 m-0 p-0"></div>
+                <div id="followers" class="col-4 m-0 p-0"></div>
+                <div id="following" class="col-4 m-0 p-0"></div>
+            </div>
+            <div style="font-size: 15px" class="row justify-content-between text-center mb-3 m-0 p-0">
+                <div class="col-4 m-0 p-0 text-truncate">
+                    Posts
+                </div>
+                <div class="col-4 m-0 p-0">
+                    Seguidores
+                </div>
+                <div class="col-4 m-0 p-0">
+                    A seguir
+                </div>
+
             </div>
         </div>
 
