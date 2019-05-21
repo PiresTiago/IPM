@@ -150,7 +150,8 @@ function getStoreType(){
 function getStore(name) {
     for (var i = 1; i < storedata.stores.length; i++) {
         
-        if (storedata.stores[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())
+        if ((storedata.stores[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())||
+        (storedata.stores[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase()) && name.length>2))
             return storedata.stores[i];
     }
     return null;

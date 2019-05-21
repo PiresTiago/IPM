@@ -6,25 +6,27 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1, shrink-to-fit=no">
+  <title>iGo</title>
+
   <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/leaflet.css">
-
-  <title>iGo</title>
   <link rel="stylesheet" href="./css/stylesheet.css">
+
+  <script src="js/maps.js"></script>
+  <script src="js/general.js"></script>
+
+  <script src="json/peopleMyWeb.js"></script>
 
 </head>
 
 <body onload="getMap(); getTime();">
   <img id="watch" src="imagens/watch.png">
-
-
   <a href="maps.html">
     <div class="container rounded p-0 pt-1 bg-dark text-center" style="border-style: solid;border-width: 1px; width:15px;height:35px; 
   position: absolute;top: 50%; left: 50%; margin-top: -157px; margin-left: 155px;">
     </div>
-</a>
+  </a>
 
   <div id="screen">
     <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
@@ -77,19 +79,13 @@
           <i id="mapsicon" class="fas fa-search bg-dark border border-white rounded-circle text-white"></i>
         </a>
       </div>
-
-
     </div>
   </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
   <script src="./js/jquery.slim.min.js"></script>
   <script src="./js/popper.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/leaflet.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="json/peopleMyWeb.js"></script>
 
 </body>
 

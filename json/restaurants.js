@@ -2,7 +2,7 @@ var restaurantdata = {
 
     restaurants: [
         {
-            "type": "Restaurantes"
+            "type": "Restauração"
         },
         {
             "name": "Vasco da Gama",
@@ -182,7 +182,8 @@ function getRestaurantType(){
 
 function getRestaurant(name) {
     for (var i = 1; i < restaurantdata.restaurants.length; i++) {
-        if (restaurantdata.restaurants[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())
+        if ((restaurantdata.restaurants[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())||
+        (restaurantdata.restaurants[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase()) && name.length>2))
             return restaurantdata.restaurants[i];
     }
     return null;

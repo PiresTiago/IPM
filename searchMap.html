@@ -5,14 +5,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-
     <title>iGo</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
 
-    <script src="js/scripts.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/maps.js"></script>
 
     <script src="json/attractions.js"></script>
     <script src="json/museums.js"></script>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="getTime();">
+<body onload="getTime(); showKeyboard()">
     <img id="watch" src="imagens/watch.png">
 
     <a href="maps.html">
@@ -85,32 +85,17 @@
             </div>
 
             <div class="input-group input-group-lg mb-4">
-                <input type="text" class="form-control input submit" id="search" onclick="showKeyboard()"
+                <input type="text" class="form-control input submit" id="search"
                     onkeyup="getValue(event)" aria-describedby="inputGroup-sizing-lg">
             </div>
             <div id="keyboard" style="display:none;" class="position-absolute"></div>
-
-            <div class="text-center">
-                <button id="mic" type="button" style="width: 100px;height: 100px"
-                    class="rounded-circle btn btn-secondary"><i class="fas fa-microphone fa-4x"
-                        onmousedown="mouseDownMic()" onmouseup="mouseUpMic()"></i></button>
-            </div>
-
-
         </div>
-
-
     </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script src="./js/jquery.slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="jkeyboard/lib/js/jkeyboard.js"></script>
-    <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
 
     <script>
         document.getElementById("search").addEventListener("keydown", function (e) {
@@ -129,9 +114,7 @@
             input: $('#search'),
             layout: 'english'
         });
-
     </script>
-
 </body>
 
 </html>

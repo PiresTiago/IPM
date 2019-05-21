@@ -8,7 +8,7 @@ var museumdata = {
             "name": "Faraday",
             "distance": "40 m",
             "type": "Tecnologia",
-            "location" : "Instituto Superior Técnico",
+            "location": "Instituto Superior Técnico",
             "schedule": [
                 {
                     "weekday": 0,
@@ -27,13 +27,13 @@ var museumdata = {
                 }
             ],
             "tickets": true,
-            "overflow":false
+            "overflow": false
         },
         {
             "name": "Campo Pequeno",
             "distance": "1 km",
             "type": "Tauromaquia",
-            "location" : "1000-082 Lisboa",
+            "location": "1000-082 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -52,13 +52,13 @@ var museumdata = {
                 }
             ],
             "tickets": true,
-            "overflow":true
+            "overflow": true
         },
         {
             "name": "Câmara dos Azuis",
             "distance": "1,4 km",
             "type": "Arte e Antuiguidades",
-            "location" : "Av. Elias Garcia 157, 1050-242 Lisboa",
+            "location": "Av. Elias Garcia 157, 1050-242 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -77,13 +77,13 @@ var museumdata = {
                 }
             ],
             "tickets": true,
-            "overflow":true
+            "overflow": true
         },
         {
             "name": "Calouste Gulbenkian",
             "distance": "1,5 km",
             "type": "Arte Moderna",
-            "location" : "Av. de Berna 45A, 1067-001 Lisboa",
+            "location": "Av. de Berna 45A, 1067-001 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -102,13 +102,13 @@ var museumdata = {
                 }
             ],
             "tickets": true,
-            "overflow":true
+            "overflow": true
         },
         {
             "name": "Whisky & Companhia",
             "distance": "1,6 km",
             "type": "Bebidas",
-            "location" : "Rua Visconde Seabra, 12C, 1700-370 Lisboa",
+            "location": "Rua Visconde Seabra, 12C, 1700-370 Lisboa",
             "schedule": [
                 {
                     "weekday": 0,
@@ -127,7 +127,7 @@ var museumdata = {
                 }
             ],
             "tickets": true,
-            "overflow":true
+            "overflow": true
         },
     ]
 };
@@ -137,13 +137,14 @@ function getMuseumData() {
     return museumdata.museums;
 }
 
-function getMuseumType(){
+function getMuseumType() {
     return museumdata.museums[0].type.toLowerCase();
 }
 
 function getMuseum(name) {
     for (var i = 1; i < museumdata.museums.length; i++) {
-        if (museumdata.museums[i].name.toLocaleLowerCase() ==  name.toLocaleLowerCase())
+        if ((museumdata.museums[i].name.toLocaleLowerCase() == name.toLocaleLowerCase()) ||
+        (museumdata.museums[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase()) && name.length>2))
             return museumdata.museums[i];
     }
     return null;

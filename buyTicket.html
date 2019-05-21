@@ -4,23 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-
     <title>iGo</title>
-    <link rel="stylesheet" href="./css/stylesheet.css">
 
-    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="external/jquery.mobile-1.3.0.min.css" />
+    <link href="css/mobipick.css" rel="stylesheet" type="text/css" />
+    <link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
+
+    <script src="js/maps.js"></script>
+    <script src="js/general.js"></script>
 
     <script src="json/attractions.js"></script>
     <script src="json/museums.js"></script>
     <script src="json/pharmacies.js"></script>
     <script src="json/restaurants.js"></script>
     <script src="json/stores.js"></script>
+    <script src="json/peopleMyWeb.js"></script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 
 </head>
 
@@ -56,16 +60,15 @@
                 <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
                     <div class="row justify-content-center m-0 p-0">
                         <div class="col-4 mb-2 mt-4 m-0 p-0">
-                            <a class="nav-link text-light font-weight-bold m-0 p-0" href="maps.html">
-                                <i
-                                    class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt mb-1"></i>
+                            <a rel="external" class="nav-link text-light font-weight-bold m-0 p-0" href="maps.html">
+                                <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt mb-1"></i>
                                 Mapas
                             </a>
                         </div>
                     </div>
                     <div class="row justify-content-center m-0 p-0">
                         <div class="col-4 mb-4 mt-4 m-0 p-0">
-                            <a class="nav-link text-light text-center font-weight-bold m-0 p-0"
+                            <a rel="external" class="nav-link text-light text-center font-weight-bold m-0 p-0"
                                 onclick="loadMyWeb(getPeopleData())" href="myweb.html">
                                 <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
                                 MyWeb
@@ -74,13 +77,6 @@
                     </div>
                 </div>
             </nav>
-
-            <!--<div class="mt-2 h4 font-weight-bold mx-2">
-                <a id="return" rel="external" href="./maps.html"><i class="fas fa-chevron-left text-dark"></i></a>
-                <span class="ml-0"></span>
-                <div class="dropdown-divider mt-2 p-0"></div>
-            </div>
-            -->
             <form id="regForm" action="">
 
                 <!-- One "tab" for each step in the form: -->
@@ -290,9 +286,6 @@
 
     </div>
 
-    <link rel="stylesheet" href="external/jquery.mobile-1.3.0.min.css" />
-    <link href="css/mobipick.css" rel="stylesheet" type="text/css" />
-    <link href="css/shCoreDefault.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/shCore.js"></script>
     <script type="text/javascript" src="external/modernizr.custom.min.js"></script>
     <script type="text/javascript" src="external/xdate.js"></script>
@@ -300,13 +293,10 @@
     <script type="text/javascript" src="external/jquery-1.9.1.min.js"></script>
     <script id="mobile" type="text/javascript" src="external/jquery.mobile-1.3.0.min.js"></script>
     <script type="text/javascript" src="js/mobipick.js"></script>
-    <script src="json/peopleMyWeb.js"></script>
-
 
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="jkeyboard/lib/js/jkeyboard.js"></script>
-    <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
 
     <script>
         var LocalName = localStorage.getItem("LocalName");
@@ -339,318 +329,9 @@
         document.getElementById('kid0').disabled = true;
         document.getElementById('adult0').disabled = true;
 
-        function increaseTickets(buttonName) {
-
-            if (document.getElementsByTagName('input')[0].value != "") {
-                makeButtonActive();
-            }
-            if (buttonName == "kidButton") {
-                KidTickets++;
-                if (KidTickets == 11) {
-                    showWarningLimit(buttonName, KidTickets);
-                }
-                document.getElementById('kid').innerText = KidTickets;
-                document.getElementById('kid0').disabled = false;
-
-            }
-            else {
-                AdultTickets++;
-                if (AdultTickets == 11) {
-                    showWarningLimit(buttonName, AdultTickets);
-                }
-                document.getElementById('adult').innerText = AdultTickets;
-                document.getElementById('adult0').disabled = false;
-            }
-            TotalPrice = (AdultTickets * 3) + (KidTickets * 1.5);
-            document.getElementById('tmpTotal').innerText = TotalPrice + '€'
-        }
-
-        function dimTickets() {
-
-        }
-
-        function decreaseTickets(buttonName) {
-            if (buttonName == "kidButton") {
-                KidTickets--;
-                document.getElementById('kid').innerText = KidTickets;
-                if (KidTickets == 0) {
-                    document.getElementById('kid0').disabled = true;
-                }
-            }
-            else {
-                AdultTickets--;
-                document.getElementById('adult').innerText = AdultTickets;
-                if (AdultTickets == 0) {
-                    document.getElementById('adult0').disabled = true;
-                }
-            }
-            TotalPrice = (AdultTickets * 3) + (KidTickets * 1.5);
-            document.getElementById('tmpTotal').innerText = TotalPrice + '€'
-            if (AdultTickets == 0 && KidTickets == 0) {
-                document.getElementById('nextBtn').disabled = true;
-            }
-        }
-
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
-
-
-        function showTab(n) {
-            // This function will display the specified tab of the form ...
-            var x = document.getElementsByClassName("tab");
-            x[n].style.display = "block";
-            // ... and fix the Previous/Next buttons:
-            if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-                if (AdultTickets == 0 && KidTickets == 0) {
-                    document.getElementById('nextBtn').disabled = true;
-                }
-                else
-                    document.getElementById('nextBtn').disabled = false;
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Confirmar";
-            } else {
-                document.getElementById("nextBtn").innerHTML = "Continuar";
-            }
-            // ... and run a function that displays the correct step indicator:
-            fixStepIndicator(n)
-        }
-
-        function nextPrev(n) {
-
-            // This function will figure out which tab to display
-            var x = document.getElementsByClassName("tab");
-
-            if (currentTab == 0) {
-                if (AdultTickets != 0) {
-                    if (AdultTickets == 1) {
-                        document.getElementById('NumAdults').innerText = '1x Bilhete Adulto'
-                    }
-                    else {
-                        document.getElementById('NumAdults').innerText = AdultTickets + 'x Bilhetes Adulto'
-                    }
-                }
-
-                if (KidTickets != 0) {
-                    if (KidTickets == 1) {
-                        document.getElementById('NumKids').innerText = '1x Bilhete Criança'
-                    }
-                    else {
-                        document.getElementById('NumKids').innerText = KidTickets + 'x Bilhetes Criança'
-                    }
-                }
-
-                if (KidTickets == 0 || AdultTickets == 0) {
-                    document.getElementById('nameLocal').className = "row m-0 p-0 justify-content-center mb-5"
-                }
-                else {
-                    document.getElementById('nameLocal').className = "row m-0 p-0 justify-content-center mb-4"
-                }
-
-                document.getElementById('total').innerText = 'TOTAL:' + TotalPrice + '€'
-            }
-
-            // Hide the current tab:
-            x[currentTab].style.display = "none";
-            // Increase or decrease the current tab by 1:
-
-            if ((currentTab == 2 || currentTab == 3 || currentTab == 4) && n > 0) {
-                currentTab = 5
-                i = 5
-            }
-
-            else if ((currentTab == 3 || currentTab == 4 || currentTab == 5) && n < 0) {
-                currentTab = 1;
-                i = 1
-            }
-
-            else if (currentTab == 1 && document.getElementById('card').checked && n > 0) {
-                currentTab = 3
-                i = 3
-            }
-
-            else if (currentTab == 1 && document.getElementById('mbway').checked && n > 0) {
-                currentTab = 4
-                i = 4
-            }
-
-            else {
-                currentTab = currentTab + n;
-                if (n == -1) {
-                    i--;
-                }
-                else {
-                    i++;
-                }
-
-            }
-            if (currentTab == 1) {
-                document.getElementById('nextBtn').disabled = true;
-            }
-            // if you have reached the end of the form... :
-            if (currentTab >= x.length) {
-                //...the form gets submitted:
-                confirmationPage()
-                n = 2
-                i = 2
-            }
-            else {
-                // Otherwise, display the correct tab:
-                showTab(currentTab);
-            }
-        }
-
-        function fixStepIndicator(n) {
-            // This function removes the "active" class of all steps...
-            var i, x = document.getElementsByClassName("step");
-            for (i = 0; i < x.length; i++) {
-                x[i].className = x[i].className.replace(" active", "");
-            }
-            //... and adds the "active" class to the current step:
-            x[n].className += " active";
-        }
-
-
-        function showWarning() {
-
-            var yes = document.createElement('a'),
-                no = document.createElement('a'),
-                container = document.createElement('div'),
-                warningText = document.createElement('div'),
-                buttons = document.createElement('div');
-
-            container.className = "position-absolute bg-light font-weight-bold text-center rounded-lg"
-            container.style = "width:230px;height:150px; margin:-160px 0px 0px 0px; border-style:solid;border-width:3px;z-index:10"
-            container.id = "warningDIV";
-
-            warningText.className = "mt-3"
-            warningText.innerText = "TEM A CERTEZA QUE DESEJA CANCELAR?"
-
-            buttons.className = "position-absolute"
-            buttons.style = "bottom:5px"
-
-            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 bg-danger text-center rounded text-light"
-            yes.style = "margin-left:55px"
-            yes.innerText = "SIM"
-            yes.rel = "external"
-            yes.addEventListener("click", function () {
-                exitPage();
-            })
-
-            no.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-2 bg-secondary text-center rounded text-light"
-            no.innerText = "NÃO"
-            no.rel = "external"
-            no.addEventListener("click", function () {
-                hideWarning();
-            })
-
-            buttons.appendChild(no);
-            buttons.appendChild(yes);
-            container.appendChild(warningText);
-            container.appendChild(buttons);
-            document.getElementsByClassName('tab')[i].appendChild(container);
-        }
-
-        function showWarningLimit(buttonName, tickets) {
-
-            var result;
-            var yes = document.createElement('a'),
-                no = document.createElement('a'),
-                container = document.createElement('div'),
-                warningText = document.createElement('div'),
-                buttons = document.createElement('div');
-
-            container.className = "position-absolute bg-light font-weight-bold text-center rounded-lg"
-            container.style = "width:230px;height:160px; margin:-160px 0px 0px 0px; border-style:solid;border-width:3px;z-index:10"
-            container.id = "warningDIV";
-
-            warningText.className = "mt-3"
-            if (buttonName == 'kidButton') {
-                warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR MAIS DE 10 BILHETES DE CRIANÇA?";
-            } else {
-                warningText.innerText = "TEM A CERTEZA QUE DESEJA COMPRAR MAIS DE 10 BILHETES DE ADULTO?";
-            }
-
-            buttons.className = "position-absolute"
-            buttons.style = "bottom:5px"
-
-            no.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-2 bg-secondary text-center rounded text-light"
-            no.innerText = "NÃO"
-            no.rel = "external"
-            no.addEventListener("click", function () {
-                hideWarning();
-                decreaseTickets(buttonName);
-            })
-
-            yes.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 bg-danger text-center rounded text-light"
-            yes.style = "margin-left:55px"
-            yes.innerText = "SIM"
-            yes.rel = "external"
-            yes.addEventListener("click", function () {
-                hideWarning();
-            })
-
-            buttons.appendChild(no);
-            buttons.appendChild(yes);
-            container.appendChild(warningText);
-            container.appendChild(buttons);
-            document.getElementsByClassName('tab')[i].appendChild(container);
-        }
-
-        function exitPage() {
-            window.location = "./place.html"
-        }
-
-        function hideWarning() {
-            document.getElementById('warningDIV').remove();
-        }
-
-        function makeButtonActive() {
-            document.getElementById('nextBtn').disabled = false;
-        }
-
-        function buttonTab0() {
-            if (AdultTickets != 0 || KidTickets != 0) {
-                document.getElementById('nextBtn').disabled = false;
-            }
-        }
-
-        function confirmationPage() {
-            var divText = document.createElement('div'),
-                returnToLocal = document.createElement('a'),
-                //container = document.createElement('div'),
-                screen = document.getElementsByTagName('screen');
-
-            while (screen.length > 1) {
-                screen[1].parentNode.removeChild(screen[1]);
-            }
-
-            //container.className = "bg-light"
-            //container.style = "z-index:1;position: absolute;top: 50%;left: 50%; margin-top: -118px; margin-left: -116px;width: 6.4cm; height: 7.48cm; overflow: scroll; overflow-x: hidden;z-index: 1;scrollbar-width: none;"
-
-            divText.innerText = "Compra Efetuada"
-            divText.className = "font-weight-bold h5"
-            divText.style = "margin-left:40px;margin-top:60px"
-
-            returnToLocal.innerText = "Voltar";
-            returnToLocal.className = "border-0 btn btn-primary btn-sm p-3 pl-4 pr-4 ml-4 bg-info text-center rounded text-light";
-            returnToLocal.style = "left:60px; bottom:20px;position:absolute"
-            returnToLocal.href = "./place.html"
-            returnToLocal.rel = "external"
-
-            //container.appendChild(divText);
-            //container.appendChild(returnToLocal);
-            document.getElementById('buttons').remove();
-
-            document.getElementById('screen').appendChild(divText);
-            document.getElementById('screen').appendChild(returnToLocal);
-        }
     </script>
-
 </body>
 
 </html>
-<!---->

@@ -118,7 +118,8 @@ function getAttractionType(){
 
 function getAttraction(name) {
     for (var i = 1; i < attractiondata.attractions.length; i++) {
-        if (attractiondata.attractions[i].name.toLocaleLowerCase() == name.toLocaleLowerCase())
+        if ((attractiondata.attractions[i].name.toLocaleLowerCase() == name.toLocaleLowerCase())||
+        (attractiondata.attractions[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase()) && name.length>2))
             return attractiondata.attractions[i];
     }
     return null;
