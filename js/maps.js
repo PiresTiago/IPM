@@ -129,6 +129,7 @@ function search(name) {
 
 
 function toListofLocals(page) {
+    localStorage.removeItem("pageData1");
     localStorage.setItem("pageData1", JSON.stringify(page));
 }
 
@@ -178,7 +179,7 @@ function loadListofLocals() {
                 })
             }
 
-            else if (data[0].type == "Restaurantes") {
+            else if (data[0].type == "Restauração") {
                 link.addEventListener("click", function () {
                     localStorage.setItem("pageData2", JSON.stringify(getRestaurant(data[i].name)))
                 })
@@ -219,8 +220,6 @@ function loadListofLocals() {
                 document.getElementById("main").appendChild(divContainer);
                 document.getElementById("main").appendChild(divDivider);
             }
-
-
         }();
     }
 
