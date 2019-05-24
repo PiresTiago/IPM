@@ -1,0 +1,70 @@
+.jkeyboard {
+  display: inline-block;
+
+}
+.jkeyboard, .jkeyboard .jline, .jkeyboard .jline ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+}
+.jkeyboard .jline {
+  text-align: center;
+  margin-left: 0px;
+  background-color: #313747;
+
+}
+.jkeyboard .jline ul li {
+  font-family: arial, sans-serif;
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid #313747;
+  -webkit-box-shadow: 0 0 3px #444444;
+  -webkit-box-shadow: inset 0 0 3px #444444;
+  background-color: #4f576b;
+  color:white;
+  border-radius: 5px;
+  width: 23px;
+  height: 32px;
+
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.jkeyboard .jline ul li.uppercase {
+  text-transform: uppercase;
+
+}
+
+.jkeyboard .jline ul li:hover, .jkeyboard .jline ul li:active {
+   background-color: white;
+  color: black;
+}
+.jkeyboard .jline .return {
+  width: 60px;
+}
+.jkeyboard .jline .space {
+  width: 115px;
+}
+.jkeyboard .jline .numeric_switch {
+  width: 50px;
+}
+.jkeyboard .jline .character_switch {
+  width: 50px;
+}
+.jkeyboard .jline .shift {
+  width: 20px;
+  background: url("../assets/shift.png") no-repeat #4f576b center center;
+}
+.jkeyboard .jline .backspace {
+  width: 40px;
+  background: url("../assets/backspace.png") no-repeat #4f576b center center;
+}

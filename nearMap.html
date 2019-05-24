@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>iGo</title>
+
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/stylesheet.css">
+
+  <script src="js/maps.js"></script>
+  <script src="js/general.js"></script>
+
+  <script src="json/attractions.js"></script>
+  <script src="json/museums.js"></script>
+  <script src="json/pharmacies.js"></script>
+  <script src="json/restaurants.js"></script>
+  <script src="json/stores.js"></script>
+  <script src="json/peopleMyWeb.js"></script>
+</head>
+
+<body onload="getTime();">
+  <img id="watch" src="imagens/watch.png">
+
+  <a href="maps.html">
+    <div class="container rounded p-0 pt-1 bg-dark text-center" style="border-style: solid;border-width: 1px; width:15px;height:35px; 
+  position: absolute;top: 50%; left: 50%; margin-top: -157px; margin-left: 155px;">
+    </div>
+</a>
+  <div id="screen">
+    <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
+
+      <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
+      <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation" onclick="switchAngle('menuswitch')">
+        <!-- Toggle change icon -->
+        <i id="menuswitch" class="fas fa-caret-down text-white"></i>
+      </button>
+      <div class="col-2 h5 m-0 p-0 font-weight-normal">
+        <img src="imagens/gps.png" class="float-right" width=60%>
+      </div>
+
+      <div class="col-2 h5 m-0 p-0 font-weight-normal">
+        <img src="imagens/battery4.png" class="float-right" width=70%>
+      </div>
+      <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
+        <div class="row justify-content-center m-0 p-0">
+          <div class="col-4 mb-2 mt-4 m-0 p-0">
+            <a class="nav-link text-light font-weight-bold m-0 p-0" href="maps.html">
+              <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt mb-1"></i>
+              Mapas
+            </a>
+          </div>
+        </div>
+        <div class="row justify-content-center m-0 p-0">
+          <div class="col-4 mb-4 mt-4 m-0 p-0">
+            <a class="nav-link text-light text-center font-weight-bold m-0 p-0" onclick="loadMyWeb(getPeopleData())"
+              href="myweb.html">
+              <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
+              MyWeb
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mx-2 mt-2 h4 font-weight-bold sticky-top">
+      <a id="return" href="maps.html"><i class="fas fa-chevron-left"></i></a>
+      <span class="ml-0">Perto de si:</span>
+      <div class="dropdown-divider mt-2 p-0 border"></div>
+    </div>
+
+    <div class="mt-0 mx-2 font-weight-bold cont">
+      <div class="container">
+        <a onclick="toListofLocals(getStoreData())" href="./places.html">
+          <p class="mb-0 pt-2 pb-2"><i class="fas fa-shopping-bag mr-2"></i>Lojas</p>
+        </a>
+      </div>
+
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+        <a onclick="toListofLocals(getRestaurantData())" href="./places.html">
+          <p class="m-0 pt-2 pb-2"><i class="fas fa-utensils mr-2"></i>Restauração</p>
+        </a>
+      </div>
+
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+        <a onclick="toListofLocals(getPharmacyData())" href="./places.html">
+          <p class="m-0 pt-2 pb-2"><i class="fas fa-prescription-bottle-alt mr-2"></i>Farmácias</p>
+        </a>
+      </div>
+
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+        <a onclick="toListofLocals(getAttractionData())" href="./places.html">
+          <p class="m-0 pt-2 pb-2"><i class="fas fa-map mr-2"></i>Atrações</p>
+        </a>
+      </div>
+
+      <div class="dropdown-divider mt-1 p-0"></div>
+
+      <div class="container">
+        <a onclick="toListofLocals(getMuseumData())" href="./places.html">
+          <p class="m-0 pt-2 pb-2"><i class="fas fa-landmark mr-2"></i>Museus</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./js/jquery.slim.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

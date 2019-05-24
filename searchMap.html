@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iGo</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="jkeyboard/lib/css/jkeyboard.css">
+
+    <script src="js/general.js"></script>
+    <script src="js/maps.js"></script>
+
+    <script src="json/attractions.js"></script>
+    <script src="json/museums.js"></script>
+    <script src="json/pharmacies.js"></script>
+    <script src="json/restaurants.js"></script>
+    <script src="json/stores.js"></script>
+    <script src="json/peopleMyWeb.js"></script>
+
+</head>
+
+<body onload="getTime(); showKeyboard()">
+    <img id="watch" src="imagens/watch.png">
+
+    <a href="maps.html">
+        <div class="container rounded p-0 pt-1 bg-dark text-center" style="border-style: solid;border-width: 1px; width:15px;height:35px; 
+      position: absolute;top: 50%; left: 50%; margin-top: -157px; margin-left: 155px;">
+        </div>
+    </a>
+    <div id="screen">
+        <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
+
+            <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
+            <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" onclick="switchAngle('menuswitch')">
+                <!-- Toggle change icon -->
+                <i id="menuswitch" class="fas fa-caret-down text-white"></i>
+            </button>
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/gps.png" class="float-right" width=60%>
+            </div>
+
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/battery4.png" class="float-right" width=70%>
+            </div>
+            <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-4 mb-2 mt-4 m-0 p-0">
+                        <a class="nav-link text-light font-weight-bold m-0 p-0" href="maps.html">
+                            <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt mb-1"></i>
+                            Mapas
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-4 mb-4 mt-4 m-0 p-0">
+                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0"
+                            onclick="loadMyWeb(getPeopleData())" href="myweb.html">
+                            <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
+                            MyWeb
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="alert alert-dark position-absolute alert-dismissible" role="alert"
+            style="display:none; z-index: 10">
+            <strong>Erro de Pesquisa</strong> Local não encontrado
+            <button type="button" onclick="closeAlert()" class="close mt-2">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+
+        <div class="mx-2">
+            <div class="mt-2 h4 font-weight-bold">
+                <a id="return" href="./maps.html"><i class="fas fa-chevron-left"></i></a>
+                <span class="ml-0">Pesquise por:</span>
+                <div class="dropdown-divider mt-2 p-0"></div>
+            </div>
+
+            <div class="input-group input-group-lg mb-4">
+                <input type="text" class="form-control input submit" id="search"
+                    onkeyup="getValue(event)" aria-describedby="inputGroup-sizing-lg">
+            </div>
+            <div id="keyboard" style="display:none;" class="position-absolute"></div>
+        </div>
+    </div>
+
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="jkeyboard/lib/js/jkeyboard.js"></script>
+
+    <script>
+        document.getElementById("search").addEventListener("keydown", function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                search(document.getElementById('search').value.toLowerCase());
+            }
+        }, false)
+
+        function showKeyboard() {
+            document.getElementById('keyboard').style = "display:block";
+        }
+
+
+        $('#keyboard').jkeyboard({
+            input: $('#search'),
+            layout: 'english'
+        });
+    </script>
+</body>
+
+</html>

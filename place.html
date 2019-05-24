@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iGo</title>
+
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/leaflet.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+
+    <script src="js/general.js"></script>
+    <script src="js/maps.js"></script>
+    
+    <script src="json/peopleMyWeb.js"></script>
+
+</head>
+
+<body onload="loadLocal(); getTime(); ">
+    <img id="watch" src="imagens/watch.png">
+    <a href="maps.html">
+        <div class="container rounded p-0 pt-1 bg-dark text-center" style="border-style: solid;border-width: 1px; width:15px;height:35px; 
+      position: absolute;top: 50%; left: 50%; margin-top: -157px; margin-left: 155px;">
+        </div>
+    </a>
+
+    <div id="screen">
+        <nav class="navbar navbar-light bg-dark text-light px-2 m-0 sticky-top">
+
+            <div class="col-4 h6 m-0 p-0 font-weight-bold" id="time"></div>
+            <button class="navbar-toggler border-0 col-4 p-0 m-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" onclick="switchAngle('menuswitch')">
+                <!-- Toggle change icon -->
+                <i id="menuswitch" class="fas fa-caret-down text-white"></i>
+            </button>
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/gps.png" class="float-right" width=60%>
+            </div>
+
+            <div class="col-2 h5 m-0 p-0 font-weight-normal">
+                <img src="imagens/battery4.png" class="float-right" width=70%>
+            </div>
+            <div class="collapse navbar-collapse py-3 text-center" id="navbarSupportedContent">
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-4 mb-2 mt-4 m-0 p-0">
+                        <a class="nav-link text-light font-weight-bold m-0 p-0" href="maps.html">
+                            <i class="p-3 bg-success text-white rounded-circle fa-2x fas fa-map-marked-alt mb-1"></i>
+                            Mapas
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-4 mb-4 mt-4 m-0 p-0">
+                        <a class="nav-link text-light text-center font-weight-bold m-0 p-0"
+                            onclick="loadMyWeb(getPeopleData())" href="myweb.html">
+                            <i class="p-3 bg-primary text-white rounded-circle fa-2x fas fa-users mb-1 m-0"></i>
+                            MyWeb
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mx-2" id="mainplace">
+            <div class="mt-2 h4 font-weight-bold">
+                <a id="return" href="./places.html"><i class="fas fa-chevron-left"></i></a>
+                <div class="ml-1" id="Localname"></div>
+                <p class="text-right m-0 mt-2 placedesc" id="tipoLugar"></p>
+                <div class="dropdown-divider mt-2 p-0 border"></div>
+            </div>
+
+            <div class="row m-0 p-0" id="titleplace">
+                <div class="col-12 mb-2 p-0 font-weight-bold">
+                    <span>Horário de funcionamento</span>
+                </div>
+            </div>
+            <div class="row m-0 mb-1 p-0">
+                <div class="col-12 m-0 p-0">
+                    Segunda a Sexta : <span id="weekdays"></span>
+                </div>
+            </div>
+            <div class="row m-0 mb-1 p-0">
+                <div class="col-12 m-0 p-0 ">
+                    Sábado : <span id="saturday"></span>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-12 m-0 p-0 ">
+                    Domingo : <span id="sunday"></span>
+                </div>
+            </div>
+            <div class="row m-0 mt-2 mb-1 p-0">
+                <div class="col-12 m-0 p-0 font-weight-bold h6">
+                    Localização
+                </div>
+            </div>
+            <div id="location" class="row col-12 m-0 p-0">
+
+            </div>
+            <div id="divider"></div>
+            <div id="Buttons" class="row m-0 p-0 justify-content-center font-weight-bold">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
